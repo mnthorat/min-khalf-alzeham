@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>من خلف الزحام — المتفائل</title>
+<meta name="description" content="من خلف الزحام: مشاهدات وقصص من المسجد الحرام. سبع سنوات خلف الزحام — كتاب عن الإنسان في أقدس لحظاته، بقلم المتفائل. حمّل نسختك مجاناً الآن.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Cairo:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #090c14;
+    --bg-2: #0d1220;
+    --panel: #131a2e;
+    --panel-2: #171f37;
+    --gold: #b68d40;
+    --gold-light: #dcb876;
+    --gold-dim: rgba(182,141,64,0.55);
+    --ivory: #ece5d6;
+    --ivory-dim: #c9c2b2;
+    --muted: #838ba3;
+    --line: rgba(182,141,64,0.22);
+    --shadow: 0 30px 80px -30px rgba(0,0,0,0.7);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:
+      radial-gradient(1200px 600px at 15% -10%, rgba(182,141,64,0.08), transparent 60%),
+      radial-gradient(900px 500px at 100% 10%, rgba(182,141,64,0.05), transparent 55%),
+      var(--bg);
+    color: var(--ivory);
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    line-height: 1.9;
+    overflow-x: hidden;
+  }
+
+  ::selection{ background: var(--gold); color:#0a0e17; }
+
+  .display{ font-family: 'Aref Ruqaa', serif; }
+  .eyebrow{
+    font-family:'Cairo', sans-serif;
+    font-weight:700;
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    color: var(--gold-light);
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width: 26px; height:1px;
+    background: var(--gold);
+    display:inline-block;
+  }
+
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+  section{ position:relative; }
+  .wrap{ max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position: fixed; inset: 0 0 auto 0;
+    z-index: 60;
+    padding: 20px 0;
+    transition: background .4s ease, padding .4s ease, border-color .4s ease;
+    border-bottom: 1px solid transparent;
+  }
+  header.nav.scrolled{
+    background: rgba(9,12,20,0.86);
+    backdrop-filter: blur(14px);
+    padding: 13px 0;
+    border-color: var(--line);
+  }
+  header.nav .wrap{ display:flex; align-items:center; justify-content:space-between; }
+  .brand{ display:flex; align-items:center; gap:12px; font-family:'Aref Ruqaa', serif; font-size:1.5rem; color: var(--ivory); }
+  .brand span{ color: var(--gold-light); }
+  .brand .mark{
+    width:34px; height:34px; border:1px solid var(--gold-dim); border-radius:50%;
+    display:flex; align-items:center; justify-content:center; font-size:0.85rem; color:var(--gold-light);
+  }
+  nav.links{ display:flex; gap:34px; font-family:'Cairo', sans-serif; font-size:0.92rem; font-weight:600; color: var(--ivory-dim); }
+  nav.links a{ position:relative; padding-bottom:4px; transition:color .25s; }
+  nav.links a:hover{ color: var(--gold-light); }
+  nav.links a::after{
+    content:""; position:absolute; right:0; bottom:0; width:0; height:1px; background:var(--gold);
+    transition: width .3s ease;
+  }
+  nav.links a:hover::after{ width:100%; }
+  .nav-cta{
+    font-family:'Cairo',sans-serif; font-weight:700; font-size:0.85rem;
+    border:1px solid var(--gold-dim); padding:9px 20px; border-radius: 999px; color: var(--gold-light);
+    transition: background .25s, color .25s;
+  }
+  .nav-cta:hover{ background: var(--gold); color:#0a0e17; }
+  .menu-btn{ display:none; background:none; border:1px solid var(--gold-dim); border-radius:8px; width:42px; height:38px; color:var(--gold-light); font-size:1.1rem; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding: 168px 0 90px;
+    display:grid;
+    grid-template-columns: 1.05fr 0.85fr;
+    gap: 60px;
+    align-items:center;
+  }
+  .hero-copy h1{
+    font-size: clamp(2.6rem, 5vw, 4.1rem);
+    line-height:1.28;
+    margin: 20px 0 22px;
+    color: var(--ivory);
+  }
+  .hero-copy h1 em{
+    font-style:normal;
+    color: var(--gold-light);
+    background: linear-gradient(180deg, transparent 62%, rgba(182,141,64,0.28) 62%);
+  }
+  .hero-tagline{
+    font-family:'Aref Ruqaa', serif;
+    font-size: 1.55rem;
+    color: var(--gold-light);
+    border-right: 2px solid var(--gold);
+    padding-right: 18px;
+    margin: 26px 0 26px;
+  }
+  .hero-desc{ color: var(--ivory-dim); font-size:1.06rem; max-width: 56ch; margin-bottom: 38px; }
+  .cta-row{ display:flex; flex-wrap:wrap; gap:16px; }
+  .btn{
+    font-family:'Cairo', sans-serif; font-weight:700; font-size:0.98rem;
+    padding: 16px 30px; border-radius: 10px; display:inline-flex; align-items:center; gap:10px;
+    transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+  }
+  .btn-primary{
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    color: #0a0e17;
+    box-shadow: 0 18px 40px -14px rgba(182,141,64,0.55);
+  }
+  .btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 22px 50px -14px rgba(182,141,64,0.75); }
+  .btn-ghost{
+    border: 1px solid var(--gold-dim); color: var(--ivory);
+  }
+  .btn-ghost:hover{ border-color: var(--gold-light); background: rgba(182,141,64,0.08); color: var(--gold-light); }
+
+  .hero-visual{ position:relative; display:flex; justify-content:center; }
+  .book-frame{
+    position:relative; width: 100%; max-width: 380px;
+    border-radius: 6px;
+    box-shadow: var(--shadow), 0 0 0 1px rgba(182,141,64,0.25);
+    transform: rotate(1.2deg);
+  }
+  .book-frame img{ border-radius: 6px; }
+  .book-glow{
+    position:absolute; inset: -40px; z-index:-1;
+    background: radial-gradient(circle at 50% 40%, rgba(182,141,64,0.25), transparent 65%);
+    filter: blur(10px);
+  }
+  .book-badge{
+    position:absolute; bottom:-22px; right: -18px;
+    background: var(--panel); border:1px solid var(--gold-dim);
+    padding: 12px 18px; border-radius: 10px;
+    font-family:'Cairo', sans-serif; font-size:0.82rem; color: var(--ivory-dim);
+    box-shadow: var(--shadow);
+  }
+  .book-badge b{ display:block; color: var(--gold-light); font-size:1.05rem; font-family:'IBM Plex Sans Arabic'; }
+
+  /* ---------- MARQUEE (signature element) ---------- */
+  .marquee-band{
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    background: var(--bg-2);
+    padding: 22px 0;
+    overflow:hidden;
+    white-space: nowrap;
+  }
+  .marquee-track{
+    display:inline-flex;
+    gap: 46px;
+    animation: scroll-rtl 42s linear infinite;
+    font-family:'Aref Ruqaa', serif;
+    font-size: 1.3rem;
+    color: var(--ivory-dim);
+  }
+  .marquee-track span{ display:inline-flex; align-items:center; gap:46px; }
+  .marquee-track b{ color: var(--gold-light); font-weight:400; }
+  .marquee-track .dot{ color: var(--gold); font-size:0.9rem; }
+  @keyframes scroll-rtl{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(50%); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .marquee-track{ animation: none; }
+    html{ scroll-behavior: auto; }
+  }
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section{ padding: 110px 0; }
+  .section-head{ max-width: 720px; margin-bottom: 56px; }
+  .section-head h2{ font-family:'Aref Ruqaa', serif; font-size: clamp(2rem, 3.4vw, 2.7rem); margin-top:14px; color: var(--ivory); }
+
+  /* reveal */
+  .reveal{ opacity:0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  /* ---------- ABOUT BOOK ---------- */
+  .about-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items:start; }
+  .about-grid p{ color: var(--ivory-dim); margin-bottom: 20px; font-size:1.02rem; }
+  .pullquote{
+    font-family:'Aref Ruqaa', serif;
+    font-size: 1.7rem;
+    line-height:1.7;
+    color: var(--gold-light);
+    border-right: 3px solid var(--gold);
+    padding-right: 24px;
+    margin: 10px 0 30px;
+  }
+  .stat-row{ display:flex; gap: 40px; margin-top: 36px; flex-wrap:wrap; }
+  .stat{ font-family:'Cairo', sans-serif; }
+  .stat b{ display:block; font-size: 2.1rem; color: var(--gold-light); font-family:'Aref Ruqaa', serif; }
+  .stat span{ font-size:0.85rem; color: var(--muted); }
+
+  /* ---------- TOC ---------- */
+  .toc-section{ background: var(--bg-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .toc-list{ display:flex; flex-direction:column; }
+  .toc-item{
+    display:flex; align-items:baseline; justify-content:space-between;
+    padding: 26px 4px; border-bottom: 1px solid var(--line);
+    gap: 20px;
+  }
+  .toc-item .num{ font-family:'Aref Ruqaa', serif; color: var(--gold); font-size:1.1rem; min-width:70px; }
+  .toc-item .name{ flex:1; font-size: 1.15rem; color: var(--ivory); font-weight:500; }
+  .toc-item .page{ color: var(--muted); font-family:'Cairo', sans-serif; font-size:0.85rem; }
+  .toc-sub{ padding: 6px 0 0 90px; color: var(--muted); font-size:0.92rem; display:flex; flex-wrap:wrap; gap: 8px 22px; }
+  .toc-sub span::before{ content:"— "; color: var(--gold-dim); }
+
+  /* ---------- QUOTE CARDS ---------- */
+  .quotes-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .quote-card{
+    background: linear-gradient(160deg, var(--panel), var(--panel-2));
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 34px 28px;
+    position:relative;
+  }
+  .quote-card::before{
+    content:"“";
+    font-family:'Aref Ruqaa', serif;
+    font-size: 3.2rem;
+    color: var(--gold-dim);
+    line-height:1;
+    display:block;
+    margin-bottom: 10px;
+  }
+  .quote-card p{ font-family:'Aref Ruqaa', serif; font-size:1.25rem; color: var(--ivory); line-height:1.8; margin-bottom: 18px; }
+  .quote-card .src{ font-family:'Cairo', sans-serif; font-size:0.78rem; color: var(--gold-light); letter-spacing:0.05em; }
+
+  /* ---------- AUTHOR ---------- */
+  .author-section{ }
+  .author-grid{ display:grid; grid-template-columns: 0.6fr 1.4fr; gap: 60px; align-items:center; }
+  .author-photo{
+    width: 100%; aspect-ratio: 1/1; border-radius: 16px;
+    background:
+      radial-gradient(circle at 35% 25%, rgba(182,141,64,0.35), transparent 60%),
+      linear-gradient(160deg, var(--panel-2), var(--bg-2));
+    border: 1px solid var(--gold-dim);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Aref Ruqaa', serif; font-size: 5rem; color: var(--gold-light);
+    box-shadow: var(--shadow);
+  }
+  .author-copy h3{ font-family:'Aref Ruqaa', serif; font-size:2rem; color: var(--ivory); margin-bottom: 6px; }
+  .author-copy .role{ color: var(--gold-light); font-family:'Cairo', sans-serif; font-weight:600; font-size:0.9rem; margin-bottom:22px; display:block; }
+  .author-copy p{ color: var(--ivory-dim); margin-bottom: 16px; max-width: 62ch; }
+  .author-links{ display:flex; gap:18px; margin-top: 24px; flex-wrap:wrap; }
+  .author-links a{ font-family:'Cairo', sans-serif; font-size:0.88rem; font-weight:600; color: var(--gold-light); border-bottom:1px solid var(--gold-dim); padding-bottom:2px; }
+  .author-links a:hover{ color: var(--ivory); border-color: var(--ivory); }
+
+  /* ---------- DOWNLOAD CTA ---------- */
+  .download-section{
+    background:
+      radial-gradient(700px 400px at 50% 0%, rgba(182,141,64,0.12), transparent 60%),
+      var(--bg-2);
+    border-top: 1px solid var(--line);
+    text-align:center;
+    padding: 130px 0;
+  }
+  .download-section .eyebrow{ justify-content:center; }
+  .download-section h2{ font-family:'Aref Ruqaa', serif; font-size: clamp(2.1rem, 4vw, 3.2rem); margin: 18px auto 20px; max-width: 16ch; color: var(--ivory); }
+  .download-section p{ color: var(--ivory-dim); max-width: 56ch; margin: 0 auto 42px; }
+  .download-section .cta-row{ justify-content:center; }
+  .fine-print{ margin-top: 22px; font-size:0.8rem; color: var(--muted); font-family:'Cairo', sans-serif; }
+
+  /* ---------- OTHER BOOKS ---------- */
+  .other-books{ padding: 110px 0; }
+  .books-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+  .book-card{
+    border:1px solid var(--line); border-radius: 14px; padding: 30px 26px;
+    background: var(--panel);
+    transition: transform .3s ease, border-color .3s ease;
+  }
+  .book-card:hover{ transform: translateY(-6px); border-color: var(--gold-dim); }
+  .book-card .tag{ font-family:'Cairo',sans-serif; font-size:0.72rem; letter-spacing:0.1em; color: var(--gold-light); border:1px solid var(--gold-dim); border-radius:999px; padding:4px 12px; display:inline-block; margin-bottom:18px; }
+  .book-card h4{ font-family:'Aref Ruqaa', serif; font-size:1.5rem; margin-bottom:10px; color: var(--ivory); }
+  .book-card p{ color: var(--muted); font-size:0.92rem; margin-bottom: 22px; }
+  .book-card a{ font-family:'Cairo', sans-serif; font-weight:700; font-size:0.85rem; color: var(--gold-light); }
+
+  /* ---------- FOOTER ---------- */
+  footer{ border-top: 1px solid var(--line); padding: 50px 0 34px; }
+  footer .wrap{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap: 20px; }
+  footer .brand{ font-size:1.2rem; }
+  footer .foot-links{ display:flex; gap: 26px; font-family:'Cairo', sans-serif; font-size:0.85rem; color: var(--muted); flex-wrap:wrap; }
+  footer .foot-links a:hover{ color: var(--gold-light); }
+  footer .rights{ width:100%; text-align:center; font-size:0.78rem; color: var(--muted); margin-top: 30px; font-family:'Cairo', sans-serif; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 980px){
+    nav.links{ display:none; }
+    .menu-btn{ display:block; }
+    .hero{ grid-template-columns: 1fr; padding-top: 140px; text-align:center; }
+    .hero-tagline{ margin-inline:auto; }
+    .cta-row{ justify-content:center; }
+    .hero-visual{ order:-1; }
+    .about-grid{ grid-template-columns: 1fr; gap: 40px; }
+    .quotes-grid{ grid-template-columns: 1fr; }
+    .author-grid{ grid-template-columns: 1fr; text-align:center; }
+    .author-photo{ max-width: 240px; margin:0 auto; }
+    .author-links{ justify-content:center; }
+    .books-grid{ grid-template-columns: 1fr; }
+    .toc-sub{ padding-inline-start:0; justify-content:center; text-align:center; }
+    .toc-item{ flex-direction:column; align-items:center; text-align:center; gap:6px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav" id="siteNav">
+  <div class="wrap">
+    <div class="brand"><span class="mark">م</span>المتفائل</div>
+    <nav class="links">
+      <a href="#about">عن الكتاب</a>
+      <a href="#toc">الفصول</a>
+      <a href="#quotes">من الكتاب</a>
+      <a href="#author">عن المؤلف</a>
+    </nav>
+    <a class="nav-cta" href="#download">تحميل الكتاب</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero wrap">
+    <div class="hero-copy reveal in">
+      <span class="eyebrow">كتاب جديد — المتفائل</span>
+      <h1>من خلف <em>الزحام</em></h1>
+      <div class="hero-tagline">"جئتُ موظفاً، وغادرتُ إنساناً مختلفاً"</div>
+      <p class="hero-desc">
+        سبع سنوات خلف الزحام — لم يكن فيها الكاتب زائراً ولا حاجاً، بل شاهداً على ما لا يراه أحد.
+        وجوهٌ من كل صقع الأرض، حكاياتٌ لم تُروَ، ومواقف علّمت ما لا تعلّمه الكتب.
+        هذا ليس كتاباً عن المسجد الحرام وحده — بل كتابٌ عن الإنسان في أقدس لحظاته.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#download">حمّل الكتاب مجاناً</a>
+        <a class="btn btn-ghost" href="https://lnk.bio/almutafail" target="_blank" rel="noopener">تصفح بقية إصداراتي</a>
+      </div>
+    </div>
+    <div class="hero-visual reveal in">
+      <div class="book-glow"></div>
+      <div class="book-frame">
+        <img src="assets/cover.jpg" alt="غلاف كتاب من خلف الزحام">
+      </div>
+      <div class="book-badge">نسخة PDF<b>تحميل فوري ومجاني</b></div>
+    </div>
+  </section>
+
+  <!-- SIGNATURE MARQUEE -->
+  <div class="marquee-band">
+    <div class="marquee-track" aria-hidden="true">
+      <span>
+        <b>مصريٌّ يضحك</b><span class="dot">✦</span>
+        <b>ومغربيٌّ يغضب</b><span class="dot">✦</span>
+        <b>وآسيويٌّ يصبر</b><span class="dot">✦</span>
+        <b>وتركيٌّ تعلو فيه الموجة وتنكسر</b><span class="dot">✦</span>
+        <b>وعراقيٌّ يترقب</b><span class="dot">✦</span>
+        <b>ورجلٌ ينهار في حضن امرأة تحاول أن تجمع شتاته</b><span class="dot">✦</span>
+        <b>وشابّةٌ تُهدي والدها الميت عمرة</b><span class="dot">✦</span>
+        <b>وطفلٌ يبحث بعينيه عمّا لا اسم له</b><span class="dot">✦</span>
+      </span>
+      <span>
+        <b>مصريٌّ يضحك</b><span class="dot">✦</span>
+        <b>ومغربيٌّ يغضب</b><span class="dot">✦</span>
+        <b>وآسيويٌّ يصبر</b><span class="dot">✦</span>
+        <b>وتركيٌّ تعلو فيه الموجة وتنكسر</b><span class="dot">✦</span>
+        <b>وعراقيٌّ يترقب</b><span class="dot">✦</span>
+        <b>ورجلٌ ينهار في حضن امرأة تحاول أن تجمع شتاته</b><span class="dot">✦</span>
+        <b>وشابّةٌ تُهدي والدها الميت عمرة</b><span class="dot">✦</span>
+        <b>وطفلٌ يبحث بعينيه عمّا لا اسم له</b><span class="dot">✦</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="wrap about-grid">
+      <div class="reveal">
+        <span class="eyebrow">عن الكتاب</span>
+        <h2 class="display" style="font-size:2.4rem; margin-top:14px;">مشاهداتٌ من خلف الطاولة، لا من داخل الصفّ</h2>
+      </div>
+      <div class="reveal">
+        <p>
+          نشأ الكاتب في مكة، وعاش الحرم كما يعرفه كل مكيّ: مألوفاً لا مدهشاً. لكن يوماً صار فيه لا زائراً بل قيّماً
+          على هذا البيت — مرشداً ومنظّماً لسبع سنوات وأكثر. وهناك بدأ يرى.
+        </p>
+        <div class="pullquote">"رأيت من العجائب ما لا يُحصى كثرة، ومن الغرائب ما لا يخطر على بال."</div>
+        <p>
+          في هذه الصفحات، لا سرد سياحي ولا خواطر عابرة، بل شهادة سبع سنوات على الإنسان في أصفى حالاته
+          وأشدّها انكشافاً: الوجوه التي لا تتكرر، الساعات الميتة التي تُفشي ما يخفيه النهار، والزحام الذي
+          يكشف من الناس ما لا يكشفه الهدوء.
+        </p>
+        <div class="stat-row">
+          <div class="stat"><b>+٧</b><span>سنوات من المشاهدة المباشرة</span></div>
+          <div class="stat"><b>٥</b><span>فصول</span></div>
+          <div class="stat"><b>٦٢</b><span>صفحة</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOC -->
+  <section class="section toc-section" id="toc">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">بين الفصول</span>
+        <h2>خمسة فصول، ومسار واحد</h2>
+      </div>
+      <div class="toc-list reveal">
+        <div class="toc-item">
+          <span class="num">الفصل الأول</span>
+          <span class="name">الوجوه</span>
+          <span class="page">ص ٧</span>
+        </div>
+        <div class="toc-item">
+          <span class="num">الفصل الثاني</span>
+          <span class="name">الساعات الميتة</span>
+          <span class="page">ص ٢١</span>
+        </div>
+        <div class="toc-item">
+          <span class="num">الفصل الثالث</span>
+          <span class="name">الصمت والضجيج</span>
+          <span class="page">ص ٢٩</span>
+        </div>
+        <div class="toc-item">
+          <span class="num">الفصل الرابع</span>
+          <span class="name">اللحظات الغريبة</span>
+          <span class="page">ص ٣٦</span>
+        </div>
+        <div class="toc-sub">
+          <span>البهرة</span><span>الإمامية الاثنا عشرية</span><span>الصوفية</span><span>حين يرى الإنسان نفسه فوق القانون</span><span>أهل السنة والجماعة</span>
+        </div>
+        <div class="toc-item">
+          <span class="num">الفصل الخامس</span>
+          <span class="name">العمال والموظفون</span>
+          <span class="page">ص ٤٨</span>
+        </div>
+        <div class="toc-item">
+          <span class="num">الخاتمة</span>
+          <span class="name">ما يبقى بعد أن يرحل الجميع</span>
+          <span class="page">ص ٥٨</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTES -->
+  <section class="section" id="quotes">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">من الكتاب</span>
+        <h2>جُملٌ تبقى بعد إغلاق الصفحة</h2>
+      </div>
+      <div class="quotes-grid">
+        <div class="quote-card reveal">
+          <p>سبع سنوات من الوجوه، ولم أرَ وجهين متطابقين في ما يحملان.</p>
+          <div class="src">الفصل الأول — الوجوه</div>
+        </div>
+        <div class="quote-card reveal">
+          <p>في تلك اللحظة، لا مصريّ ولا عراقيّ، لا من فقد ولا من يودّع — بل إنسانٌ واحد، في مواجهة شيء أكبر منه، يطلب.</p>
+          <div class="src">الفصل الأول — الوجوه</div>
+        </div>
+        <div class="quote-card reveal">
+          <p>الليل في الحرم يفتح ما أغلقه النهار.</p>
+          <div class="src">الفصل الثاني — الساعات الميتة</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTHOR -->
+  <section class="section author-section" id="author">
+    <div class="wrap author-grid">
+      <div class="reveal">
+        <div class="author-photo">م</div>
+      </div>
+      <div class="author-copy reveal">
+        <span class="eyebrow">عن المؤلف</span>
+        <h3 style="margin-top:14px;">المتفائل</h3>
+        <span class="role">أبو أسامة سامي الذبياني</span>
+        <p>
+          كاتب وباحث مستقل من جدة، متعدد التخصصات، تتقاطع مؤلفاته بين الفلسفة والتاريخ والأدب
+          والعلوم السياسية والجيوبوليتيك وتحليل الخطاب. يسعى في كتاباته إلى تقديم قراءات عميقة
+          تخاطب العقل الشغوف بفهم ما وراء الأحداث والظواهر من زوايا متعددة.
+        </p>
+        <p>
+          اختار لنفسه اسم "المتفائل" عن وعي بما تعلّمه من علم النفس، وما قرأه فيه من أن للأسماء
+          أثراً في أصحابها — فاختار أن يحمل اسماً يذكّره في كل لحظة بما يريد أن يكون.
+          لا يكتب لأنه يجيد، بل لأنه يحبّ.
+        </p>
+        <div class="author-links">
+          <a href="mailto:almtfayl562@gmail.com">almtfayl562@gmail.com</a>
+          <a href="https://lnk.bio/almutafail" target="_blank" rel="noopener">جميع الإصدارات ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section class="download-section" id="download">
+    <div class="wrap">
+      <span class="eyebrow">النسخة الإلكترونية</span>
+      <h2>ادخل خلف الزحام — مجاناً</h2>
+      <p>حمّل نسخة PDF الكاملة من "من خلف الزحام" الآن، واقرأها في مكانك الهادئ الخاص بك.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://archive.org/details/20260621_20260621_1312/page/36/mode/1up" target="_blank" rel="noopener">حمّل الكتاب مجاناً (PDF)</a>
+        <a class="btn btn-ghost" href="https://lnk.bio/almutafail" target="_blank" rel="noopener">بقيّة كتبي للشراء</a>
+      </div>
+      <div class="fine-print">القراءة والتحميل عبر أرشيف الإنترنت (Archive.org). جميع الحقوق محفوظة للمؤلف.</div>
+    </div>
+  </section>
+
+  <!-- OTHER BOOKS -->
+  <section class="other-books">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">إصدارات أخرى</span>
+        <h2>لمن أراد المزيد</h2>
+      </div>
+      <div class="books-grid">
+        <div class="book-card reveal">
+          <span class="tag">هذا الكتاب</span>
+          <h4>من خلف الزحام</h4>
+          <p>مشاهدات وقصص من المسجد الحرام. متاح للتحميل المجاني.</p>
+          <a href="#download">تحميل مجاني ↑</a>
+        </div>
+        <div class="book-card reveal">
+          <span class="tag">قريباً</span>
+          <h4>إصدارات المتفائل</h4>
+          <p>مؤلفات في الفلسفة والتاريخ والأدب والجيوبوليتيك — على منصّتي الشخصية.</p>
+          <a href="https://lnk.bio/almutafail" target="_blank" rel="noopener">تصفّح المكتبة ↗</a>
+        </div>
+        <div class="book-card reveal">
+          <span class="tag">تواصل</span>
+          <h4>راسل المؤلف</h4>
+          <p>للتعاون أو الاستفسار عن الإصدارات المدفوعة وحقوق النشر.</p>
+          <a href="mailto:almtfayl562@gmail.com">مراسلة عبر البريد ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="brand"><span class="mark">م</span>المتفائل</div>
+    <div class="foot-links">
+      <a href="#about">عن الكتاب</a>
+      <a href="#toc">الفصول</a>
+      <a href="#author">عن المؤلف</a>
+      <a href="mailto:almtfayl562@gmail.com">التواصل</a>
+      <a href="https://lnk.bio/almutafail" target="_blank" rel="noopener">جميع الإصدارات</a>
+    </div>
+    <div class="rights">جميع الحقوق محفوظة للمؤلف © المتفائل — الطبعة الأولى ١٤٤٦هـ / ٢٠٢٦م</div>
+  </div>
+</footer>
+
+<script>
+  const navEl = document.getElementById('siteNav');
+  window.addEventListener('scroll', () => {
+    navEl.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
