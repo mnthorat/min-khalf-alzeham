@@ -90,7 +90,7 @@
 
   a{ color:inherit; text-decoration:none; }
   img{ max-width:100%; display:block; }
-  section{ position:relative; }
+  section{ position:relative; scroll-margin-top: 84px; }
   .wrap{ max-width: 1180px; margin: 0 auto; padding: 0 28px; }
 
   /* ---------- NAV ---------- */
@@ -306,6 +306,42 @@
   .author-links a{ font-family:'Cairo', sans-serif; font-size:0.88rem; font-weight:600; color: var(--gold-light); border-bottom:1px solid var(--gold-dim); padding-bottom:2px; }
   .author-links a:hover{ color: var(--ivory); border-color: var(--ivory); }
 
+  .testimonial-section{ background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .testimonial-card{
+    max-width: 780px; margin: 0 auto;
+    background: linear-gradient(160deg, var(--panel), var(--panel-2));
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 48px 44px;
+    position: relative;
+  }
+  .testimonial-card::before{
+    content:"“";
+    font-family:'Aref Ruqaa', serif;
+    font-size: 4.5rem;
+    color: var(--gold-dim);
+    line-height:1;
+    display:block;
+    margin-bottom: 6px;
+  }
+  .testimonial-card p{
+    font-family:'Aref Ruqaa', serif;
+    font-size: 1.4rem;
+    line-height: 2;
+    color: var(--ivory);
+    margin-bottom: 26px;
+  }
+  .testimonial-foot{ display:flex; align-items:center; gap: 14px; }
+  .testimonial-foot .avatar{
+    width: 44px; height:44px; border-radius:50%;
+    border: 1px solid var(--gold-dim);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Aref Ruqaa', serif; color: var(--gold-light); font-size:1.2rem;
+    background: rgba(182,141,64,0.08);
+  }
+  .testimonial-foot .who b{ display:block; font-family:'Cairo', sans-serif; font-size:0.92rem; color: var(--ivory); }
+  .testimonial-foot .who span{ font-family:'Cairo', sans-serif; font-size:0.78rem; color: var(--muted); }
+
   /* ---------- DOWNLOAD CTA ---------- */
   .download-section{
     background:
@@ -362,6 +398,9 @@
     .books-grid{ grid-template-columns: 1fr; }
     .toc-sub{ padding-inline-start:0; justify-content:center; text-align:center; }
     .toc-item{ flex-direction:column; align-items:center; text-align:center; gap:6px; }
+    .section{ padding: 70px 0; }
+    .download-section{ padding: 80px 0; }
+    .other-books{ padding: 70px 0; }
   }
   @media (max-width: 480px){
     .book-frame{ max-width: 150px; }
@@ -494,9 +533,6 @@
           <span class="name">اللحظات الغريبة</span>
           <span class="page">ص ٣٦</span>
         </div>
-        <div class="toc-sub">
-          <span>البهرة</span><span>الإمامية الاثنا عشرية</span><span>الصوفية</span><span>حين يرى الإنسان نفسه فوق القانون</span><span>أهل السنة والجماعة</span>
-        </div>
         <div class="toc-item">
           <span class="num">الفصل الخامس</span>
           <span class="name">العمال والموظفون</span>
@@ -558,6 +594,30 @@
         <div class="author-links">
           <a href="mailto:almtfayl562@gmail.com">almtfayl562@gmail.com</a>
           <a href="https://payhip.com/ALMTFAEL" target="_blank" rel="noopener">جميع الإصدارات ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="section testimonial-section">
+    <div class="wrap">
+      <div class="section-head reveal" style="margin-bottom:40px;">
+        <span class="eyebrow">قال عنه القرّاء</span>
+        <h2>ماذا يقول من قرأه؟</h2>
+      </div>
+      <div class="testimonial-card reveal">
+        <p>
+          الحق يا أبو أسامة، بدون أدنى مجاملة.. فكرة الكتاب مدهشة لتوثيق مرحلة معايشة لأعظم وأطهر وأقدس مكان.
+          والله إني قلت سأقرأ كم صفحة وسأكمل فيما بعد، ولكني أكملت الكتاب الصغير، وأعجبني ألفاظه وتسلسل أفكاره،
+          والخاتمة التي خرجت بها وغيّرت منك أو أكسبتك طباعاً جميلة. لست أديباً أو ناقداً لأقيّم، ولكني أسجّل وأعبّر عن إعجابي به.
+        </p>
+        <div class="testimonial-foot">
+          <div class="avatar">ع</div>
+          <div class="who">
+            <b>العذبي</b>
+            <span>تعليق حقيقي بعد قراءة الكتاب كاملاً</span>
+          </div>
         </div>
       </div>
     </div>
