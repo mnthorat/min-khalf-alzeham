@@ -18,6 +18,7 @@
 <meta name="twitter:title" content="من خلف الزحام — المتفائل">
 <meta name="twitter:description" content="مشاهدات وقصص من المسجد الحرام. سبع سنوات خلف الزحام.">
 <meta name="twitter:image" content="https://mnthorat.github.io/min-khalf-alzeham/assets/cover.jpg">
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -36,11 +37,12 @@
   "datePublished": "2026"
 }
 </script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Cairo:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{
+  :root {
     --bg: #090c14;
     --bg-2: #0d1220;
     --panel: #131a2e;
@@ -55,9 +57,13 @@
     --shadow: 0 30px 80px -30px rgba(0,0,0,0.7);
   }
 
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
+  /* تم إضافة before و after لتجنب مشاكل العرض */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  html { scroll-behavior: smooth; }
+  
+  /* تم التعديل لمنع الفراغ الجانبي (التمرير الأفقي) */
+  body {
     background:
       radial-gradient(1200px 600px at 15% -10%, rgba(182,141,64,0.08), transparent 60%),
       radial-gradient(900px 500px at 100% 10%, rgba(182,141,64,0.05), transparent 55%),
@@ -66,248 +72,260 @@
     font-family: 'IBM Plex Sans Arabic', sans-serif;
     line-height: 1.9;
     overflow-x: hidden;
+    width: 100%;
+    position: relative;
   }
 
-  ::selection{ background: var(--gold); color:#0a0e17; }
+  ::selection { background: var(--gold); color: #0a0e17; }
 
-  .display{ font-family: 'Aref Ruqaa', serif; }
-  .eyebrow{
-    font-family:'Cairo', sans-serif;
-    font-weight:700;
+  .display { font-family: 'Aref Ruqaa', serif; }
+  .eyebrow {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
     font-size: 0.78rem;
     letter-spacing: 0.22em;
     color: var(--gold-light);
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
   }
-  .eyebrow::before{
-    content:"";
-    width: 26px; height:1px;
+  .eyebrow::before {
+    content: "";
+    width: 26px; height: 1px;
     background: var(--gold);
-    display:inline-block;
+    display: inline-block;
   }
 
-  a{ color:inherit; text-decoration:none; }
-  img{ max-width:100%; display:block; }
-  section{ position:relative; scroll-margin-top: 84px; }
-  .wrap{ max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; height: auto; display: block; }
+  section { position: relative; scroll-margin-top: 84px; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; width: 100%; }
 
   /* ---------- NAV ---------- */
-  header.nav{
+  header.nav {
     position: fixed; inset: 0 0 auto 0;
     z-index: 60;
     padding: 20px 0;
     transition: background .4s ease, padding .4s ease, border-color .4s ease;
     border-bottom: 1px solid transparent;
   }
-  header.nav.scrolled{
-    background: rgba(9,12,20,0.86);
+  header.nav.scrolled {
+    background: rgba(9,12,20,0.95);
     backdrop-filter: blur(14px);
     padding: 13px 0;
     border-color: var(--line);
   }
-  header.nav .wrap{ display:flex; align-items:center; justify-content:space-between; }
-  .brand{ display:flex; align-items:center; gap:12px; font-family:'Aref Ruqaa', serif; font-size:1.5rem; color: var(--ivory); }
-  .brand span{ color: var(--gold-light); }
-  .brand .mark{
-    width:34px; height:34px; border:1px solid var(--gold-dim); border-radius:50%;
-    display:flex; align-items:center; justify-content:center; font-size:0.85rem; color:var(--gold-light);
+  header.nav .wrap { display: flex; align-items: center; justify-content: space-between; }
+  .brand { display: flex; align-items: center; gap: 12px; font-family: 'Aref Ruqaa', serif; font-size: 1.5rem; color: var(--ivory); z-index: 61; }
+  .brand span { color: var(--gold-light); }
+  .brand .mark {
+    width: 34px; height: 34px; border: 1px solid var(--gold-dim); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 0.85rem; color: var(--gold-light);
   }
-  nav.links{ display:flex; gap:34px; font-family:'Cairo', sans-serif; font-size:0.92rem; font-weight:600; color: var(--ivory-dim); }
-  nav.links a{ position:relative; padding-bottom:4px; transition:color .25s; }
-  nav.links a:hover{ color: var(--gold-light); }
-  nav.links a::after{
-    content:""; position:absolute; right:0; bottom:0; width:0; height:1px; background:var(--gold);
+  
+  nav.links { display: flex; gap: 34px; font-family: 'Cairo', sans-serif; font-size: 0.92rem; font-weight: 600; color: var(--ivory-dim); }
+  nav.links a { position: relative; padding-bottom: 4px; transition: color .25s; }
+  nav.links a:hover { color: var(--gold-light); }
+  nav.links a::after {
+    content: ""; position: absolute; right: 0; bottom: 0; width: 0; height: 1px; background: var(--gold);
     transition: width .3s ease;
   }
-  nav.links a:hover::after{ width:100%; }
-  .nav-cta{
-    font-family:'Cairo',sans-serif; font-weight:700; font-size:0.85rem;
-    border:1px solid var(--gold-dim); padding:9px 20px; border-radius: 999px; color: var(--gold-light);
+  nav.links a:hover::after { width: 100%; }
+  
+  .nav-actions { display: flex; align-items: center; gap: 15px; z-index: 61; }
+  .nav-cta {
+    font-family: 'Cairo',sans-serif; font-weight: 700; font-size: 0.85rem;
+    border: 1px solid var(--gold-dim); padding: 9px 20px; border-radius: 999px; color: var(--gold-light);
     transition: background .25s, color .25s;
+    text-align: center;
   }
-  .nav-cta:hover{ background: var(--gold); color:#0a0e17; }
-  .menu-btn{ display:none; background:none; border:1px solid var(--gold-dim); border-radius:8px; width:42px; height:38px; color:var(--gold-light); font-size:1.1rem; }
+  .nav-cta:hover { background: var(--gold); color: #0a0e17; }
+  .menu-btn { 
+    display: none; 
+    background: none; 
+    border: 1px solid var(--gold-dim); 
+    border-radius: 8px; 
+    width: 42px; height: 38px; 
+    color: var(--gold-light); 
+    font-size: 1.1rem; 
+    cursor: pointer;
+  }
 
   /* ---------- HERO ---------- */
-  .hero{
+  .hero {
     padding: 168px 0 90px;
-    display:grid;
+    display: grid;
     grid-template-columns: 1.05fr 0.85fr;
     gap: 60px;
-    align-items:center;
+    align-items: center;
   }
-  .hero-copy h1{
-    font-size: clamp(2.6rem, 5vw, 4.1rem);
-    line-height:1.28;
+  .hero-copy h1 {
+    font-size: clamp(2.4rem, 5vw, 4.1rem);
+    line-height: 1.28;
     margin: 20px 0 22px;
     color: var(--ivory);
   }
-  .hero-copy h1 em{
-    font-style:normal;
+  .hero-copy h1 em {
+    font-style: normal;
     color: var(--gold-light);
     background: linear-gradient(180deg, transparent 62%, rgba(182,141,64,0.28) 62%);
   }
-  .hero-tagline{
-    font-family:'Aref Ruqaa', serif;
-    font-size: 1.55rem;
+  .hero-tagline {
+    font-family: 'Aref Ruqaa', serif;
+    font-size: clamp(1.2rem, 3vw, 1.55rem);
     color: var(--gold-light);
     border-right: 2px solid var(--gold);
     padding-right: 18px;
     margin: 26px 0 26px;
   }
-  .hero-desc{ color: var(--ivory-dim); font-size:1.06rem; max-width: 56ch; margin-bottom: 38px; }
-  .cta-row{ display:flex; flex-wrap:wrap; gap:16px; }
-  .btn{
-    font-family:'Cairo', sans-serif; font-weight:700; font-size:0.98rem;
-    padding: 16px 30px; border-radius: 10px; display:inline-flex; align-items:center; gap:10px;
+  .hero-desc { color: var(--ivory-dim); font-size: 1.06rem; max-width: 56ch; margin-bottom: 38px; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 16px; }
+  .btn {
+    font-family: 'Cairo', sans-serif; font-weight: 700; font-size: 0.98rem;
+    padding: 16px 30px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center; gap: 10px;
     transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
   }
-  .btn-primary{
+  .btn-primary {
     background: linear-gradient(135deg, var(--gold-light), var(--gold));
     color: #0a0e17;
     box-shadow: 0 18px 40px -14px rgba(182,141,64,0.55);
   }
-  .btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 22px 50px -14px rgba(182,141,64,0.75); }
-  .btn-ghost{
-    border: 1px solid var(--gold-dim); color: var(--ivory);
-  }
-  .btn-ghost:hover{ border-color: var(--gold-light); background: rgba(182,141,64,0.08); color: var(--gold-light); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 22px 50px -14px rgba(182,141,64,0.75); }
+  .btn-ghost { border: 1px solid var(--gold-dim); color: var(--ivory); }
+  .btn-ghost:hover { border-color: var(--gold-light); background: rgba(182,141,64,0.08); color: var(--gold-light); }
 
-  .hero-visual{ position:relative; display:flex; justify-content:center; }
-  .book-frame{
-    position:relative; width: 100%; max-width: 380px;
+  .hero-visual { position: relative; display: flex; justify-content: center; width: 100%; }
+  .book-frame {
+    position: relative; width: 100%; max-width: 380px;
     border-radius: 6px;
     box-shadow: var(--shadow), 0 0 0 1px rgba(182,141,64,0.25);
     transform: rotate(1.2deg);
   }
-  .book-frame img{ border-radius: 6px; }
-  .book-glow{
-    position:absolute; inset: -40px; z-index:-1;
+  .book-frame img { border-radius: 6px; width: 100%; }
+  .book-glow {
+    position: absolute; inset: -20px; z-index: -1;
     background: radial-gradient(circle at 50% 40%, rgba(182,141,64,0.25), transparent 65%);
-    filter: blur(10px);
+    filter: blur(15px);
   }
-  .book-badge{
-    position:absolute; bottom:-22px; right: -18px;
-    background: var(--panel); border:1px solid var(--gold-dim);
+  .book-badge {
+    position: absolute; bottom: -22px; right: -18px;
+    background: var(--panel); border: 1px solid var(--gold-dim);
     padding: 12px 18px; border-radius: 10px;
-    font-family:'Cairo', sans-serif; font-size:0.82rem; color: var(--ivory-dim);
+    font-family: 'Cairo', sans-serif; font-size: 0.82rem; color: var(--ivory-dim);
     box-shadow: var(--shadow);
   }
-  .book-badge b{ display:block; color: var(--gold-light); font-size:1.05rem; font-family:'IBM Plex Sans Arabic'; }
+  .book-badge b { display: block; color: var(--gold-light); font-size: 1.05rem; font-family: 'IBM Plex Sans Arabic'; }
 
-  /* ---------- MARQUEE (signature element) ---------- */
-  .marquee-band{
+  /* ---------- MARQUEE ---------- */
+  .marquee-band {
     border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
     background: var(--bg-2);
     padding: 22px 0;
-    overflow:hidden;
+    overflow: hidden;
     white-space: nowrap;
+    width: 100%;
   }
-  .marquee-track{
-    display:inline-flex;
+  .marquee-track {
+    display: inline-flex;
     gap: 46px;
     animation: scroll-rtl 42s linear infinite;
-    font-family:'Aref Ruqaa', serif;
+    font-family: 'Aref Ruqaa', serif;
     font-size: 1.3rem;
     color: var(--ivory-dim);
   }
-  .marquee-track span{ display:inline-flex; align-items:center; gap:46px; }
-  .marquee-track b{ color: var(--gold-light); font-weight:400; }
-  .marquee-track .dot{ color: var(--gold); font-size:0.9rem; }
-  @keyframes scroll-rtl{
-    from{ transform: translateX(0); }
-    to{ transform: translateX(50%); }
+  .marquee-track span { display: inline-flex; align-items: center; gap: 46px; }
+  .marquee-track b { color: var(--gold-light); font-weight: 400; }
+  .marquee-track .dot { color: var(--gold); font-size: 0.9rem; }
+  @keyframes scroll-rtl {
+    from { transform: translateX(0); }
+    to { transform: translateX(50%); }
   }
-  @media (prefers-reduced-motion: reduce){
-    .marquee-track{ animation: none; }
-    html{ scroll-behavior: auto; }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track { animation: none; }
+    html { scroll-behavior: auto; }
   }
 
   /* ---------- SECTION HEADERS ---------- */
-  .section{ padding: 110px 0; }
-  .section-head{ max-width: 720px; margin-bottom: 56px; }
-  .section-head h2{ font-family:'Aref Ruqaa', serif; font-size: clamp(2rem, 3.4vw, 2.7rem); margin-top:14px; color: var(--ivory); }
+  .section { padding: 110px 0; }
+  .section-head { max-width: 720px; margin-bottom: 56px; }
+  .section-head h2 { font-family: 'Aref Ruqaa', serif; font-size: clamp(2rem, 3.4vw, 2.7rem); margin-top: 14px; color: var(--ivory); }
 
   /* reveal */
-  .reveal{ opacity:0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
-  .reveal.in{ opacity:1; transform:none; }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in { opacity: 1; transform: none; }
 
   /* ---------- ABOUT BOOK ---------- */
-  .about-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items:start; }
-  .about-grid p{ color: var(--ivory-dim); margin-bottom: 20px; font-size:1.02rem; }
-  .pullquote{
-    font-family:'Aref Ruqaa', serif;
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: start; }
+  .about-grid p { color: var(--ivory-dim); margin-bottom: 20px; font-size: 1.02rem; }
+  .pullquote {
+    font-family: 'Aref Ruqaa', serif;
     font-size: 1.7rem;
-    line-height:1.7;
+    line-height: 1.7;
     color: var(--gold-light);
     border-right: 3px solid var(--gold);
     padding-right: 24px;
     margin: 10px 0 30px;
   }
-  .stat-row{ display:flex; gap: 40px; margin-top: 36px; flex-wrap:wrap; }
-  .stat{ font-family:'Cairo', sans-serif; }
-  .stat b{ display:block; font-size: 2.1rem; color: var(--gold-light); font-family:'Aref Ruqaa', serif; }
-  .stat span{ font-size:0.85rem; color: var(--muted); }
+  .stat-row { display: flex; gap: 40px; margin-top: 36px; flex-wrap: wrap; }
+  .stat { font-family: 'Cairo', sans-serif; }
+  .stat b { display: block; font-size: 2.1rem; color: var(--gold-light); font-family: 'Aref Ruqaa', serif; }
+  .stat span { font-size: 0.85rem; color: var(--muted); }
 
   /* ---------- TOC ---------- */
-  .toc-section{ background: var(--bg-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
-  .toc-list{ display:flex; flex-direction:column; }
-  .toc-item{
-    display:flex; align-items:baseline; justify-content:space-between;
+  .toc-section { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .toc-list { display: flex; flex-direction: column; }
+  .toc-item {
+    display: flex; align-items: baseline; justify-content: space-between;
     padding: 26px 4px; border-bottom: 1px solid var(--line);
     gap: 20px;
   }
-  .toc-item .num{ font-family:'Aref Ruqaa', serif; color: var(--gold); font-size:1.1rem; min-width:70px; }
-  .toc-item .name{ flex:1; font-size: 1.15rem; color: var(--ivory); font-weight:500; }
-  .toc-item .page{ color: var(--muted); font-family:'Cairo', sans-serif; font-size:0.85rem; }
-  .toc-sub{ padding: 6px 0 0 90px; color: var(--muted); font-size:0.92rem; display:flex; flex-wrap:wrap; gap: 8px 22px; }
-  .toc-sub span::before{ content:"— "; color: var(--gold-dim); }
+  .toc-item .num { font-family: 'Aref Ruqaa', serif; color: var(--gold); font-size: 1.1rem; min-width: 70px; }
+  .toc-item .name { flex: 1; font-size: 1.15rem; color: var(--ivory); font-weight: 500; }
+  .toc-item .page { color: var(--muted); font-family: 'Cairo', sans-serif; font-size: 0.85rem; }
 
   /* ---------- QUOTE CARDS ---------- */
-  .quotes-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-  .quote-card{
+  .quotes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .quote-card {
     background: linear-gradient(160deg, var(--panel), var(--panel-2));
     border: 1px solid var(--line);
     border-radius: 14px;
     padding: 34px 28px;
-    position:relative;
+    position: relative;
   }
-  .quote-card::before{
-    content:"“";
-    font-family:'Aref Ruqaa', serif;
+  .quote-card::before {
+    content: "“";
+    font-family: 'Aref Ruqaa', serif;
     font-size: 3.2rem;
     color: var(--gold-dim);
-    line-height:1;
-    display:block;
+    line-height: 1;
+    display: block;
     margin-bottom: 10px;
   }
-  .quote-card p{ font-family:'Aref Ruqaa', serif; font-size:1.25rem; color: var(--ivory); line-height:1.8; margin-bottom: 18px; }
-  .quote-card .src{ font-family:'Cairo', sans-serif; font-size:0.78rem; color: var(--gold-light); letter-spacing:0.05em; }
+  .quote-card p { font-family: 'Aref Ruqaa', serif; font-size: 1.25rem; color: var(--ivory); line-height: 1.8; margin-bottom: 18px; }
+  .quote-card .src { font-family: 'Cairo', sans-serif; font-size: 0.78rem; color: var(--gold-light); letter-spacing: 0.05em; }
 
   /* ---------- AUTHOR ---------- */
-  .author-section{ }
-  .author-grid{ display:grid; grid-template-columns: 0.6fr 1.4fr; gap: 60px; align-items:center; }
-  .author-photo{
+  .author-grid { display: grid; grid-template-columns: 0.6fr 1.4fr; gap: 60px; align-items: center; }
+  .author-photo {
     width: 100%; aspect-ratio: 1/1; border-radius: 16px;
     background:
       radial-gradient(circle at 35% 25%, rgba(182,141,64,0.35), transparent 60%),
       linear-gradient(160deg, var(--panel-2), var(--bg-2));
     border: 1px solid var(--gold-dim);
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Aref Ruqaa', serif; font-size: 5rem; color: var(--gold-light);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Aref Ruqaa', serif; font-size: 5rem; color: var(--gold-light);
     box-shadow: var(--shadow);
   }
-  .author-copy h3{ font-family:'Aref Ruqaa', serif; font-size:2rem; color: var(--ivory); margin-bottom: 6px; }
-  .author-copy .role{ color: var(--gold-light); font-family:'Cairo', sans-serif; font-weight:600; font-size:0.9rem; margin-bottom:22px; display:block; }
-  .author-copy p{ color: var(--ivory-dim); margin-bottom: 16px; max-width: 62ch; }
-  .author-links{ display:flex; gap:18px; margin-top: 24px; flex-wrap:wrap; }
-  .author-links a{ font-family:'Cairo', sans-serif; font-size:0.88rem; font-weight:600; color: var(--gold-light); border-bottom:1px solid var(--gold-dim); padding-bottom:2px; }
-  .author-links a:hover{ color: var(--ivory); border-color: var(--ivory); }
+  .author-copy h3 { font-family: 'Aref Ruqaa', serif; font-size: 2rem; color: var(--ivory); margin-bottom: 6px; }
+  .author-copy .role { color: var(--gold-light); font-family: 'Cairo', sans-serif; font-weight: 600; font-size: 0.9rem; margin-bottom: 22px; display: block; }
+  .author-copy p { color: var(--ivory-dim); margin-bottom: 16px; max-width: 62ch; }
+  .author-links { display: flex; gap: 18px; margin-top: 24px; flex-wrap: wrap; }
+  .author-links a { font-family: 'Cairo', sans-serif; font-size: 0.88rem; font-weight: 600; color: var(--gold-light); border-bottom: 1px solid var(--gold-dim); padding-bottom: 2px; }
+  .author-links a:hover { color: var(--ivory); border-color: var(--ivory); }
 
-  .testimonial-section{ background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .testimonial-card{
+  /* ---------- TESTIMONIAL ---------- */
+  .testimonial-section { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .testimonial-card {
     max-width: 780px; margin: 0 auto;
     background: linear-gradient(160deg, var(--panel), var(--panel-2));
     border: 1px solid var(--line);
@@ -315,100 +333,142 @@
     padding: 48px 44px;
     position: relative;
   }
-  .testimonial-card::before{
-    content:"“";
-    font-family:'Aref Ruqaa', serif;
+  .testimonial-card::before {
+    content: "“";
+    font-family: 'Aref Ruqaa', serif;
     font-size: 4.5rem;
     color: var(--gold-dim);
-    line-height:1;
-    display:block;
+    line-height: 1;
+    display: block;
     margin-bottom: 6px;
   }
-  .testimonial-card p{
-    font-family:'Aref Ruqaa', serif;
-    font-size: 1.4rem;
+  .testimonial-card p {
+    font-family: 'Aref Ruqaa', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
     line-height: 2;
     color: var(--ivory);
     margin-bottom: 26px;
   }
-  .testimonial-foot{ display:flex; align-items:center; gap: 14px; }
-  .testimonial-foot .avatar{
-    width: 44px; height:44px; border-radius:50%;
+  .testimonial-foot { display: flex; align-items: center; gap: 14px; }
+  .testimonial-foot .avatar {
+    width: 44px; height: 44px; border-radius: 50%;
     border: 1px solid var(--gold-dim);
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Aref Ruqaa', serif; color: var(--gold-light); font-size:1.2rem;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Aref Ruqaa', serif; color: var(--gold-light); font-size: 1.2rem;
     background: rgba(182,141,64,0.08);
   }
-  .testimonial-foot .who b{ display:block; font-family:'Cairo', sans-serif; font-size:0.92rem; color: var(--ivory); }
-  .testimonial-foot .who span{ font-family:'Cairo', sans-serif; font-size:0.78rem; color: var(--muted); }
+  .testimonial-foot .who b { display: block; font-family: 'Cairo', sans-serif; font-size: 0.92rem; color: var(--ivory); }
+  .testimonial-foot .who span { font-family: 'Cairo', sans-serif; font-size: 0.78rem; color: var(--muted); }
 
   /* ---------- DOWNLOAD CTA ---------- */
-  .download-section{
+  .download-section {
     background:
       radial-gradient(700px 400px at 50% 0%, rgba(182,141,64,0.12), transparent 60%),
       var(--bg-2);
     border-top: 1px solid var(--line);
-    text-align:center;
+    text-align: center;
     padding: 130px 0;
   }
-  .download-section .eyebrow{ justify-content:center; }
-  .download-section h2{ font-family:'Aref Ruqaa', serif; font-size: clamp(2.1rem, 4vw, 3.2rem); margin: 18px auto 20px; max-width: 16ch; color: var(--ivory); }
-  .download-section p{ color: var(--ivory-dim); max-width: 56ch; margin: 0 auto 42px; }
-  .download-section .cta-row{ justify-content:center; }
-  .fine-print{ margin-top: 22px; font-size:0.8rem; color: var(--muted); font-family:'Cairo', sans-serif; }
+  .download-section .eyebrow { justify-content: center; }
+  .download-section h2 { font-family: 'Aref Ruqaa', serif; font-size: clamp(2.1rem, 4vw, 3.2rem); margin: 18px auto 20px; max-width: 16ch; color: var(--ivory); }
+  .download-section p { color: var(--ivory-dim); max-width: 56ch; margin: 0 auto 42px; }
+  .download-section .cta-row { justify-content: center; }
+  .fine-print { margin-top: 22px; font-size: 0.8rem; color: var(--muted); font-family: 'Cairo', sans-serif; }
 
   /* ---------- OTHER BOOKS ---------- */
-  .other-books{ padding: 110px 0; }
-  .books-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
-  .book-card{
-    border:1px solid var(--line); border-radius: 14px; padding: 30px 26px;
+  .other-books { padding: 110px 0; }
+  .books-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+  .book-card {
+    border: 1px solid var(--line); border-radius: 14px; padding: 30px 26px;
     background: var(--panel);
     transition: transform .3s ease, border-color .3s ease;
   }
-  .book-card:hover{ transform: translateY(-6px); border-color: var(--gold-dim); }
-  .book-card .tag{ font-family:'Cairo',sans-serif; font-size:0.72rem; letter-spacing:0.1em; color: var(--gold-light); border:1px solid var(--gold-dim); border-radius:999px; padding:4px 12px; display:inline-block; margin-bottom:18px; }
-  .book-card h4{ font-family:'Aref Ruqaa', serif; font-size:1.5rem; margin-bottom:10px; color: var(--ivory); }
-  .book-card p{ color: var(--muted); font-size:0.92rem; margin-bottom: 22px; }
-  .book-card a{ font-family:'Cairo', sans-serif; font-weight:700; font-size:0.85rem; color: var(--gold-light); }
+  .book-card:hover { transform: translateY(-6px); border-color: var(--gold-dim); }
+  .book-card .tag { font-family: 'Cairo',sans-serif; font-size: 0.72rem; letter-spacing: 0.1em; color: var(--gold-light); border: 1px solid var(--gold-dim); border-radius: 999px; padding: 4px 12px; display: inline-block; margin-bottom: 18px; }
+  .book-card h4 { font-family: 'Aref Ruqaa', serif; font-size: 1.5rem; margin-bottom: 10px; color: var(--ivory); }
+  .book-card p { color: var(--muted); font-size: 0.92rem; margin-bottom: 22px; }
+  .book-card a { font-family: 'Cairo', sans-serif; font-weight: 700; font-size: 0.85rem; color: var(--gold-light); }
 
   /* ---------- FOOTER ---------- */
-  footer{ border-top: 1px solid var(--line); padding: 50px 0 34px; }
-  footer .wrap{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap: 20px; }
-  footer .brand{ font-size:1.2rem; }
-  footer .foot-links{ display:flex; gap: 26px; font-family:'Cairo', sans-serif; font-size:0.85rem; color: var(--muted); flex-wrap:wrap; }
-  footer .foot-links a:hover{ color: var(--gold-light); }
-  footer .rights{ width:100%; text-align:center; font-size:0.78rem; color: var(--muted); margin-top: 30px; font-family:'Cairo', sans-serif; }
+  footer { border-top: 1px solid var(--line); padding: 50px 0 34px; }
+  footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+  footer .brand { font-size: 1.2rem; }
+  footer .foot-links { display: flex; gap: 26px; font-family: 'Cairo', sans-serif; font-size: 0.85rem; color: var(--muted); flex-wrap: wrap; justify-content: center; }
+  footer .foot-links a:hover { color: var(--gold-light); }
+  footer .rights { width: 100%; text-align: center; font-size: 0.78rem; color: var(--muted); margin-top: 30px; font-family: 'Cairo', sans-serif; }
 
-  /* ---------- RESPONSIVE ---------- */
-  @media (max-width: 980px){
-    nav.links{ display:none; }
-    .menu-btn{ display:block; }
-    .hero{ grid-template-columns: 1fr; padding-top: 140px; text-align:center; }
-    .hero-tagline{ margin-inline:auto; }
-    .cta-row{ justify-content:center; }
-    .hero-visual{ order:-1; }
-    .book-frame{ max-width: 190px; }
-    .book-badge{ font-size: 0.66rem; padding: 7px 12px; bottom:-12px; right:-4px; border-radius:8px; }
-    .book-badge b{ font-size: 0.8rem; }
-    .about-grid{ grid-template-columns: 1fr; gap: 40px; }
-    .quotes-grid{ grid-template-columns: 1fr; }
-    .author-grid{ grid-template-columns: 1fr; text-align:center; }
-    .author-photo{ max-width: 240px; margin:0 auto; }
-    .author-links{ justify-content:center; }
-    .books-grid{ grid-template-columns: 1fr; }
-    .toc-sub{ padding-inline-start:0; justify-content:center; text-align:center; }
-    .toc-item{ flex-direction:column; align-items:center; text-align:center; gap:6px; }
-    .section{ padding: 56px 0; }
-    .section-head{ margin-bottom: 34px; }
-    .download-section{ padding: 56px 0; }
-    .other-books{ padding: 56px 0; }
+  /* ---------- RESPONSIVE (الموبايل) ---------- */
+  @media (max-width: 980px) {
+    .menu-btn { display: block; }
+    
+    /* تصميم القائمة المنسدلة في الموبايل */
+    nav.links { 
+      position: absolute; 
+      top: 100%; 
+      left: 0; 
+      right: 0; 
+      background: var(--bg-2); 
+      flex-direction: column; 
+      padding: 20px; 
+      gap: 20px;
+      border-bottom: 1px solid var(--gold-dim); 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      transition: clip-path 0.3s ease;
+      text-align: center;
+    }
+    nav.links.active {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .nav-cta { display: none; }
+
+    .hero { grid-template-columns: 1fr; padding-top: 120px; text-align: center; gap: 40px; }
+    .hero-tagline { margin-inline: auto; }
+    .hero-desc { margin-inline: auto; }
+    .cta-row { justify-content: center; width: 100%; }
+    .hero-visual { order: -1; margin-bottom: 20px; }
+    
+    .book-frame { max-width: 220px; margin: 0 auto; }
+    
+    /* تعديل شارة الكتاب لمنع الخروج عن الإطار */
+    .book-badge { 
+      right: 0; 
+      left: 0; 
+      margin: 0 auto; 
+      width: max-content; 
+      bottom: -15px; 
+      font-size: 0.7rem; 
+      padding: 8px 14px; 
+      border-radius: 8px; 
+    }
+    .book-badge b { font-size: 0.9rem; }
+    
+    .about-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+    .pullquote { border-right: none; padding-right: 0; border-top: 2px solid var(--gold); padding-top: 15px; }
+    .stat-row { justify-content: center; }
+    
+    .quotes-grid { grid-template-columns: 1fr; }
+    .author-grid { grid-template-columns: 1fr; text-align: center; }
+    .author-photo { max-width: 220px; margin: 0 auto; }
+    .author-links { justify-content: center; }
+    .books-grid { grid-template-columns: 1fr; }
+    
+    .toc-item { flex-direction: column; align-items: center; text-align: center; gap: 8px; }
+    
+    .section { padding: 70px 0; }
+    .section-head { margin-bottom: 34px; text-align: center; margin-inline: auto; }
+    .download-section { padding: 70px 0; }
+    .other-books { padding: 70px 0; }
+    footer .wrap { justify-content: center; flex-direction: column; }
   }
-  @media (max-width: 480px){
-    .book-frame{ max-width: 150px; }
-    .hero{ padding-top: 110px; padding-bottom: 60px; }
-    .hero-copy h1{ margin: 14px 0 16px; }
-    .hero-tagline{ font-size: 1.25rem; margin: 18px auto; }
-    .hero-desc{ margin-bottom: 26px; }
+  
+  @media (max-width: 480px) {
+    .book-frame { max-width: 170px; }
+    .hero { padding-top: 100px; padding-bottom: 50px; }
+    .hero-copy h1 { margin: 10px 0 14px; }
+    .btn { width: 100%; padding: 14px 20px; }
+    .testimonial-card { padding: 30px 20px; }
+    .testimonial-card::before { font-size: 3.5rem; }
   }
 </style>
 </head>
@@ -417,13 +477,18 @@
 <header class="nav" id="siteNav">
   <div class="wrap">
     <div class="brand"><span class="mark">م</span>المتفائل</div>
-    <nav class="links">
+    <nav class="links" id="navLinks">
       <a href="#about">عن الكتاب</a>
       <a href="#toc">الفصول</a>
       <a href="#quotes">من الكتاب</a>
       <a href="#author">عن المؤلف</a>
+      <!-- قمنا بإضافة زر التحميل داخل القائمة للموبايل كبديل للزر الخارجي الذي يختفي -->
+      <a href="#download" style="color: var(--gold-light);">تحميل الكتاب</a>
     </nav>
-    <a class="nav-cta" href="#download">تحميل الكتاب</a>
+    <div class="nav-actions">
+      <a class="nav-cta" href="#download">تحميل الكتاب</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle Menu">☰</button>
+    </div>
   </div>
 </header>
 
@@ -448,8 +513,8 @@
       <div class="book-glow"></div>
       <div class="book-frame">
         <img src="assets/cover.jpg" alt="غلاف كتاب من خلف الزحام">
+        <div class="book-badge">نسخة PDF<b>تحميل فوري ومجاني</b></div>
       </div>
-      <div class="book-badge">نسخة PDF<b>تحميل فوري ومجاني</b></div>
     </div>
   </section>
 
@@ -484,7 +549,7 @@
     <div class="wrap about-grid">
       <div class="reveal">
         <span class="eyebrow">عن الكتاب</span>
-        <h2 class="display" style="font-size:2.4rem; margin-top:14px;">مشاهداتٌ من خلف الطاولة، لا من داخل الصفّ</h2>
+        <h2 class="display" style="font-size: clamp(1.8rem, 4vw, 2.4rem); margin-top:14px;">مشاهداتٌ من خلف الطاولة، لا من داخل الصفّ</h2>
       </div>
       <div class="reveal">
         <p>
@@ -498,7 +563,7 @@
           يكشف من الناس ما لا يكشفه الهدوء.
         </p>
         <div class="stat-row">
-          <div class="stat"><b>+٧</b><span>سنوات من المشاهدة المباشرة</span></div>
+          <div class="stat"><b>+٧</b><span>سنوات مشاهدة</span></div>
           <div class="stat"><b>٥</b><span>فصول</span></div>
           <div class="stat"><b>٦٢</b><span>صفحة</span></div>
         </div>
@@ -684,11 +749,32 @@
 </footer>
 
 <script>
+  // تحسين تغيير خلفية شريط التنقل عند النزول
   const navEl = document.getElementById('siteNav');
   window.addEventListener('scroll', () => {
     navEl.classList.toggle('scrolled', window.scrollY > 40);
   });
 
+  // تفعيل القائمة الجانبية للموبايل
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  const navItems = navLinks.querySelectorAll('a');
+
+  menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    // تغيير شكل الزر عند الفتح
+    menuBtn.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
+  });
+
+  // إغلاق القائمة تلقائياً عند الضغط على أي رابط بداخلها
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      menuBtn.innerHTML = '☰';
+    });
+  });
+
+  // تفعيل حركة الظهور التدريجي للعناصر
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
