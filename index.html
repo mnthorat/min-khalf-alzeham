@@ -326,18 +326,20 @@
   .quote-card .src { font-family: 'Cairo', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--gold-light); display: inline-block; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.05); width: 100%; }
 
   /* ---------- AUTHOR ---------- */
-  .author-grid { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 70px; align-items: center; }
+  .author-grid { display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 640px; margin: 0 auto; gap: 34px; }
   .author-photo {
-    width: 100%; aspect-ratio: 1/1; border-radius: 20px;
+    width: 180px; aspect-ratio: 1/1; border-radius: 20px; flex-shrink: 0;
     background: radial-gradient(circle at 35% 25%, rgba(182,141,64,0.4), transparent 60%), linear-gradient(160deg, var(--panel-2), var(--bg-2));
     border: 1px solid var(--gold-dim); display: flex; align-items: center; justify-content: center;
-    font-family: 'Aref Ruqaa', serif; font-size: 6rem; color: var(--gold-light); box-shadow: var(--shadow); transition: transform 0.5s ease;
+    font-family: 'Aref Ruqaa', serif; font-size: 4.5rem; color: var(--gold-light); box-shadow: var(--shadow); transition: transform 0.5s ease;
   }
   .author-photo:hover { transform: scale(1.03) rotate(-2deg); border-color: var(--gold); }
+  .author-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: inherit; }
+  .author-copy { display: flex; flex-direction: column; align-items: center; }
   .author-copy h3 { font-family: 'Aref Ruqaa', serif; font-size: 2.6rem; color: var(--ivory); margin-bottom: 8px; }
   .author-copy .role { color: var(--gold-light); font-family: 'Cairo', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 24px; display: inline-block; background: rgba(182,141,64,0.1); padding: 4px 14px; border-radius: 20px; }
-  .author-copy p { color: var(--ivory-dim); margin-bottom: 18px; max-width: 62ch; font-size: 1.1rem; }
-  .author-links { display: flex; gap: 20px; margin-top: 28px; flex-wrap: wrap; }
+  .author-copy p { color: var(--ivory-dim); margin-bottom: 18px; max-width: 58ch; font-size: 1.1rem; text-align: center; }
+  .author-links { display: flex; gap: 20px; margin-top: 28px; flex-wrap: wrap; justify-content: center; }
   .author-links a { font-family: 'Cairo', sans-serif; font-size: 1rem; font-weight: 700; color: var(--gold-light); position: relative; padding-bottom: 4px; }
   .author-links a::after { content: ''; position: absolute; bottom: 0; right: 0; width: 100%; height: 1px; background: var(--gold-dim); transition: width 0.3s ease; }
   .author-links a:hover { color: var(--ivory); }
@@ -420,8 +422,7 @@
     .pullquote { border-right: none; padding-right: 0; border-top: 2px solid var(--gold); border-bottom: 2px solid var(--gold); padding: 25px 0; }
     .stat-row { justify-content: center; gap: 30px; }
     .quotes-grid { grid-template-columns: 1fr; gap: 20px; }
-    .author-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
-    .author-photo { max-width: 200px; margin: 0 auto; font-size: 4.5rem; }
+    .author-photo { width: 150px; font-size: 4rem; }
     .author-links { justify-content: center; }
     .books-grid { grid-template-columns: 1fr; gap: 20px; }
     .toc-item { flex-direction: column; align-items: center; text-align: center; gap: 10px; padding: 20px; }
@@ -615,7 +616,9 @@
   <section class="section author-section" id="author">
     <div class="wrap author-grid">
       <div class="reveal">
-        <div class="author-photo">م</div>
+        <div class="author-photo">
+          <img src="assets/author.jpg" alt="صورة المؤلف المتفائل" loading="lazy" decoding="async" onerror="this.onerror=null; this.replaceWith(Object.assign(document.createElement('span'), {textContent:'م'}));">
+        </div>
       </div>
       <div class="author-copy reveal">
         <span class="eyebrow">عن المؤلف</span>
