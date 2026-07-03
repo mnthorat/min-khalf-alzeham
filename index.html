@@ -216,13 +216,15 @@
   }
 
   .book-badge {
-    position: absolute; bottom: -20px; right: -30px;
+    position: absolute; bottom: -54px; left: 50%;
     background: rgba(19, 26, 46, 0.95); backdrop-filter: blur(10px);
     border: 1px solid var(--gold-dim);
-    padding: 12px 20px; border-radius: 12px;
-    font-weight: 500; font-size: 0.9rem; color: var(--ivory-dim);
+    padding: 10px 22px; border-radius: 12px;
+    font-weight: 500; font-size: 0.85rem; color: var(--ivory-dim);
     box-shadow: var(--shadow-gold);
-    transform: translateZ(20px);
+    transform: translateX(-50%);
+    width: max-content; max-width: 92%;
+    text-align: center; white-space: nowrap;
   }
   .book-badge b { display: block; color: var(--gold-light); font-size: 1.15rem; font-weight: 700; }
 
@@ -382,7 +384,7 @@
     
     /* تصغير الكتاب للموبايل مع الحفاظ على التناسب */
     .book-frame { max-width: 220px; margin: 0 auto; animation: none; transform: none; box-shadow: -10px 20px 30px -10px rgba(0,0,0,0.7), inset -4px 0 10px rgba(0,0,0,0.2); }
-    .book-badge { right: auto; left: 50%; transform: translateX(-50%); bottom: -18px; width: max-content; font-size: 0.8rem; padding: 10px 18px; }
+    .book-badge { bottom: -46px; font-size: 0.75rem; padding: 8px 16px; }
     
     .about-grid { grid-template-columns: 1fr; gap: 50px; text-align: center; }
     .pullquote { border-right: none; padding-right: 0; border-top: 2px solid var(--gold); border-bottom: 2px solid var(--gold); padding: 25px 0; }
