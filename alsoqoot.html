@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>السقوط — هذه قصة حياتي | المتفائل</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#120D0A;
+    --bark:#1C1510;
+    --bark-2:#231A13;
+    --stone:#4A3F35;
+    --ember:#C97A3A;
+    --ember-dim:#8C572A;
+    --gold:#E7C98F;
+    --parchment:#EDE3D1;
+    --dim:#93876F;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--void);
+    color:var(--parchment);
+    font-family:'Tajawal', sans-serif;
+    overflow-x:hidden;
+    line-height:1.9;
+  }
+  h1,h2,h3, .display{
+    font-family:'Aref Ruqaa', serif;
+    font-weight:700;
+  }
+  a{color:inherit; text-decoration:none;}
+  ::selection{background:var(--ember-dim); color:var(--parchment);}
+
+  /* ---------- Well rings background ---------- */
+  .well-bg{
+    position:absolute; inset:0;
+    background:
+      radial-gradient(circle at 50% 8%, rgba(231,201,143,0.14) 0%, rgba(231,201,143,0.05) 6%, transparent 26%),
+      repeating-radial-gradient(circle at 50% 8%, rgba(74,63,53,0.35) 0px, rgba(74,63,53,0.35) 2px, transparent 3px, transparent 42px),
+      linear-gradient(180deg, #0c0906 0%, var(--void) 55%, var(--bark) 100%);
+    z-index:0;
+  }
+  .well-bg::after{
+    content:"";
+    position:absolute; top:-10%; left:50%; transform:translateX(-50%);
+    width:340px; height:340px; border-radius:50%;
+    background:radial-gradient(circle, rgba(231,201,143,0.5) 0%, rgba(201,122,58,0.15) 45%, transparent 70%);
+    filter:blur(6px);
+    animation:glow 7s ease-in-out infinite;
+  }
+  @keyframes glow{
+    0%,100%{opacity:.55; transform:translateX(-50%) scale(1);}
+    50%{opacity:.9; transform:translateX(-50%) scale(1.08);}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    min-height:100svh;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center;
+    padding:8vh 6vw 10vh;
+    isolation:isolate;
+  }
+  .eyebrow{
+    font-size:.8rem; letter-spacing:.35em; color:var(--gold);
+    opacity:.8; margin-bottom:2.2rem; z-index:2;
+  }
+  .hero h1{
+    font-size:clamp(4rem, 14vw, 9rem);
+    color:var(--parchment);
+    text-shadow:0 0 40px rgba(201,122,58,.35);
+    z-index:2;
+    line-height:1;
+  }
+  .hero .sub{
+    margin-top:1.4rem;
+    font-size:clamp(1.05rem, 2.2vw, 1.5rem);
+    color:var(--gold);
+    letter-spacing:.06em;
+    z-index:2;
+  }
+  .hero .author{
+    margin-top:2.6rem;
+    font-size:.95rem;
+    color:var(--dim, #A99A87);
+    letter-spacing:.15em;
+    z-index:2;
+  }
+  .falling-figure{
+    width:34px; height:34px; margin-top:3.4rem; z-index:2;
+    opacity:.75;
+    animation:fall 4.5s ease-in-out infinite;
+  }
+  @keyframes fall{
+    0%{transform:translateY(-6px) rotate(-4deg); opacity:.4;}
+    50%{transform:translateY(6px) rotate(4deg); opacity:.85;}
+    100%{transform:translateY(-6px) rotate(-4deg); opacity:.4;}
+  }
+
+  .cta{
+    display:inline-flex; align-items:center; gap:.6rem;
+    margin-top:3.4rem;
+    background:linear-gradient(135deg, var(--ember), var(--ember-dim));
+    color:#1a1006;
+    font-weight:900;
+    font-size:1.05rem;
+    padding:1.05rem 2.8rem;
+    border-radius:2px;
+    box-shadow:0 12px 30px -8px rgba(201,122,58,.55);
+    transition:transform .25s ease, box-shadow .25s ease;
+    z-index:2;
+    position:relative;
+  }
+  .cta:hover{transform:translateY(-3px); box-shadow:0 18px 36px -6px rgba(201,122,58,.7);}
+  .cta small{font-weight:400; font-size:.75rem; opacity:.75; display:block;}
+
+  .scroll-hint{
+    position:absolute; bottom:2.4rem; left:50%; transform:translateX(-50%);
+    width:1px; height:56px;
+    background:linear-gradient(var(--gold), transparent);
+    z-index:2;
+    animation:pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{opacity:.2;} 50%{opacity:.8;}}
+
+  /* ---------- Section shells ---------- */
+  section{
+    position:relative;
+    padding:7rem 6vw;
+    max-width:920px;
+    margin:0 auto;
+  }
+  .divider{
+    width:56px; height:56px; margin:0 auto 2.6rem;
+    border:1px solid var(--stone);
+    border-radius:50%;
+    position:relative;
+  }
+  .divider::before{
+    content:""; position:absolute; inset:14px;
+    border:1px solid var(--ember-dim); border-radius:50%;
+  }
+
+  .kicker{
+    text-align:center; color:var(--gold);
+    font-size:.85rem; letter-spacing:.3em; margin-bottom:1rem;
+  }
+  .lede{
+    font-size:clamp(1.3rem, 2.6vw, 1.8rem);
+    text-align:center;
+    color:var(--parchment);
+    font-family:'Aref Ruqaa', serif;
+    line-height:1.85;
+    max-width:760px;
+    margin:0 auto;
+  }
+  .lede strong{color:var(--gold); font-weight:700;}
+
+  p.body-text{
+    font-size:1.08rem;
+    color:#D9CDBB;
+    max-width:680px;
+    margin:1.6rem auto 0;
+    text-align:center;
+  }
+
+  /* ---------- Rope / chapters ---------- */
+  .rope-wrap{position:relative; padding-top:2rem;}
+  .rope-line{
+    position:absolute; top:0; bottom:0; right:calc(50% - .5px);
+    width:1px;
+    background:linear-gradient(var(--stone), var(--ember-dim), var(--stone));
+  }
+  .station{
+    position:relative;
+    width:calc(50% - 3rem);
+    margin-bottom:3.6rem;
+    padding:1.6rem 1.8rem;
+    background:linear-gradient(160deg, var(--bark-2), var(--bark));
+    border:1px solid rgba(74,63,53,.6);
+  }
+  .station:nth-child(odd){margin-right:0; margin-left:auto; text-align:right;}
+  .station:nth-child(even){margin-left:0; margin-right:auto; text-align:right;}
+  .station::before{
+    content:"";
+    position:absolute; top:1.9rem;
+    width:11px; height:11px; border-radius:50%;
+    background:var(--gold);
+    box-shadow:0 0 12px rgba(231,201,143,.7);
+  }
+  .station:nth-child(odd)::before{left:-3.05rem;}
+  .station:nth-child(even)::before{right:-3.05rem;}
+  .station .num{
+    display:block; font-size:.75rem; letter-spacing:.2em; color:var(--ember);
+    margin-bottom:.5rem; font-family:'Tajawal',sans-serif; font-weight:700;
+  }
+  .station h3{font-size:1.35rem; color:var(--parchment); margin-bottom:.5rem;}
+  .station p{font-size:.95rem; color:#C9BCA9;}
+
+  @media (max-width:720px){
+    .rope-line{right:1.2rem;}
+    .station{width:calc(100% - 3.2rem); margin-right:2.8rem !important; margin-left:0 !important; text-align:right;}
+    .station:nth-child(odd)::before, .station:nth-child(even)::before{right:-2.05rem; left:auto;}
+  }
+
+  /* ---------- Quote spotlight ---------- */
+  .spotlight{
+    background:var(--bark);
+    border-top:1px solid var(--stone);
+    border-bottom:1px solid var(--stone);
+    padding:7rem 6vw;
+  }
+  .spotlight blockquote{
+    max-width:780px; margin:0 auto; text-align:center;
+    font-family:'Aref Ruqaa', serif;
+    font-size:clamp(1.5rem, 3.4vw, 2.3rem);
+    color:var(--gold);
+    line-height:1.9;
+    position:relative;
+  }
+  .spotlight blockquote::before, .spotlight blockquote::after{
+    content:"❖"; display:block; color:var(--ember-dim); font-size:1rem; margin:1.2rem 0;
+  }
+  .spotlight cite{
+    display:block; margin-top:2rem; font-style:normal;
+    font-family:'Tajawal',sans-serif; font-size:.85rem; letter-spacing:.2em; color:var(--dim,#93876F);
+  }
+
+  /* ---------- What's inside grid ---------- */
+  .grid3{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem; margin-top:3rem;
+  }
+  @media (max-width:760px){.grid3{grid-template-columns:1fr;}}
+  .card{
+    background:var(--bark-2);
+    border:1px solid rgba(74,63,53,.5);
+    padding:2rem 1.6rem;
+    text-align:center;
+  }
+  .card .icon{font-size:1.6rem; color:var(--ember); margin-bottom:1rem; display:block;}
+  .card h4{font-size:1.1rem; color:var(--parchment); margin-bottom:.7rem; font-family:'Aref Ruqaa',serif;}
+  .card p{font-size:.9rem; color:#C2B4A0;}
+
+  /* ---------- Author ---------- */
+  .author-block{
+    display:flex; flex-direction:column; align-items:center; text-align:center; gap:1.2rem;
+  }
+  .author-block .frame{
+    width:88px; height:88px; border-radius:50%;
+    border:1px solid var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Aref Ruqaa',serif; font-size:1.8rem; color:var(--gold);
+    box-shadow:0 0 24px rgba(231,201,143,.25);
+  }
+  .author-block h3{font-size:1.6rem; color:var(--parchment);}
+  .author-block .role{color:var(--ember); font-size:.85rem; letter-spacing:.15em;}
+  .author-block p{max-width:620px; color:#D0C3B0; font-size:.98rem;}
+
+  /* ---------- Final CTA ---------- */
+  .final{
+    text-align:center;
+    padding:8rem 6vw 9rem;
+    position:relative;
+  }
+  .final::before{
+    content:"";
+    position:absolute; top:0; left:50%; transform:translateX(-50%);
+    width:1px; height:70px;
+    background:linear-gradient(transparent, var(--gold));
+  }
+  .final h2{
+    font-size:clamp(2.2rem, 5vw, 3.2rem);
+    color:var(--parchment);
+    margin-bottom:1.2rem;
+  }
+  .final p{color:#CBBBA5; max-width:520px; margin:0 auto 2.6rem; font-size:1.02rem;}
+  .price-tag{
+    display:inline-block; margin-top:1.4rem; font-size:.85rem; color:var(--dim,#93876F); letter-spacing:.1em;
+  }
+
+  footer{
+    text-align:center; padding:3rem 6vw; color:#6E6153; font-size:.8rem;
+    border-top:1px solid rgba(74,63,53,.5);
+  }
+  footer a{color:var(--gold);}
+
+  .reveal{
+    opacity:0; transform:translateY(24px);
+    transition:opacity .9s ease, transform .9s ease;
+  }
+  .reveal.in{opacity:1; transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="well-bg"></div>
+  <div class="eyebrow">سيرة لا تُروى لتُصدَّق، بل لتُعاش من جديد</div>
+  <h1>السقوط</h1>
+  <div class="sub">هذه قصة حياتي</div>
+  <div class="author">تأليف — المتفائل</div>
+
+  <svg class="falling-figure" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6">
+    <circle cx="12" cy="5" r="2.2"/>
+    <path d="M12 8v6M12 10l-5 5M12 10l5 5M12 14l-3.5 5M12 14l3.5 5"/>
+  </svg>
+
+  <a class="cta" href="https://payhip.com/b/vexQw" target="_blank" rel="noopener">
+    اشترِ الكتاب الآن
+  </a>
+
+  <div class="scroll-hint"></div>
+</div>
+
+<section class="reveal">
+  <div class="divider"></div>
+  <p class="kicker">حكاية سقطتين، في قرية واحدة</p>
+  <p class="lede">
+    سقطتْ أختُه في بئر فماتت. وبعد سنوات، وعلى مقربة من ذلك المكان نفسه، <strong>سقط هو من فوق بناية</strong> — فعاش.
+    هذا الكتاب محاولة لفهم كيف تتحول لحظة عابرة، لم يخترها أحد، إلى الخيط الذي ينسج منه المرء بقية حياته.
+  </p>
+  <p class="body-text">
+    ليست سيرة بالمعنى الذي عرفه القدماء، ولا نصيحة جاهزة تُقدَّم على طبق. هي محاولة صادقة، وربما قاصرة،
+    لتتبّع أثرٍ واحد وهو يتحول من حادثة إلى فكرة، ومن فكرة إلى طريقة في الحياة أشبه بحكمة.
+  </p>
+</section>
+
+<section class="spotlight reveal">
+  <blockquote>
+    "علمتُ، بعد طول تأمل، أن المرء يحمل من صباه حادثة أو حادثتين، لا يدرك أنهما صنعتاه
+    إلا بعد أن يشيب رأسه من التفكّر."
+    <cite>من مقدمة الكتاب</cite>
+  </blockquote>
+</section>
+
+<section class="reveal">
+  <p class="kicker" style="margin-top:0;">رحلة الكتاب</p>
+  <h2 class="lede" style="font-size:clamp(1.6rem,3vw,2rem); margin-bottom:1rem;">سبع محطات، من الغياب إلى السكينة</h2>
+
+  <div class="rope-wrap">
+    <div class="rope-line"></div>
+
+    <div class="station">
+      <span class="num">الفصل الأول</span>
+      <h3>الغياب</h3>
+      <p>طفلة تسقط في بئر فتموت قبل أن يولد، واسمٌ يُمنح له ليكمل به ما لم يُكتب لها أن تكمله.</p>
+    </div>
+
+    <div class="station">
+      <span class="num">الفصل الثاني</span>
+      <h3>طفل من القرية</h3>
+      <p>قرية جبلية هادئة، لا تُعِدّ أهلها لصدمة، تحتضن طفولة موسومة بالبراءة قبل أن ينقلب كل شيء.</p>
+    </div>
+
+    <div class="station">
+      <span class="num">الفصل الثالث</span>
+      <h3>الجسد والسقوط</h3>
+      <p>خمس سنوات عجاف تعقب الحادثة، وجسدٌ يحمل ذاكرة الخوف بلغة لا يُحسن أحد ترجمتها.</p>
+    </div>
+
+    <div class="station">
+      <span class="num">الفصل الرابع</span>
+      <h3>في المدينة</h3>
+      <p>الانتقال من عزلة القرية إلى ضوضاء لا تنقطع، وتجارب أولى في الجامعة والعمل والناس.</p>
+    </div>
+
+    <div class="station">
+      <span class="num">الفصل الخامس</span>
+      <h3>التحوّل</h3>
+      <p>سنوات عمل مضنية، وخيانة ثقة، ومرحلة تتشكل فيها بلاد بأكملها من حوله.</p>
+    </div>
+
+    <div class="station">
+      <span class="num">الفصل السادس</span>
+      <h3>الخمس العجاف</h3>
+      <p>عزلة طويلة، ومرض لا يُفهم سببه، وكتاب ومكتبة تصيران الرفيق الوحيد.</p>
+    </div>
+
+    <div class="station">
+      <span class="num">الفصل السابع</span>
+      <h3>الخمس السمان</h3>
+      <p>سكينة لم تُطلب، وفلسفة رواقية تُعاش لا تُقرأ فحسب، وسقطة تتحول أخيرًا إلى باب.</p>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <p class="kicker" style="margin-top:0;">لماذا تقرأ هذا الكتاب</p>
+  <div class="grid3">
+    <div class="card">
+      <span class="icon">✒</span>
+      <h4>صدق لا يُجامل</h4>
+      <p>لا يقدّم الكاتب نفسه بطلاً ولا ضحية، بل يروي القسوة والرحمة كما وقعتا، دون تجميل.</p>
+    </div>
+    <div class="card">
+      <span class="icon">◐</span>
+      <h4>أسئلة أكبر من السيرة</h4>
+      <p>عن القدر والاختيار، عن الأسماء وأثرها، وعن كيف تتحول هزيمة أمة إلى غضب في بيت.</p>
+    </div>
+    <div class="card">
+      <span class="icon">✦</span>
+      <h4>حكمة تُعاش لا تُملى</h4>
+      <p>الكتاب لا يطلب منك أن تُصدّق، بل أن تجد في سقوطه ظلاً من سقوطك أنت.</p>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="author-block">
+    <div class="frame">م</div>
+    <h3>المتفائل</h3>
+    <div class="role">أبو أسامة سامي الذبياني — كاتب وباحث مستقل من جدة</div>
+    <p>
+      تتقاطع مؤلفاته بين الفلسفة والتاريخ والأدب والعلوم السياسية والجيوبوليتيك وتحليل الخطاب،
+      ويسعى فيها إلى تقديم قراءات عميقة تخاطب العقل الشغوف بفهم ما وراء الأحداث والظواهر.
+    </p>
+  </div>
+</section>
+
+<div class="final reveal">
+  <h2>ابدأ القراءة الآن</h2>
+  <p>سقطتُ طفلاً من فوق بناية، لا تبعد كثيرًا عن حيث سقطت أختي فماتت قبلي، ولم أكن أعرف أن ذلك السقوط سيصوغ ملامح حياتي كلها.</p>
+  <a class="cta" href="https://payhip.com/b/vexQw" target="_blank" rel="noopener">
+    اشترِ نسختك الآن
+  </a>
+  <div class="price-tag">نسخة رقمية · تصلك فور إتمام الشراء</div>
+</div>
+
+<footer>
+  <div>© جميع الحقوق محفوظة للمؤلف — المتفائل</div>
+  <div style="margin-top:.4rem;">للتواصل: <a href="mailto:almtfayl562@gmail.com">almtfayl562@gmail.com</a></div>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.15});
+  els.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
