@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>من خلف الزحام — مشاهدات وقصص من المسجد الحرام</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Scheherazade+New:wght@400;700&family=Reem+Kufi:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #ece4d3;
+  --paper-deep: #e1d6bd;
+  --panel: #e6dcc6;
+  --ink: #26211b;
+  --ink-soft: #5c5346;
+  --ink-faint: #8f8570;
+  --accent: #8a6234;
+  --accent-deep: #5e4321;
+  --line: #c7b99c;
+  --line-soft: #ddd0af;
+  --shadow: rgba(38, 33, 27, 0.12);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  background-image:
+    radial-gradient(circle at 15% 8%, rgba(138,98,52,0.06), transparent 40%),
+    radial-gradient(circle at 85% 92%, rgba(138,98,52,0.07), transparent 40%);
+  color: var(--ink);
+  font-family: 'Scheherazade New', serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+a { color: inherit; text-decoration: none; }
+
+.progress {
+  position: fixed;
+  top: 0; right: 0; left: 0;
+  height: 3px;
+  background: transparent;
+  z-index: 60;
+}
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent-deep), var(--accent));
+  transition: width 0.08s linear;
+}
+
+/* ---------- Crowd dot dividers (signature element) ---------- */
+.dotrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 2.6em 0;
+}
+.dotrow span {
+  display: inline-block;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.dotrow span:nth-child(1) { width:4px; height:4px; opacity:.35; }
+.dotrow span:nth-child(2) { width:6px; height:6px; opacity:.5; }
+.dotrow span:nth-child(3) { width:5px; height:5px; opacity:.4; }
+.dotrow span:nth-child(4) { width:8px; height:8px; opacity:.65; }
+.dotrow span:nth-child(5) { width:6px; height:6px; opacity:.5; }
+.dotrow span:nth-child(6) { width:10px; height:10px; opacity:.85; background:var(--accent-deep);}
+.dotrow span:nth-child(7) { width:6px; height:6px; opacity:.5; }
+.dotrow span:nth-child(8) { width:8px; height:8px; opacity:.65; }
+.dotrow span:nth-child(9) { width:5px; height:5px; opacity:.4; }
+.dotrow span:nth-child(10) { width:6px; height:6px; opacity:.5; }
+.dotrow span:nth-child(11) { width:4px; height:4px; opacity:.35; }
+.dotrow span:nth-child(12) { width:5px; height:5px; opacity:.3; }
+.dotrow span:nth-child(13) { width:3px; height:3px; opacity:.25; }
+
+.dotrow.disperse span { background: var(--ink-faint); }
+.dotrow.disperse span:nth-child(1) { opacity:.7; width:9px; height:9px; }
+.dotrow.disperse span:nth-child(2) { opacity:.5; width:7px; height:7px; }
+.dotrow.disperse span:nth-child(3) { opacity:.4; width:6px; height:6px; }
+.dotrow.disperse span:nth-child(4) { opacity:.3; width:5px; height:5px; }
+.dotrow.disperse span:nth-child(5) { opacity:.22; width:4px; height:4px; }
+.dotrow.disperse span:nth-child(6) { opacity:.16; width:4px; height:4px; }
+.dotrow.disperse span:nth-child(7) { opacity:.1; width:3px; height:3px; }
+.dotrow.disperse span:nth-child(8),
+.dotrow.disperse span:nth-child(9),
+.dotrow.disperse span:nth-child(10),
+.dotrow.disperse span:nth-child(11),
+.dotrow.disperse span:nth-child(12),
+.dotrow.disperse span:nth-child(13) { opacity: 0.05; width:2px; height:2px; }
+
+/* ---------- Cover ---------- */
+.cover {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6vh 6vw;
+  position: relative;
+}
+.cover-frame {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 3.2rem 1rem;
+  max-width: 620px;
+  width: 100%;
+}
+.cover .eyebrow-top {
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.35em;
+  color: var(--ink-faint);
+  margin: 0 0 2rem;
+}
+.cover h1 {
+  font-family: 'Aref Ruqaa', serif;
+  font-weight: 700;
+  font-size: clamp(2.6rem, 8vw, 4.6rem);
+  margin: 0 0 0.6rem;
+  line-height: 1.25;
+  color: var(--ink);
+}
+.cover .subtitle {
+  font-family: 'Aref Ruqaa', serif;
+  font-size: clamp(1.15rem, 3vw, 1.5rem);
+  color: var(--accent-deep);
+  margin: 0 0 2.2rem;
+}
+.cover .meta {
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.03em;
+  line-height: 2.1;
+}
+.cover .meta .author-name {
+  color: var(--accent);
+  font-size: 1.05rem;
+}
+.scrolldown {
+  margin-top: 3.2rem;
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  color: var(--ink-faint);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+.scrolldown::after {
+  content: "";
+  width: 1px;
+  height: 34px;
+  background: linear-gradient(var(--accent), transparent);
+  animation: drip 2.4s ease-in-out infinite;
+}
+@keyframes drip {
+  0% { opacity: 0; transform: scaleY(0.4); transform-origin: top;}
+  50% { opacity: 1; transform: scaleY(1); transform-origin: top;}
+  100% { opacity: 0; transform: scaleY(0.4); transform-origin: top;}
+}
+
+/* ---------- Legal / front matter ---------- */
+.frontmatter {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 5rem 6vw 4rem;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 2;
+}
+.frontmatter .rights {
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: var(--accent-deep);
+  margin-bottom: 1rem;
+}
+.frontmatter p { margin: 0 0 1.1rem; }
+.frontmatter .contact-line {
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+}
+.frontmatter .contact-line a { color: var(--accent); border-bottom: 1px dotted var(--accent); }
+.frontmatter .disclaimer {
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  border-top: 1px solid var(--line-soft);
+  padding-top: 1.4rem;
+  margin-top: 1.4rem;
+}
+
+/* ---------- Table of contents ---------- */
+.toc-section {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 3rem 6vw 5rem;
+}
+.toc-section .eyebrow { text-align:center; }
+.toc-section h2 { text-align: center; }
+.toc {
+  list-style: none;
+  margin: 2.6rem 0 0;
+  padding: 0;
+}
+.toc li a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.55rem 0.2rem;
+  font-size: 1.15rem;
+  color: var(--ink);
+  transition: color 0.2s ease;
+}
+.toc li a:hover { color: var(--accent); }
+.toc li a .t { white-space: nowrap; }
+.toc li a .leader {
+  flex: 1;
+  border-bottom: 1px dotted var(--line);
+  transform: translateY(-4px);
+}
+.toc li.sub a {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  padding-right: 1.6rem;
+}
+
+/* ---------- Floating TOC toggle ---------- */
+.toc-fab {
+  position: fixed;
+  bottom: 26px;
+  left: 26px;
+  z-index: 70;
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  color: var(--accent-deep);
+  padding: 0.65rem 1.1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px var(--shadow);
+}
+.toc-fab:hover { background: var(--paper-deep); }
+
+.toc-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(38,33,27,0.55);
+  z-index: 80;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 6vh 5vw;
+}
+.toc-overlay.open { display: flex; }
+.toc-panel {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  max-width: 480px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 2.4rem 2rem;
+  border-radius: 4px;
+  position: relative;
+}
+.toc-panel h2 { text-align:center; margin-top:0; }
+.toc-close {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 1.3rem;
+  color: var(--ink-faint);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ---------- General typography ---------- */
+.eyebrow {
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.28em;
+  color: var(--accent);
+  margin: 0 0 0.6rem;
+}
+h2 {
+  font-family: 'Aref Ruqaa', serif;
+  font-weight: 700;
+  font-size: clamp(1.9rem, 4.4vw, 2.6rem);
+  margin: 0 0 2.4rem;
+  color: var(--ink);
+}
+h3 {
+  font-family: 'Aref Ruqaa', serif;
+  font-size: 1.5rem;
+  color: var(--accent-deep);
+  margin: 3rem 0 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+h3 .mark {
+  font-family: 'Reem Kufi', sans-serif;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+.reading {
+  max-width: 660px;
+  margin: 0 auto;
+  padding: 5.5rem 6vw;
+}
+.reading.tight { padding-top: 3rem; padding-bottom: 3rem; }
+
+p {
+  font-size: 1.28rem;
+  line-height: 2.05;
+  margin: 0 0 1.5rem;
+  text-align: justify;
+  color: var(--ink);
+}
+p.lede::first-line {
+  color: var(--accent-deep);
+}
+
+.subsection p { font-size: 1.2rem; }
+
+/* ---------- Dedication ---------- */
+.dedication {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 6vw;
+}
+.dedication blockquote {
+  margin: 0;
+  font-family: 'Aref Ruqaa', serif;
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  line-height: 2.1;
+  color: var(--ink);
+  max-width: 520px;
+}
+.dedication .label {
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  color: var(--ink-faint);
+  margin-bottom: 2rem;
+}
+
+/* ---------- Chapter head ---------- */
+.chapter-head { text-align: center; margin-bottom: 3.2rem; }
+.chapter-head .eyebrow { text-align: center; }
+.chapter-head h2 { margin-bottom: 0; }
+.chapter { position: relative; }
+
+.intro-sign {
+  text-align: left;
+  font-family: 'Aref Ruqaa', serif;
+  color: var(--accent-deep);
+  font-size: 1.3rem;
+  margin-top: 2rem;
+}
+
+/* ---------- Author section ---------- */
+.author-card {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 4rem 6vw 6rem;
+  text-align: center;
+}
+.author-card .avatar-mark {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.6rem;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Aref Ruqaa', serif;
+  font-size: 1.6rem;
+  color: var(--accent);
+}
+.author-card h2 { margin-bottom: 0.2rem; }
+.author-card .kunya {
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 0.95rem;
+  color: var(--ink-faint);
+  margin-bottom: 2rem;
+}
+.author-card p { text-align: center; font-size: 1.15rem; }
+.author-card .closing-line {
+  font-family: 'Aref Ruqaa', serif;
+  color: var(--accent-deep);
+  font-size: 1.3rem;
+  margin: 2rem 0;
+}
+.author-links {
+  margin-top: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 0.9rem;
+}
+.author-links a {
+  color: var(--accent-deep);
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
+}
+.author-links a:hover { color: var(--accent); }
+
+.credit {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 6vw 4rem;
+  text-align: center;
+}
+.credit-card {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 2rem 1.6rem;
+  background: var(--panel);
+}
+.credit-mark {
+  width: 46px;
+  height: 46px;
+  margin: 0 auto 1rem;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Aref Ruqaa', serif;
+  font-size: 1.3rem;
+  color: var(--accent);
+  background: var(--paper);
+}
+.credit p {
+  font-size: 1rem;
+  text-align: center;
+  color: var(--ink-soft);
+  margin: 0 0 1rem;
+}
+.credit a.credit-link {
+  display: inline-block;
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 0.9rem;
+  color: var(--accent-deep);
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
+}
+.credit a.credit-link:hover { color: var(--accent); }
+
+footer {
+  text-align: center;
+  padding: 3rem 6vw 5rem;
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 640px) {
+  .reading { padding: 3.5rem 7vw; }
+  p { font-size: 1.15rem; line-height: 1.95; }
+  .toc-fab { left: 14px; bottom: 14px; padding: 0.55rem 0.9rem; font-size: 0.72rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .scrolldown::after { animation: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+
+<button class="toc-fab" id="tocFab">الفهرس ☰</button>
+<div class="toc-overlay" id="tocOverlay">
+  <div class="toc-panel">
+    <button class="toc-close" id="tocClose">✕</button>
+    <p class="eyebrow" style="text-align:center">من خلف الزحام</p>
+    <h2>الفهرس</h2>
+    <ul class="toc">
+      <li><a href="#dedication"><span class="t">الإهداء</span><span class="leader"></span></a></li>
+<li><a href="#intro"><span class="t">المقدمة</span><span class="leader"></span></a></li>
+<li><a href="#ch1"><span class="t">الفصل الأول — الوجوه</span><span class="leader"></span></a></li>
+<li><a href="#ch2"><span class="t">الفصل الثاني — الساعات الميتة</span><span class="leader"></span></a></li>
+<li><a href="#ch3"><span class="t">الفصل الثالث — الصمت والضجيج</span><span class="leader"></span></a></li>
+<li><a href="#ch4"><span class="t">الفصل الرابع — اللحظات الغريبة</span><span class="leader"></span></a></li>
+<li class="sub"><a href="#s-bohra"><span class="t">↳ البهرة</span><span class="leader"></span></a></li>
+<li class="sub"><a href="#s-imamiyya"><span class="t">↳ الإمامية الاثنا عشرية</span><span class="leader"></span></a></li>
+<li class="sub"><a href="#s-sufiyya"><span class="t">↳ الصوفية</span><span class="leader"></span></a></li>
+<li class="sub"><a href="#s-law"><span class="t">↳ حين يرى الإنسان نفسه فوق القانون</span><span class="leader"></span></a></li>
+<li class="sub"><a href="#s-sunnah"><span class="t">↳ أهل السنة والجماعة</span><span class="leader"></span></a></li>
+<li><a href="#ch5"><span class="t">الفصل الخامس — العمال والموظفون</span><span class="leader"></span></a></li>
+<li><a href="#conclusion"><span class="t">الخاتمة — ما يبقى بعد أن يرحل الجميع</span><span class="leader"></span></a></li>
+<li><a href="#author"><span class="t">تعريف المؤلف</span><span class="leader"></span></a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===================== COVER ===================== -->
+<section class="cover" id="top">
+  <div class="cover-frame">
+    <p class="eyebrow-top">مشاهدات من أرض الحرم</p>
+    <h1>من خلف الزحام</h1>
+    <p class="subtitle">مشاهدات وقصص من المسجد الحرام</p>
+    <div class="dotrow" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <p class="meta">
+      <span class="author-name">المؤلف: المتفائل</span><br>
+      الطبعة الأولى: 1446 هـ / 2026 م
+    </p>
+  </div>
+  <div class="scrolldown">ابدأ القراءة</div>
+</section>
+
+<!-- ===================== FRONT MATTER ===================== -->
+<section class="frontmatter">
+  <p class="rights">جميع الحقوق محفوظة للمؤلف</p>
+  <p>لا يجوز إعادة نشر هذا الكتاب أو أي جزء منه بأي شكل من الأشكال — إلكترونياً أو ورقياً أو مسموعاً — أو تخزينه في أي نظام استرجاع، أو نقله بأي وسيلة كانت، سواء أكانت إلكترونية أم ميكانيكية أم بالتصوير أم بالتسجيل أم بغير ذلك، إلا بإذن خطي مسبق من المؤلف.</p>
+  <p class="disclaimer">الآراء الواردة في هذا الكتاب تعبّر عن وجهة نظر المؤلف وحده، ولا تعكس بالضرورة رأي أي جهة أو مؤسسة.</p>
+  <p class="contact-line">للتواصل مع المؤلف:<br><a href="mailto:almtfayl562@gmail.com">almtfayl562@gmail.com</a></p>
+</section>
+
+<div class="dotrow" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<!-- ===================== TOC ===================== -->
+<section class="toc-section">
+  <p class="eyebrow">دليل القراءة</p>
+  <h2>الفهرس</h2>
+  <ul class="toc">
+    <li><a href="#dedication"><span class="t">الإهداء</span><span class="leader"></span></a></li>
+<li><a href="#intro"><span class="t">المقدمة</span><span class="leader"></span></a></li>
+<li><a href="#ch1"><span class="t">الفصل الأول — الوجوه</span><span class="leader"></span></a></li>
+<li><a href="#ch2"><span class="t">الفصل الثاني — الساعات الميتة</span><span class="leader"></span></a></li>
+<li><a href="#ch3"><span class="t">الفصل الثالث — الصمت والضجيج</span><span class="leader"></span></a></li>
+<li><a href="#ch4"><span class="t">الفصل الرابع — اللحظات الغريبة</span><span class="leader"></span></a></li>
+<li class="sub"><a href="#s-bohra"><span class="t">↳ البهرة</span><span class="leader"></span></a></li>
+<li class="sub"><a href="#s-imamiyya"><span class="t">↳ الإمامية الاثنا عشرية</span><span class="leader"></span></a></li>
+<li class="sub"><a href="#s-sufiyya"><span class="t">↳ الصوفية</span><span class="leader"></span></a></li>
+<li class="sub"><a href="#s-law"><span class="t">↳ حين يرى الإنسان نفسه فوق القانون</span><span class="leader"></span></a></li>
+<li class="sub"><a href="#s-sunnah"><span class="t">↳ أهل السنة والجماعة</span><span class="leader"></span></a></li>
+<li><a href="#ch5"><span class="t">الفصل الخامس — العمال والموظفون</span><span class="leader"></span></a></li>
+<li><a href="#conclusion"><span class="t">الخاتمة — ما يبقى بعد أن يرحل الجميع</span><span class="leader"></span></a></li>
+<li><a href="#author"><span class="t">تعريف المؤلف</span><span class="leader"></span></a></li>
+  </ul>
+</section>
+
+<div class="dotrow" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<!-- ===================== DEDICATION ===================== -->
+<section class="dedication" id="dedication">
+  <div>
+    <p class="label">إهداء</p>
+    <blockquote>
+      إلى أبي وأمي اللذين علّماني الإيمان<br>وإلى هذا البيت الذي علّمني الإنسان
+    </blockquote>
+  </div>
+</section>
+
+<div class="dotrow" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<!-- ===================== INTRODUCTION ===================== -->
+<section class="reading" id="intro">
+  <div class="chapter-head">
+    <p class="eyebrow">تصدير</p>
+    <h2>مقدمة</h2>
+  </div>
+  <p class="lede">نشأتُ في مكة وترعرعتُ بين أزقتها وشوارعها منذ أن عَقَلتُ. كنتُ أعرف الحرم كما يعرفه كلُّ مكيٍّ؛ معرفةً عابرةً، تألُّفاً لا تأمُّلاً، وأُنساً لا إدهاشاً. كنتُ أدخله ولا أميّز ملامح الوجوه، ولا أهتمّ بمن يجلس إلى جانبي أو يطوف أمامي. كان المكان حاضراً في حياتي حضوراً طبيعياً، كالهواء تماماً — لا تشعر به إلا حين يشحّ.</p>
+<p>وفي هذا أرى اليوم ميزةً خفيّة لأهل مكة وأهل الغربية عموماً؛ فهم بحكم احتكاكهم الدائم بالشعوب القادمة من أصقاع الأرض حجاجاً ومعتمرين، باتوا يرون في الآخر إنساناً مسلماً يستحق الاحترام، لا أكثر ولا أقل. لا يسألونه عن منبته ولا يحكمون عليه بلهجته. وهذه سماحة لا تجدها في كل مكان، ولا عند كل أحد.</p>
+<p>ثم جاء يومٌ صرتُ فيه لا زائراً بل مُقيماً في خدمة هذا البيت — مرشداً ومنظِّماً لسبع سنوات وأكثر. وهنا بدأتُ أرى.</p>
+<p>رأيتُ من العجائب ما لا يُحصى كثرةً، ومن الغرائب ما لا يخطر على بال. غير أنني أُقرّ منذ البداية أن ليس كلَّ ما رأيتُ يُقال؛ فلهذا المكان منزلته وقدره في نفوس المسلمين، وما لا خير في ذكره ولا نفعَ في نقله فإنني، تعظيماً للبيت وصوناً لحرمته، لن أتناوله.</p>
+<p>في هذه الصفحات ستقرأ عن الطوائف الدينية التي رأيتُها ولمستُ تنوّعها، وعن العلماء والمشاهير الذين التقيتُ بهم في مكان لا يساوي فيه أحدٌ أحداً. وستقرأ مشاهد ربما دفعتك إلى الابتسام أو الدهشة أو التأمل الطويل.</p>
+<p>وقد وجدتُ — قبل أن أكتب — أن ما نقله الرحالة العظام من قبلي كابن بطوطة وابن جبير عن مشاهداتهم في هذا البيت لا يزال يتصل في سياقه بما شهدتُه أنا بعدهم بقرون. وهذا دليلٌ عندي على أن العوائد راسخةٌ في طبع الناس، وأن البشر — بكل اختلافاتهم — يأتون إلى هذا البيت بالفطرة ذاتها، والدهشة ذاتها، والحاجة ذاتها.</p>
+<p>وربما كان في هذا وحده ما يستحق أن يُكتب.</p>
+  <p class="intro-sign">المتفائل</p>
+</section>
+
+<div class="dotrow" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<!-- ===================== CHAPTER 1 ===================== -->
+<section class="reading" id="ch1">
+  
+<section class="chapter" id="ch1-inner">
+  <div class="chapter-head">
+    <p class="eyebrow">الفصل الأول</p>
+    <h2>الوجوه</h2>
+  </div>
+  <p class="lede">لم أكن أعرف أن للبشر كل هذه الألوان حتى وقفتُ للمرة الأولى في مواجهة هذا الجمع. ليس الأمر مجرد تنوع في الأشكال، بل هو صدمة بصرية حقيقية تُربك الذهن وتُعجز الوصف. وجوهٌ جاءت من كل صقع من صقاع الأرض، تحمل معها ألوانها ولغاتها ونداءاتها، وكأن الأرض كلها قرّرت في لحظة واحدة أن تُفرغ نفسها في هذا المكان.</p>
+<p>أصابتني الدهشة في البداية — دهشةٌ لا تشبه ما يصفه الناس عادةً عن الحرم. لم تكن دهشة المؤمن المتأمّل، بل كانت دهشة من وجد نفسه فجأة أمام متحف حيّ للجنس البشري، يمشي ويتنفس ويبكي ويطوف.</p>
+<p>وبمرور الوقت — سبع سنوات كانت مدرسةً لا تشبه أي مدرسة — صرتُ أُميّز الجنسيات والأعراق قبل أن أسمع كلمة. من الملامح أولاً، ثم من المشية وطريقة التعامل مع الفضاء، ثم — وهذه فائدة غريبة لا تُكتسب إلا بالاحتكاك الطويل — من الروائح أيضاً.</p>
+<p>وأعني هذا بجدية تامة. فالعلم اليوم يُقرّ بما لاحظته الحواس قبل أن تُقرّه المختبرات؛ إذ تؤكد أبحاث حديثة نُشرت في مجلة Evolution and Human Behavior أن الغذاء اليومي يؤثر تأثيراً مباشراً ومقيساً على رائحة الجسم. والآلية علمية دقيقة: حين يُهضم الطعام، تتفاعل مكوناته الكيميائية مع البكتيريا في الأمعاء والجلد، فتُنتج مركبات تُفرز عبر العرق وتُشكّل رائحةً مميزة. وقد لاحظ الباحثون أن الأطعمة الغنية بالكبريت — كالبروكلي والملفوف والبصل — تُنتج غازات أثناء الهضم تتفاعل مع بكتيريا الجلد فتُحدث روائح قوية وثابتة، وأن تناول اللحوم الحمراء باستمرار يُكثّف رائحة الجسم بشكل ملحوظ يُدركه الآخرون.</p>
+<p>فالهنود ومن يجاورهم — وقد رأيتهم — لهم رائحة مميزة تشبه رائحة التوابل التي تملأ مطابخهم ومنازلهم وتلتصق بثيابهم. وليس هذا غريباً في ضوء ما سبق؛ فالأطعمة الحارة الغنية بالتوابل تُنتج مركبات تتسرّب عبر الجلد وتبقى ساعات طويلة. أما الأتراك فلهم رائحة أخرى أعرفها ولا أُسمّيها — يعسر عليّ وصفها، وأكتفي بأنني كنت أعرفها. وأكاد أجزم أن لكل شعب رائحةً خاصةً به تعود إلى نوع الطعام الذي يتناوله، أو إلى رائحة البيئة والأرض التي جاء منها — وهو تمايزٌ لا أراه إلا من صنع الخالق الذي جعل لكل شيء سمةً تُعرّفه، ذلك تقدير العزيز العليم.</p>
+<p>ومثلما تختلف الروائح، تختلف الطباع — وهذا ما يُفاجئك حين تعيش بين الناس لا حين تزورهم. وقد انتبه القدماء أنفسهم إلى هذه الصلة بين العرق والطبع، وإن جاء بعض كلامهم بعين اليوم مُثقلاً بالتحيّز ومحدودية العصر. فقد كتب ابن بطلان الطبيب والفيلسوف في كتابه رسالة في شري الرقيق وتقليب العبيد:</p>
+<p>"فالرقص والإيقاع فطرة فطرة في الزنوج، ويقال: لو وقع الزنجي من السماء إلى الأرض ما وقع إلا بالإيقاع. وهم أنقى الناس ثغورًا لكثرة الريق، وكثرة الريق لفساد الهضوم؛ وفيهم جَلَد على الكدِّ، فالزنجي إذا شبع فصب العذاب عليه صبًّا فإنه لا يتألم له."</p>
+<p>هذا الكلام يعكس أكثر ما يعكس جهلَ عصره لا حقيقة البشر؛ إذ لم يكن العلم قد كشف بعد عن وحدة الأصل الإنساني، ولم يكن قد تبيّن أن اختلاف الألوان ليس إلا أثراً لصبغة الميلانين وتفاعلها مع البيئة والمناخ. أما أنا فلا أنقل هذا استشهاداً بصحته، بل إشارةً إلى أن ملاحظة التمايز بين الشعوب ليست وليدة اليوم — وأن الفارق بين الملاحظة والحكم المجحف هو كل شيء. المشاهدة ظلٌّ، والإنسان أكبر من ظله دائماً.</p>
+<p>المصريون — وقد كانوا كثيرين — يحملون معهم خفّةً لافتة؛ روحٌ لا تأخذ الأمور بثقل أكثر مما ينبغي، وابتسامة تسبق الكلام. وفي الزحام حيث تنكسر أعصاب كثيرين، كان المصري يجد مخرجاً بالنكتة أو بالتحايل الذكي. دعابةٌ أحياناً في غير موضعها، وتملّصٌ من الترتيب قد يُغضبك — لكنك بعد لحظة تجد نفسك تبتسم رغماً عنك.</p>
+<p>أبناء جنوب شرق آسيا — الإندونيسيون والماليزيون وذووهم — كانوا أكثر الجماعات هدوءاً في الزحام وألطفها في التعامل. لا يدفعون، لا يجادلون، يسيرون بسلاسة كأنهم تعلّموا أن الصبر أقصر الطرق. في مكان لا تنجح فيه إلا اللطف أو القوة، كانوا يختارون اللطف دائماً — وكانوا يصلون.</p>
+<p>الأتراك — يجمعون بين طرفين لا تتوقع اجتماعهما: اللطف والانفعال. يُقبلون عليك بدفء حقيقي، وينفجرون بالعاطفة بالسرعة ذاتها — لكن انفعالهم لا يحمل حقداً، بل هو كالموجة تعلو وتنكسر وتذهب. وجدتُ فيهم أناساً لا يُخفون ما في داخلهم، وفي مكان كالحرم كان هذا الصدق العاطفي يميّزهم.</p>
+<p>المغاربيون — بسطاء في الغالب، يحملون ديناً عميقاً في طريقة اندماجهم بالمكان. لكن كان يلفت انتباهي أن فتيل الغضب عند بعضهم — لا سيما من قابلتُ منهم من الجزائر — قصيرٌ جداً. استفزازٌ بسيط، كلمة خاطئة، دفعة في الزحام — يكفي هذا لأن يتحول المشهد فجأة. وهذا ليس حكماً، بل توصيف لمن جمعتني به مواقف.</p>
+<p>العراقيون والإيرانيون ومن جاورهم ممن يحملون العقائد ذاتها — كانوا من أكثر الجماعات التي استوقفتني، وأقول هذا بلا مجاملة ولا إساءة. كان يغلب على كثيرٍ منهم شعورٌ دائم بالتربص والترقب، كأنهم يمشون في أرض لا تُرحّب بهم، أو يعيشون في محيط يراقبهم لا يحتضنهم. وهذا في جزء منه مفهوم؛ فهم يأتون إلى مكان يختلف أغلب روّاده عنهم في العقيدة والتصور، فإذا أدّوا شعائرهم وجدوا من حولهم نظراتٍ لا تخطئها عينٌ — نظرات تقول بلا كلام: كفّوا عن هذا. فيزداد الحذر، ويضيق الانسجام.</p>
+<p>وقد كانت أنظمة الحرم تمنع التمسّح بالمقامات والتبرك بغير الله تعظيماً لا تضييقاً — وكان تطبيق هذا المنع جزءاً من عملي. وهنا وجدتُ نفسي أمام ظاهرة لا تُفسَّر بسهولة: الازدواجية — تلك القدرة العجيبة على فعل الشيء وإنكاره في الوقت ذاته، بثقة لا تتزعزع. وأذكر منها موقفاً لا يفارق ذاكرتي؛ امرأةٌ كانت تتمسّح بالمقام أمامي، وحين نبّهتُها أن ذلك ممنوع، رفعت يدها إلى السماء وأقسمت بالله أنها لا تفعل ذلك — وهي لا تزال تتمسّح. فقلت لها بهدوء: أقسم بالله أنكِ تعلمين أنني أعلم أنكِ تكذبين. فما كان منها إلا أن غرقت في الضحك وانصرفت، وتركت خلفها في عقلي علامات استفهام لم تُجَب — ليس غضباً، بل دهشةً حقيقية من هذه الازدواجية التي تُقسّم الإنسان إلى قسمين لا يعرف أحدهما الآخر.</p>
+<p>عرب الخليج — وقد يبدو غريباً أن أتحدث عنهم في معرض الحديث عن الجنسيات الوافدة، وهم أهل الدار وأبناء الجوار. لكنهم كانوا من أقل من احتككتُ بهم، لا لشيء إلا لأن الحرم كان في معظم الأوقات يعجّ بالأمم الأخرى حتى يكاد يغيب فيها أبناء البلد أنفسهم. ومع ذلك فقد لاحظتُ فيمن التقيتُ بهم منهم شيئاً يصعب وصفه إلا بالصدق في التعظيم؛ تعظيمٌ لهذا المكان راسخٌ في الفطرة لا في التكلّف، كأن الصلة بينهم وبين البيت أقدم من كل ما يمكن تعلّمه. وقد يرى بعضهم في هذا الكلام تعصباً — لكنها مشاهدة رجل رأى، لا حكم رجل حكم. ولعل في هذا ما يُفسّر جزءاً من الحكمة الإلهية في أن يكون لهذا المكان من يرعاه ويخدمه من أبنائه.</p>
+<p>ثم كانت هناك وجوه من نوع آخر — لا تُميّزها بالجنسية ولا باللون ولا بالطبع.</p>
+<p>وجوه المرضى والعاجزين، أولئك الذين جاؤوا وهم يعرفون أن الطريق إلى هنا كان أصعب طريق في حياتهم — وربما آخره. رجلٌ على كرسي متحرك تدفعه ابنته بيد مرتجفة وعين تبكي قبل أن تُصلّي. عجوزٌ تُحمل على الأعناق ويداها مرفوعتان والمسافة بينها وبين الكعبة أمتار لا تقدر على قطعها بقدميها. وكثيرٌ منهم كانوا يحملون في وجوههم شيئاً لا تجد له اسماً تماماً — شيءٌ يشبه الارتياح؛ كأنهم أتوا ليقولوا وداعاً، أو ليطلبوا إذناً بالرحيل.</p>
+<p>وأذكر من بين كل ما رأيتُ مشهداً لا يزال يسكن ذاكرتي حتى اليوم. كنتُ في موقعي حين لفت انتباهي رجلٌ وامرأة يجلسان في صحن المطاف قبالة المكان الذي أعمل فيه. كانا يبكيان — لكن ليس كما يبكي الناس في هذا المكان. كان الرجل منهاراً انهياراً لم أرَ له مثيلاً في حياتي؛ يضع رأسه في حضن المرأة وهو يتقطّع، وهي تحاول أن تهدّئه بيد ترتجف هي الأخرى. كان بكاؤه من النوع الذي يُجبرك على أن تشعر بشيء لم تأذن لنفسك بالشعور به. دارت في عقلي أسئلة لم أجرؤ على طرحها — ولم يكن السؤال مناسباً أصلاً في مثل هذه اللحظات. والذي ثاب في خلدي أن هذا رجلٌ فقد عزيزاً — ابناً ربما، أو شخصاً لا يُعوَّض — وجاء إلى هنا يحمل حزنه لأنه لم يجد له مكاناً آخر يليق به.</p>
+<p>وبعدها بأيام رأيتُ مشهداً يشبهه في الشكل ويختلف عنه في التفاصيل — شابةٌ تجهش بالبكاء بالطريقة ذاتها التي لا تُنسى. هذه المرة امتلكتُ الشجاعة وسألتُ. أخبرتني أنها جاءت بعد وفاة والدها، وأن هذه العمرة عنه — آخر ما تستطيع أن تُهديه بعد أن فات الأوان لكل شيء آخر. ثم قالت بصوت منكسر: إنها تشعر بالضياع ولا تدري ماذا تفعل. وقفتُ أمامها ولم أجد ما أقوله — ليس لأن الكلام عجز، بل لأن بعض اللحظات أكبر من أن يُواسيها كلام.</p>
+<p>وكان الأطفال فصلاً آخر من فصول الدهشة.</p>
+<p>الطفل في الحرم لا يفهم ما يجري، لكنه يشعر — وهذا الفارق هو كل شيء. رأيتُ أطفالاً يسيرون بجوار أمهاتهم وعيونهم مفتوحة على اتساعها، لا خوفاً ولا انبهاراً بالبناء الشاهق، بل باحثةً عن شيء غير مرئي يملأ الهواء ولا يقدر حتى الكبار على تسميته. وأحياناً يبكي الطفل دون سبب ظاهر فتحمله أمه وتمشي، وأنت تعلم أنه بعد عشرين سنة لن يتذكر هذا المشهد — لكن شيئاً منه سيبقى فيه في مكان لا يعرف له مصدراً ولا تفسيراً.</p>
+<p>سبع سنوات من الوجوه، ولم أرَ وجهين متطابقين في ما يحملان.</p>
+<p>مصريٌّ يضحك، ومغربيٌّ يغضب، وآسيويٌّ يصبر، وتركيٌّ تعلو فيه الموجة وتنكسر، وعراقيٌّ يترقب، ورجلٌ ينهار في حضن امرأة تحاول أن تجمع شتاته، وشابةٌ تُهدي والدها الميت عمرةً لأنها لم تجد ما تُهديه سواها، وطفلٌ يبحث بعينيه عمّا لا اسم له، ومسنٌّ جاء ليودّع — كلهم مختلفون في كل شيء.</p>
+<p>لكن ثمة لحظة واحدة كنتُ أراها كل يوم تمحو هذا كله؛ تلك اللحظة التي يرفع فيها كل واحد منهم يديه بالدعاء. في تلك اللحظة بالذات لا مصري ولا عراقي ولا مريض ولا صحيح، لا باكٍ ولا ضاحك، لا من فقد ولا من يودّع — بل إنسانٌ واحد، في مواجهة شيء أكبر منه بكثير، يطلب.</p>
+<p>وهذا وحده كان يكفيني لأعود في اليوم التالي.</p>
+</section>
+
+</section>
+
+<div class="dotrow" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<!-- ===================== CHAPTER 2 ===================== -->
+<section class="reading" id="ch2">
+  
+<section class="chapter" id="ch2-inner">
+  <div class="chapter-head">
+    <p class="eyebrow">الفصل الثاني</p>
+    <h2>الساعات الميتة</h2>
+  </div>
+  <p class="lede">ثمة وقتٌ في الحرم لا يعرفه إلا من عمل فيه — ذلك الوقت الذي يخلو فيه المكان نسبياً من الزحام، حين ينسحب الناس إلى فنادقهم وتبقى الكعبة في مواجهة القليلين. الفجر ومنتصف الليل. الساعات الميتة.</p>
+<p>وللمكان في هذه الساعات وجهٌ لا يراه الحاج.</p>
+<p>الأضواء ذاتها، والكعبة في مكانها، والطواف لا يتوقف — لكن الصوت يتغير. في النهار الحرم ضجيجٌ منظّم، ملايين الأقدام وملايين الأصوات تصنع معاً جداراً من الحضور الإنساني لا تخترقه. أما في الساعات الميتة فيتفكّك هذا الجدار شيئاً فشيئاً حتى تسمع ما لم تسمعه من قبل — صوت الرياح تمرّ على أعمدة الرواق، وخطوات المنفردين على الرخام البارد، وأحياناً بكاءً خافتاً من مكان لا تعرف تحديده. يتّسع المكان فجأة — ليس لأنه كبر، بل لأن البشر أخلوا بعض فضائه. والكعبة في هذا الهدوء تبدو أقرب، كأنها حين يذهب الزحام تستردّ شيئاً كان مشغولاً.</p>
+<p>كنتُ في بعض الليالي أقف وأنظر إليها دون أن أفكر في شيء — وهذا نادرٌ لمن يعمل، لأن العمل يملأ العقل بالتفاصيل ويُغلق نوافذ التأمل. لكن في تلك الساعات كان المكان يفرض نفسه بطريقة لا تقاومها.</p>
+<p>كان أغلب عملي في هذه الفترة، وكنتُ أُفضّلها على غيرها — لهدوئها النسبي، ولذلك الشيء الذي يصعب تسميته. غير أن هذا الهدوء كان له ثمنه؛ فبعد سنوات من العمل الليلي المتواصل، بدأت تظهر عليّ تأثيرات صحية لم أتوقعها، وأدركتُ متأخراً أن الجسد يُحاسب على ما تُهمله منه حتى في أشرف البقاع.</p>
+<p>لكن هذه الساعات — على هدوئها الظاهر — كانت مليئة بالأحداث. بل كانت في الغالب موعداً لأغرب ما شهدتُه في سنواتي كلها. وقد كان زملاؤنا في العمل يقولون ساخرين: هذه الفترة يكثر فيها المجانين. ولم أكن أعلم في البداية أن في كلامهم حقيقة تفوق المزاح بكثير.</p>
+<p>وأذكر من بين ما شهدتُ في تلك الساعات موقفاً لا يزال حياً في ذاكرتي كأنه وقع أمس.</p>
+<p>كانت قد هبّت عاصفةٌ قوية، وكنتُ جالساً في أحد الساحات القريبة من الحرم حين سقطت بجواري حمامةٌ أرهقتها الريح فلم تقدر على الطيران. وكان يجلس قريباً مني رجلٌ غريب المنظر والهيئة — شيءٌ فيه لا تعرف تسميته، لكن عينيك لا تُفارقانه دون أن تعرف لماذا. ما كادت الحمامة تسقط حتى قام بركلها بقوة. صمتَ من حولي وكانوا مصدومين. تقدّمتُ منه وطلبتُ منه أن يتقي الله وأن يكفّ. فنظر إليّ وقال بهدوء مُروِّع: هذه الدنيا عذاب، دعها تتعذب. ثم ركلها مرة أخرى.</p>
+<p>وقبل أن أتصرف، تقدّم رجلٌ آخر بالزي المدني وأوقفه — سأله: هل تعاني من شيء؟ هل تناولت شيئاً؟ وبعد التفتيش تبيّن أن هذا الرجل كان يتعاطى موادّ تذهب العقل، ووُجد معه بعضها.</p>
+<p>وقفتُ أنظر وأنا أستوعب ما جرى في دقائق معدودة. وما استوقفني أكثر من الحادثة نفسها هو توقيت العقوبة — جاءت فورية، كأنها قُدِّرت أن تكون في ذلك المكان وتلك اللحظة بالذات. وفي الحرم تشعر أن الأشياء لا تقع بالصدفة — أو ربما تشعر هكذا لأن المكان يجعل عينيك ترى ما كانت تُغفله في غيره.</p>
+<p>وفي تلك الساعات ذاتها التقيتُ برجل من نوع مختلف تماماً — لم يكن غريباً ولا مضطرباً، بل كان الأكثر وضوحاً وأصالة من بين كل من مررتُ بهم.</p>
+<p>كنتُ أراه شبه يومي في نفس المكان — لا يغادر الحرم، ولا ينام إلا بين جنباته. استوقفني تكراره فذهبتُ إليه وتعرّفتُ عليه. أخبرني أنه جاء من مدينة بعيدة لغرض واحد: كان مدمناً على التدخين، فنذر لله أن يبقى في المسجد الحرام شهراً كاملاً لا يخرج منه — جاعلاً من هذا المكان سجنه الاختياري ومعتكفه ومعينه في آنٍ واحد. وأخبرني بفرح لا يُخطئه أنه وجد في الحرم أصدقاء صالحين أعانوه على مقاومة رغبته طوال تلك الفترة، وأنه بفضلهم وبفضل المكان صمد.</p>
+<p>وقفتُ أمامه وفكّرتُ — هذا رجل لم يذهب إلى عيادة ولا إلى برنامج علاجي، بل ذهب إلى بيت الله وجعل منه علاجه. وقد نجح. في هذا الموقف درسٌ لم يُلقِه عليّ أحد، عن الإرادة حين تتكئ على شيء أكبر منها.</p>
+<p>ثم كانت هناك اللقاءات التي تتركك وحيداً مع أسئلة لا إجابات لها.</p>
+<p>جاءني ذات ليلة شابّان — الأول يبكي بكاءً مراً لا يستطيع تفسيره، ويخبرني أنه يشعر بسواد يغشاه من الداخل لا يعرف ما هو. وكان يُصرّ أنها عقوبةٌ من الله على ذنوبه. قلتُ له بهدوء: ما تعانيه اسمه الاكتئاب، وعليك أن تزور طبيباً نفسياً. نظر إليّ كأنني قلتُ له شيئاً لا يصدّق — كأن تسمية ما يعانيه بمرض يعالجه الأطباء تنقص مما يحمله من ثقل روحي.</p>
+<p>وجاء آخر استوقفني وهو يتكلم كمن يهرب من ظلّه — يريد الخلاص من ذنوب فعلها، وأخبرني أنه يتعاطى موادّ تذهب العقل ولا يعرف كيف يتوقف. كان يحكي كأنما وجد في هذا المكان الليلي الهادئ ومضةَ جرأة جعلته يعترف لأول مرة — لا لشيخ ولا لصديق، بل لموظف غريب في الثلاثة فجراً.</p>
+<p>وهنا أدركتُ شيئاً لم أقرأه في كتاب ولم يُخبرني به أحد: الليل في الحرم يفتح ما يُغلقه النهار. الناس في الزحام يلبسون وجوهاً أخرى، لكنهم في تلك الساعات الهادئة يخلعون ما يستطيعون خلعه. وكأن الظلام والسكينة معاً يصنعان شيئاً يشبه الاعتراف — ليس في كنيسة ولا أمام قاضٍ، بل في فضاء مفتوح تحت السماء، أمام بيت يعرف أسرار الجميع ولا يحكي لأحد.</p>
+<p>للّيل في هذا المكان أسرار — وكانت تُفشي إليّ بعضها.</p>
+</section>
+
+</section>
+
+<div class="dotrow" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<!-- ===================== CHAPTER 3 ===================== -->
+<section class="reading" id="ch3">
+  
+<section class="chapter" id="ch3-inner">
+  <div class="chapter-head">
+    <p class="eyebrow">الفصل الثالث</p>
+    <h2>الصمت والضجيج</h2>
+  </div>
+  <p class="lede">حين تقف أمام الكعبة للمرة الأولى — أو للمرة الألف — يضربك شيءٌ لا تجد له تفسيراً منطقياً تاماً. البناء أمامك ضخمٌ، لكن ضخامته ليست ما يُربكك. المكان حولك صاخبٌ بالأقدام والأصوات والأنفاس، لكن هذا الصخب لا يملأ الفراغ — بل يزيده عمقاً. والإنسان الواحد في مواجهة هذا كله يصغر فجأة، لا إهانةً له، بل كأن المكان يُعيده إلى حجمه الحقيقي — حجم الإنسان أمام ما هو أكبر منه. تلك اللحظة التي تشعر فيها أنك نقطة في محيط، وأن هذا جيّد، وأن الصغر هنا ليس ضعفاً بل سلاماً.</p>
+<p>هذا التناقض — بين ضخامة المكان وخشوع الفرد داخله — هو أول ما تراه وآخر ما تنساه.</p>
+<p>يظن كثيرون أن الحرم يُغيّر الناس حين يدخلونه — وهذا صحيح أحياناً. لكن الصحيح أيضاً أن الناس يدخلون الحرم وهم ما هم، يحملون معهم كل ما صنعتهم إياه حياتهم قبل أن يصلوا إلى هنا. الأمريكي الذي جاء معتمراً لا يختلف عن الأمريكي الذي يعيش في دولته — يحمل هموم حياته وقناعاته وتحيزاته وطريقة نظرته إلى الآخرين. وكذلك الهندي والتركي والمصري. هذا المكان يستقبل البشر كما هم، لا كما ينبغي أن يكونوا. وربما هذا جزء من حكمته — أن يضع أمامك نفسك في أوضح صورة.</p>
+<p>وقد فهمتُ هذا جيداً في موقف بقي في ذاكرتي طويلاً.</p>
+<p>كان ذلك قبيل صلاة الفجر. رجلٌ أمريكي من ذوي البشرة السوداء كان جالساً مع مجموعة في صحن المطاف — وكانت زوجته جالسة معه في مكان مخصص للرجال. كنتُ أجيد الإنجليزية بشكل متوسط، فتقدّمتُ وأخبرته بأدب أن على زوجته الانتقال إلى المصليات المخصصة للنساء.</p>
+<p>لم يفهم ما قلتُه بالطريقة التي قصدتُه. فهم شيئاً آخر تماماً — فهم أن لديّ مشكلة مع لونه ولون زوجته. بدأ يرفع صوته، ويلتفت إلى من حوله، ويحاول استرعاء انتباه الناس بأنه يتعرض لعنصرية — أن هذا الموظف يطلب من زوجته المغادرة بسبب بشرتها.</p>
+<p>وقفتُ أمامه ولم أنزعج. بل أقول الحقيقة: تفهّمتُه جداً. هذا رجلٌ نشأ في مجتمع علّمه أن يكون يقظاً لهذا النوع من المواقف، وأن يتصدى لها قبل أن تتمكن منه. هذه ليست مشكلته — هذا تاريخه.</p>
+<p>أخبرتُه أن الأمر لا يخصه وحده. لم يصدّق. فتركتُه وذهبتُ إلى غيره ممن كانت نساؤهم جالسات في الصحن ذاته — أطلب منهم بالطريقة ذاتها، بلا تمييز في اللون أو الشكل أو الجنسية. وكان يراقبني من بعيد. ثم حين رأى النساء البيض يقمن دون تردد، وأنني لا أستثني أحداً ولا أميّز بين وجه ووجه — تغيّر شيءٌ فيه.</p>
+<p>عاد إليّ. وبدأ يعتذر — اعتذاراً حاراً لم أتوقع حرارته. قال إنه استعجل، وإنه ظلمني. وكان في اعترافه بالظلم شجاعةٌ لا يملكها كثيرون.</p>
+<p>وفي السياق ذاته أذكر مشهداً أقصر لكنه لا يقل دلالةً.</p>
+<p>امرأةٌ أوروبية كانت جالسة في صحن المطاف — لكنها لم تكن تطوف ولا تصلي ولا تدعو. كانت تنظر. بعينين تحللان ما حولهما بطريقة فيها شيءٌ يشبه الاستغراب، وشيءٌ يشبه الاستعلاء — كأنها تسأل نفسها في الوقت ذاته: لماذا أنا هنا؟ وماذا يفعل هؤلاء؟! وكأن الإجابة لم تكن واضحة لها تماماً.</p>
+<p>لاحظتُها ودار في خلدي سؤال عن حقيقة إسلامها — هل جاءت مؤمنةً أم فضوليةً أم ضائعةً تبحث عن شيء لم تُسمّه بعد؟ ثم لاحظت هي أنني أنظر إليها، فابتسمت — ابتسامةً غريبة لا تشبه ابتسامة من يُحيّي، بل تشبه ابتسامة من يقول: لقد عرفتَ سري.</p>
+<p>وقفتُ مع تلك الابتسامة لحظةً طويلة. لم أسألها شيئاً، ولم تقل شيئاً. لكن في تلك الابتسامة كان اعترافٌ صامت بأن بعض الناس يأتون إلى هذا المكان لا يعرفون لماذا — ثم يجلسون فيه حتى يعرفوا، أو حتى يغادروا دون أن يعرفوا. وكلا الأمرين في الحرم مشهودٌ كثيراً.</p>
+<p>لكن ما تركته هذه المشاهد مجتمعةً في نفسي لم يكن مجرد قصص طريفة عن سوء الفهم أو الضياع. بل كان سؤالاً ظل يدور في رأسي طويلاً — عن ظاهرة أراها في كثير من الناس وفي كثير من الأماكن: رفع الاستحقاق.</p>
+<p>ذلك الشعور عند بعض الناس بأن العالم مدينٌ لهم بشيء، وأن أي موقف يمسّهم هو بالضرورة اعتداء، وأن الشك في النوايا أسرع إليهم من التثبّت. وهذا ليس ضعفاً — هو في أغلب الأحيان جرحٌ قديم يظهر في اللحظات التي يشعر فيها الإنسان أنه مستهدف. الرجل الأمريكي لم يكن مخطئاً في أن يكون يقظاً — كان مخطئاً في أن يُطلق حكمه قبل أن يرى. والمرأة الأوروبية لم تكن مخطئةً في أن تتساءل — لكن ابتسامتها كشفت أنها كانت تعرف أن ثمة شيئاً تبحث عنه لم تجده بعد.</p>
+<p>وهذا درسٌ لا يخص أحدهما وحده. فكثيرٌ منا يحمل إلى هذا المكان المقدس جراحه وتحيزاته وتساؤلاته وطريقة نظرته التي صنعها تاريخه الشخصي — ويدخل الحرم وهو يظن أنه جاء ليتخلص منها، لكنه في الحقيقة يجلس بها في الصحن، ويطوف بها حول الكعبة، ولا يتركها إلا حين يُصدم بدليل لا يستطيع إنكاره.</p>
+<p>والمكان — بصمته الذي يتخلل الضجيج — يصبر عليهم جميعاً.</p>
+</section>
+
+</section>
+
+<div class="dotrow" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<!-- ===================== CHAPTER 4 ===================== -->
+<section class="reading" id="ch4">
+  <div class="chapter-head">
+    <p class="eyebrow">الفصل الرابع</p>
+    <h2>اللحظات الغريبة</h2>
+  </div>
+  <p class="lede">لا يمكنني الحديث عن المواقف التي مرت بي في هذا الفصل دون أن أمهّد أولاً بنبذة عن بعض العقائد التي لا تزال حاضرة في عالمنا اليوم — عقائد رأيتُ أصحابها بعيني وتعاملتُ معهم بيدي، وكانت طريقة تعاملهم مع المكان ومع الآخرين نافذةً كاشفةً على ما يحملونه من الداخل.</p>
+<p>وأعني بهذا الكلام شيئاً محدداً: أن الإنسان حين يأتي إلى هذا المكان لا يأتي فارغاً. يأتي وهو يحمل تاريخه كله — عقيدته وجراحه وغروره وتحيزاته. وهذا المكان لا يصادر ما يحمله أحد، بل يكشفه — ويضعه أمامك في أوضح ضوء.</p>
+  
+<div class="subsection" id="s-bohra">
+  <h3><span class="mark">↳</span>البهرة</h3>
+  <p>وثّق الإمام أبو الفتح الشهرستاني في كتابه الملل والنحل أن البهرة فرقة من الإسماعيلية المستعلية، نسبةً إلى الإمام المستعلي بن المستنصر الفاطمي، وهم الذين آثروا المستعلي على أخيه نزار حين انقسم البيت الفاطمي. وكلمة "بهرة" هندية الأصل تعني التاجر، إذ اشتُهر أتباعها بالاشتغال بالتجارة عن سائر المهن. ويعتقدون بغيبة إمامهم الطيب بن الآمر وينتظرون ظهوره، ويتميزون بالتكتم الشديد في عقائدهم وما يسمونه بالتأويل الباطني للنصوص.</p>
+<p>كنتُ أراهم يأتون بكثرة — يلبسون قبعاتهم المزخرفة بالذهب، ويجتمعون في مجموعات أمام الكعبة في صحن المطاف. وهم في غالبهم هنود، لم أرَ عربياً قط ينتحل هذه النحلة — إلا ما رأيتُه من أبناء نجران، الذين يبدو أن لهم معتقدات تشترك في الأصل وتختلف في التفاصيل، وهم المعروفون بالإسماعيليين العلويين.</p>
+<p>والذي ميّز هؤلاء جميعاً في تعاملي معهم شيءٌ واحد ثابت: الجفاء والتكتم. لا يريدون احتكاكاً بالآخرين، ولا يريدون من الآخرين الاحتكاك بهم. يحرصون حرصاً شديداً على إخفاء عقائدهم وطقوسهم، وكأن السرية جزء أصيل من هويتهم لا مجرد احتياط. وحين كنتُ أتعامل معهم في العمل كنتُ أشعر بجدار غير مرئي بيني وبينهم — لا عداوة، بل عزلة مقصودة. يؤدّون ما جاؤوا من أجله ويغادرون، وكأنهم لم يكونوا.</p>
+</div>
+
+
+<div class="subsection" id="s-imamiyya">
+  <h3><span class="mark">↳</span>الإمامية الاثنا عشرية</h3>
+  <p>عرّفهم الإمام أبو منصور البغدادي في كتابه الفرق بين الفرق بقوله: "الإمامية هم القائلون بأن الإمامة ركنٌ من أركان الدين، وأنها لا تكون إلا بنصٍّ جليٍّ أو خفيٍّ من النبي صلى الله عليه وسلم أو من الإمام قبله، وأن الإمام معصومٌ من الكبائر والصغائر." وسُمّوا بالاثني عشرية لقولهم بإمامة اثني عشر إماماً، آخرهم محمد بن الحسن العسكري الذي يعتقدون أنه غاب وسيعود في آخر الزمان.</p>
+<p>كان يغلب على كثيرٍ منهم شعورٌ دائم بالتربص والترقب — كأنهم يمشون في أرض لا ترحب بهم. وقد رسّخت هذه القناعة عندي مواقف متكررة رأيتُها حتى صارت في نظري نمطاً لا حادثة عارضة.</p>
+<p>أذكر رجلاً منهم ضجر حين طُلب منه الالتزام ببعض تعليمات التنظيم، وبدأ يُلمّح بأن هذا الطلب متعلق بمعتقده لا بالنظام. فقلتُ له بهدوء: المشكلة ليست فيهم، بل فيك. فغضب غضباً شديداً — لكن امرأته التي كانت بجواره ضحكت ووافقتني، لأنها فهمت ما فهمتُه: أن القوانين تُطبَّق على الجميع بلا استثناء، وأنها لا علاقة لها بما يشعر به هذا الشخص من تربص أو إقصاء.</p>
+<p>ورأيتُ من أبناء هذه الطائفة ما تكرر أمامي حتى أصبح نمطاً: عدم تقديس للمكان، وأحياناً حبٌّ في إيذاء الآخرين — يأتون في مجموعات أثناء الزحام ويؤذون العاملين بطريقة فيها خبث، كأنهم يرون في الموظف عدواً لا منظِّماً. وأذكر رجلاً منهم كان يدخن داخل المسجد الحرام، فلما رآني خاف وارتبك. قلتُ له: إن معتقدك الإمامي يُعظّم المسجد الحرام — فلماذا لا تُعظّمه؟ فلم يجد جواباً.</p>
+<p>وبعيداً عن الحرم، أذكر موقفاً في حافلة النقل العام عائداً من العمل. ركبتُ فإذا جميع من فيها من العراق ومن أبناء هذه الطائفة. لاحظتُ عليهم شيئاً مختلفاً من اللحظة الأولى — نظراتٌ تقيسني وتزنني. ثم بدأ ما لم أتوقعه: أخذوا يرددون عبارات طائفية بصوت مرتفع، فيها شحنٌ وإساءة وطعن في صحابة النبي صلى الله عليه وسلم — وكان واضحاً أنها موجّهة إليّ، لأنهم تخيّلوا فيّ وهابياً أو ناصبياً يستحق هذه المعاملة. وكان لهم رجلٌ يقوم فيهم مقام المحرّض — يرفع صوته بما فيه أشد الطعن وأقسى الشحن، وكأنه يعلّمهم درساً في الحقد المجاني.</p>
+<p>غضبتُ — لكن غضبي لم يكن عاطفياً بل عملياً. تقدّمتُ من هذا الرجل وأخبرته بهدوء تام أنه إن لم يتوقف فسأستدعي الأمن فوراً، لأن مثل هذه العبارات التي فيها إساءة لرموز الإسلام ممنوعةٌ صراحةً في المملكة العربية السعودية وعقوبتها صارمة. فسكت. وانكسف. وخاب. ولم يُكمل.</p>
+<p>وجلستُ في بقية الطريق أفكر — هذا رجل جاء إلى أقدس بقعة على الأرض، وأول ما فعله أن حمل حقده معه وفرّغه في حافلة. لم يتركه عند باب الحرم ولم يتركه في العراق — بل أحضره معه وصار يوزّعه على الركاب مجاناً.</p>
+<p>والأمر المؤسف أن بعض أبناء هذه الطائفة يحملون معهم إلى هذا المكان المقدس أثقالاً من الطائفية لا تليق بحرمته — وهذا أمرٌ ينبغي أن ينتبه له أبناء هذه الطائفة أنفسهم ويُصلحوه، فلن يكون هناك مكان لعقيدة تستعدي الآخرين وتتصادم معهم في أقدس بقاع الأرض.</p>
+</div>
+
+
+<div class="subsection" id="s-sufiyya">
+  <h3><span class="mark">↳</span>الصوفية</h3>
+  <p>أشار الإمام عبد الرحمن ابن خلدون في مقدمته إلى أن أصل التصوف طريقةُ حقٍّ وهداية، قائلاً: "أصله أن طريقة هؤلاء القوم لم تزل عند سلف الأمة وكبارها من الصحابة والتابعين طريقةَ الحق والهداية، وأصلها العكوف على العبادة والانقطاع إلى الله تعالى، والإعراض عن زخرف الدنيا وزينتها، والزهد فيما يُقبل عليه الجمهور من لذة ومال وجاه، والانفراد عن الخلق والخلوة للعبادة." ثم نبّه ابن خلدون إلى أن التصوف تطوّر لاحقاً حتى دخلت فيه أمور لم تكن من أصله، كالغلو في الأولياء وبعض الطقوس التي فيها خلط بما ليس من الدين.</p>
+<p>وهذا ما رأيتُه بعيني — كانوا يُغنّون في المسجد الحرام، ويرفعون أصواتهم بالصياح: هو أو الله، وأحياناً بأصوات تشبه النباح. وكانت هذه الطقوس منتشرة بين بعض الأتراك وبين بعض الآسيويين من الإندونيسيين وغيرهم. وكنتُ أستغرب كيف يجمع شخصٌ واحد بين التعلق بهذا البيت والإتيان فيه بما يُزعج من حوله ويُخلّ بخشوعهم — وهو مما نبّه عليه ابن خلدون نفسه حين أشار إلى ما دخل التصوف من زيادات لم يأذن بها الشرع.</p>
+</div>
+
+
+<div class="subsection" id="s-law">
+  <h3><span class="mark">↳</span>حين يرى الإنسان نفسه فوق القانون</h3>
+  <p>وبعيداً عن الأديان والعقائد، ثمة مواقف تكشف عن طبع إنساني لا علاقة له بالدين بل بالنفس وما تحمله من غرور — وهذا الموقف واحدٌ منها.</p>
+<p>كان رجلاً مصرياً رياضياً — يمارس التايكواندو، ويحمل في جسده قوةً وفي نفسه ما هو أخطر منها: الاعتقاد بأنه فوق القانون. جاء إلى هذا المكان وفي رأسه أنه منعِمٌ متفضّل لا زائرٌ ملتزم — وهو نوع من الغرور لا يستثني جنسيةً ولا بلداً، لكنني رأيته في ذلك اليوم بأجلى صوره.</p>
+<p>حاول خرق أحد الأنظمة. نبّهه رجال الأمن مرة وثانية وثالثة، وكلٌّ منهم أدّى واجبه بأدب. لكنه في كل مرة ازداد إصراراً وجرأةً — وبدأ يتوعّدهم ويهدّدهم، كأن القانون شيءٌ يسري على سواه لا عليه. حين اضطر رجال الأمن لأخذه جانباً للمساءلة رفض الانصياع — وهنا قرّر أن يتحوّل الأمر إلى ميدان آخر يعرفه، فأخذ يوظّف مهارات التايكواندو على رجال الأمن، وأصاب بعضهم برضوض.</p>
+<p>لكنه نسي شيئاً واحداً: أنه لم يكن في ملعب، بل في أقدس بقعة على الأرض، أمام مؤسسة لا تُفاوَض. اجتمع عليه رجال الأمن من كل اتجاه، ولُقِّن درساً أنا على يقين أنه لن ينساه ما حيي.</p>
+<p>وبينما كان الأمر يُحسم، جاءتني زوجته — وفي عينيها خليطٌ من الخجل والقلق. طلبت مني أن أتوسط له عند الأمن وأن يُطلق سراحه. وأخبرتني أنه يحمل الحزام الأسود في التايكواندو، وأنه بطلٌ في رياضته، وأنه سريع الغضب ولا يقصد ما يفعله حين يثور. استمعتُ إليها بهدوء، ثم قلتُ لها بصدق: أنا موظف عادي، ولا أستطيع أن أفرض على الأمن شيئاً — والأمر بات في أيديهم وحدهم.</p>
+<p>انصرفت وهي تحمل همّها. وبقيتُ أنا مع فكرة لم تفارقني: الزوجة تعرف أنه أخطأ — قالت ذلك صراحةً — لكنها مع ذلك جاءت تطلب إفلاته من العواقب. وهذا وحده يُفسّر جزءاً من المشكلة: حين يجد الغرور من يحميه من نتائجه، يكبر ولا يتعلم.</p>
+</div>
+
+
+<div class="subsection" id="s-sunnah">
+  <h3><span class="mark">↳</span>أهل السنة والجماعة</h3>
+  <p>وفي مقابل كل هذا — الطائفية والتكتم والغرور والطقوس المقحمة — كان ثمة مشهدٌ آخر تراه كل يوم ولا يستوقفك لأنه لا يصنع ضجيجاً.</p>
+<p>أصحاب العقيدة الصحيحة من أهل السنة والجماعة — وخاصة العرب منهم — لا تجدهم إلا غارقين في الدعاء والبكاء والتضرع إلى الله عز وجل، أو في العبادة الصامتة التي لا تُزعج أحداً ولا تستوقف أحداً — لكنها تملأ المكان بشيء يشعر به كل من يجلس بجوارها. لا شعارات، ولا طقوس، ولا احتجاجات — بل إنسانٌ وربه، وبينهما هذا البيت.</p>
+<p>وفي هذا التناقض — بين من يحمل عقيدته سلاحاً في أقدس بقعة على الأرض، وبين من يضعها في قلبه ويقف بها أمام ربه في صمت — كان درسٌ لم أحتج أحداً ليُلقيه عليّ.</p>
+<p>المكان يتسع للجميع. لكنه لا يكذب على أحد.</p>
+</div>
+
+</section>
+
+<div class="dotrow" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<!-- ===================== CHAPTER 5 ===================== -->
+<section class="reading" id="ch5">
+  
+<section class="chapter" id="ch5-inner">
+  <div class="chapter-head">
+    <p class="eyebrow">الفصل الخامس</p>
+    <h2>العمال والموظفون</h2>
+  </div>
+  <p class="lede">لا شيء يستدعي العجب أكثر من موظف يعمل في هذا المكان — ذلك الذي تتبدل أمامه الوجوه كل يوم، ويتعامل مع أنواع البشر بأشكالهم وألوانهم ولغاتهم وأنماط سلوكهم وحياتهم. إن شخصاً يعمل في هذا المكان لخليقٌ بالإجلال والاحترام — فهذا مكانٌ هو مدرسة للصبر وللتحمّل قبل أن يكون مدرسة لأي شيء آخر.</p>
+<p>وأنا واحدٌ من هؤلاء. سبع سنوات وأكثر في هذا المكان علّمتني شيئاً لم أتوقع أن أحمله معي حين غادرت — الصبر. وقد كان هذا من الأمور التي تستغرب منها من أتعامل معهم اليوم؛ يتعجبون من تحمّلي وصبري الشديد، ولا يعلمون من أين جاء. جاء من هنا — من سبع سنوات أمام ملايين الوجوه وملايين المواقف التي علّمتني أن الإنسان قد يكون معذوراً أحياناً في تصرفاته وأقواله وأفعاله. فهو يتعامل معك بناءً على حالة مزاجية، أو موقف سبق مرّ به، أو فهم خاطئ يكون هو مبرره لما يفعل. وحين تفهم هذا تصبح أكثر هدوءاً — لا لأنك لا تُبالي، بل لأنك تُبصر.</p>
+<p>وزاد على ذلك أنك هنا لستَ أمام أي مجتمع — بل أمام مجتمع يجمعه دين الإسلام، دين الأخوة والمحبة. فكان العامل في هذا المكان مكافحاً ومتعلماً في الوقت ذاته، يتعلم من المسجد الحرام ما لا تُعلّمه الكتب.</p>
+<p>لكن هذه المدرسة — على جلالتها — لم تخلُ من مشاهد تجمع بين الطرافة والإرهاق، وأحياناً بين الغرابة والألم.</p>
+<p>أذكر زميلاً من العاملين في المسجد — رجلٌ نحيل، هادئ الطبع، وجد نفسه ذات يوم أمام تحدٍّ لم تُعدّه له أي جهة تدريبية. امرأتان — كأنهما جبلان من شدة ضخامتهما — كانتا تجلسان وتُصلّيان في طريق خاص للمشاة. طلب منهما الانتقال، فرفضتا. وكلما انتهت إحداهما من صلاتها قامت بسرعة في غفلة منه لتبدأ صلاة أخرى — وكأنهما توافقتا على نظام تناوب لا يُتيح له فرصة الحسم. استمر هذا حتى نفد صبره، فأقدم على خطوة يرى فيها حلاً عملياً — سحب سجادة الصلاة من تحتهما.</p>
+<p>لم يكن يعلم ما الذي فتحه.</p>
+<p>ما كان منهما إلا أن قامتا بالاعتداء عليه بكل ما أوتيتا من قوة. وكان هذا الموظف النحيل أمام تلك الصفعات واللطمات كالريشة بين فيلين — إذا انتهت إحداهما من صفعه التقطت الأخرى حيث تركت. ولولا أن تدخّل من كانوا حوله وانتشلوه من براثنهما، لأصبح نسياً منسياً في سجلات الحوادث الغريبة. وقفنا نحن الذين سمعنا القصة بين الضحك والاستغراب — ليس من المرأتين، بل من المشهد كله. لأن هذا بالضبط ما يعنيه العمل هنا: أن تستعد لكل شيء، ثم يأتيك ما لم تستعد له.</p>
+<p>حين يتحول العطر إلى سلاح</p>
+<p>ومن أغرب ما مررتُ به في سنوات العمل — وأمرّه — موقفٌ لم أدرك خطورته إلا بعد فوات الأوان.</p>
+<p>كان رجلٌ يحمل دهناً عطرياً، ويتجوّل بين العاملين يُعطّرهم بيد مبسوطة وابتسامة عريضة. وفي خضم الزحام والانشغال لم يلتفت أحدٌ منا إلى شيء غريب في الأمر — فالكرم في هذا المكان ليس نادراً، والناس يأتون من كل مكان وبعضهم يحمل هدايا وطيباً. لكن ما تكشّف لاحقاً كان أبعد ما يكون عن الكرم.</p>
+<p>بدأ عددٌ من زملائي يشكون من مشاكل صحية متشابهة — حساسية، وأمراض تتعلق بالجيوب الأنفية، وربوٌ طارئ عند من لم يكن يعاني منه من قبل. وتجمّعت الشكاوى حتى صار من الصعب إغفال الرابط بينها وبين ذلك الرجل وعطره. وقال أحد الزملاء كلاماً لا أنساه — قال إنه لا يستبعد أن يكون ذلك الدهن يحتوي على شيء من البراز. وحين سألتُ نفسي بصدق هل هذا ممكن — تذكّرتُ تلك الرائحة التي شممتُها حين لامس العطر جلدي، رائحةٌ فيها شيءٌ لم يكن يشبه الطيب في شيء، وكان فيها من الخبث ما جعل كلام زميلي أقرب إلى الحقيقة منه إلى المبالغة.</p>
+<p>فُعل ذلك نكايةً ولؤماً وحقداً على هذا البلد وأهله — من شخص جاء إلى أقدس بقاع الأرض يحمل في قلبه ما لا يليق حتى بأدنى الأماكن. وهذا وحده يكفي دليلاً على أن الحقد حين يتجذّر في القلب لا يتركه حتى في أقدس اللحظات وأشرف الأماكن.</p>
+<p>المرأة والقانون — معادلة لم أحلّها</p>
+<p>ومن أكثر ما يُرهق العامل في هذا المكان — ولا أقول هذا تحاملاً بل مشاهدةً متكررة — التعامل مع بعض النساء حين يتعلق الأمر بتطبيق الأنظمة.</p>
+<p>المرأة بطبيعتها — وهذا ما رأيتُه ورآه زملائي مئات المرات — لا تُحبّ أن تُعامَل بأنظمة خرساء وقوانين جافة صارمة. هي بطبيعتها تُحبّ أن تُعامَل كأنها مميزة، كأن لها حالةً خاصة لا تنطبق عليها القواعد التي تنطبق على سواها. وحين يطلب منها موظفٌ أن تفعل ما هو مطلوب منها قانوناً — لا أكثر ولا أقل — تقوم الدنيا ولا تقعد. وكم رأيتُ من زميل يتعرض لموقف مُحرج، أو يُتّهم بما لم يفعله، فقط لأنه طلب من سيدة أن تلتزم بما يلتزم به الجميع.</p>
+<p>وليس هذا قاصراً على جنسية بعينها أو ثقافة بعينها — بل رأيتُه في العربية والأجنبية، في المتعلمة وغير المتعلمة، في الكبيرة والصغيرة. كأن هذه السمة لا تعرف حدوداً جغرافية ولا ثقافية. وأنا — بعد سبع سنوات — لم أصل إلى تفسير مُقنع لهذه المعادلة. المرأة عجيبة، ولا أقول هذا ذماً بل إقراراً بحقيقة عجزتُ شخصياً عن فهمها. ولعل أصدق ما أقوله في هذا الباب: أن من أراد أن يفهم المرأة فليعمل في المسجد الحرام سبع سنوات — ثم ليُخبرني إن توصّل إلى شيء، لأنني غادرتُ ولم أتوصل.</p>
+<p>الثمن الخفي</p>
+<p>وإن كانت بعض المواقف تستدعي الضحك، فإن خلف كل ضحكة كان يكمن ثقلٌ لا يراه الزائر — ثقل الإنسان الذي يعمل في هذا المكان يوماً بعد يوم.</p>
+<p>رأيتُ بعض زملائي يمرون بمواقف لا أجد في نفسي الاستعداد لذكرها — فما بيني وبينهم من صداقة أعزّ عليّ من أن أخرمها بالكلام. وبعضهم قد رحل إلى رحمة الله، وبعضهم لا يزال على قيد الحياة، وكلهم يحملون من هذا المكان ما لا يقوله لأحد.</p>
+<p>لكن الذي أستطيع قوله — لأنني عشتُه بنفسي — هو أن أكثر ما يتعرض له العاملون هنا هو الإرهاق؛ إرهاقٌ من نوعين لا نوع واحد. إرهاق الجسد أولاً — وهذا مفهوم لمن يقف ساعات في زحام لا يهدأ، تحت حرارة لا ترحم، أمام أعداد لا تُحصى من الناس. وإرهاق النفس ثانياً — وهذا الأخطر، وهو ما لا يُرى ولا يُقاس بسهولة. رأيتُ بعض زملائي ينهار من التعب الجسدي فيُحمل، ورأيتُ آخرين ينهارون من التعب النفسي في صمت لا يلتفت إليه أحد — وهذا النوع الثاني هو الأشد إيلاماً والأبطأ شفاءً.</p>
+<p>وكنتُ أنا واحداً من هؤلاء. الضغط النفسي الذي تراكم عبر السنوات، والزحام الذي لا يهدأ، والشخصيات الصعبة التي تستنزف أكثر مما تُعطي — كل هذا كان يتراكم في الداخل كما يتراكم الماء خلف سد، حتى كان لا بد له من مخرج. وكان هذا في النهاية السبب الحقيقي الذي دفعني إلى ترك العمل في هذا المكان — لا كرهاً فيه، بل لأن الجسد والنفس معاً أخبراني أن الوقت قد جاء.</p>
+<p>وأرى أن هذا الأمر يستحق أن يُدرس ويُؤخذ بجدية — فالعاملون في المسجد الحرام يؤدون خدمة لا تُقدَّر، في بيئة لا تشبه أي بيئة عمل أخرى على وجه الأرض. وأقل ما يستحقونه أن يُنظر في ما يحملونه من أعباء نفسية، وأن تُوفَّر لهم سبل الرعاية التي تُعينهم على الاستمرار.</p>
+<p>يخرج الزائر من هذا المكان وهو يحمل ذكرى وربما دمعة وربما دعاءً مستجاباً. أما العامل فيخرج وهو يحمل أكثر من ذلك بكثير — يحمل سنوات من الوجوه والمواقف والأثقال والدروس، محفورةً في ذاكرته بطريقة لا تُمحى. وهذا وحده يجعل كل من خدم هذا البيت جديراً بأن يُذكر باحترام.</p>
+</section>
+
+</section>
+
+<div class="dotrow" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<!-- ===================== CONCLUSION ===================== -->
+<section class="reading" id="conclusion">
+  <div class="chapter-head">
+    <p class="eyebrow">خاتمة</p>
+    <h2>ما يبقى بعد أن يرحل الجميع</h2>
+  </div>
+  <p class="lede">حين تركتُ العمل في المسجد الحرام، لم أترك المكان في الحقيقة — بل أخذتُه معي. أخذتُه في طريقة نظرتي إلى الناس، وفي صبري الذي يستغربه من يعرفني، وفي تلك القدرة على رؤية الإنسان كما هو لا كما أريده أن يكون.</p>
+<p>سبع سنوات وأكثر علّمتني أن هذا المكان مرآة — لكنها مرآة لا تكذب. تأتيها بكل ما فيك فترُدّه إليك مُضاعَفاً. تأتيها بحقدك فيكبر، وتأتيها بإيمانك فيرسخ، وتأتيها بغرورك فينكسر، وتأتيها بدمعتك فتجد لها مكاناً لا تجده في أي مكان آخر على وجه الأرض.</p>
+<p>رأيتُ في هذا المكان أمريكياً يعتذر بحرارة حين أدرك أنه أخطأ، وهندياً يرفض أن يُكلّمك وفي عينيه جدار، وعراقياً يحمل طائفيته في حافلة نقل عام، ومصرياً يظن أن التايكواندو سلاح في وجه القانون، وامرأتين ضخامتين يُلقّنان موظفاً نحيلاً درساً لم يطلبه، ورجلاً يحمل في دهنه العطري ما لا يليق بأبسط الأماكن فضلاً عن أقدسها. ورأيتُ في المقابل — وهذا ما يبقى أطول — رجالاً ونساءً غارقين في دعاء لا يُزعج أحداً، وعيوناً مملوءة بدموع لا يعرف أسبابها إلا الله.</p>
+<p>وفي النهاية، حين تجلس وتسأل نفسك: ما الذي علّمك إياه هذا المكان؟ — تجد الجواب أبسط مما توقعت.</p>
+<p>علّمك أن البشر على اختلافهم وتنوعهم وتناقضاتهم يبحثون جميعاً عن شيء واحد — شيء يكبر عليهم، وشيء يستحق أن يتواضعوا أمامه. وأن بعضهم يجده حين يصل، وبعضهم يمر به ولا يجده، لا لأن المكان بخل عليه، بل لأنه جاء ومعه من الأثقال ما لم يدعه يرى.</p>
+<p>أما أنا — فقد جئتُ موظفاً، وغادرتُ إنساناً مختلفاً. وهذا يكفي.</p>
+</section>
+
+<div class="dotrow disperse" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<!-- ===================== AUTHOR ===================== -->
+<section class="author-card" id="author">
+  <div class="avatar-mark">م</div>
+  <p class="eyebrow" style="text-align:center">تعريف المؤلف</p>
+  <h2>المتفائل</h2>
+  <p class="kunya">أبو أسامة سامي الذبياني</p>
+  <p>كاتب وباحث مستقل من جدة، متعدد التخصصات، تتقاطع مؤلفاته بين الفلسفة والتاريخ والأدب والعلوم السياسية والجيوبوليتيك وتحليل الخطاب. يسعى في كتاباته إلى تقديم قراءات عميقة تخاطب العقل الشغوف بفهم ما وراء الأحداث والظواهر من زوايا متعددة.</p>
+  <p>اختار لنفسه اسم المتفائل عن وعي بما تعلّمه من علم النفس وما قرأه فيه من أن للأسماء أثراً في أصحابها — فاختار أن يحمل اسماً يُذكّره في كل لحظة بما يريد أن يكون. صار هذا الاسم هويته على المنصات قبل أن يصير عنواناً لكتبه، حتى كاد يختصر كل ما يريد قوله عن نفسه في كلمة واحدة.</p>
+  <p class="closing-line">يكتب لأنه يُبالي. ويُبالي لأنه يحب.</p>
+  <div class="author-links">
+    <span>للتواصل والمتابعة: <a href="mailto:almtfayl562@gmail.com">almtfayl562@gmail.com</a></span>
+    <span>لمن أعجبه هذا الكتاب — تصفح بقية مؤلفاتي هنا<br><a href="https://lnk.bio/almutafail" target="_blank" rel="noopener">https://lnk.bio/almutafail</a></span>
+  </div>
+</section>
+
+<section class="credit">
+  <div class="credit-card">
+    <div class="credit-mark">✎</div>
+    <p>هذا العمل من إبداع فريق <strong>كتابك الأول</strong> — هذه صفحتنا</p>
+    <a class="credit-link" href="https://aami-eep.github.io/kitabak-alawal/index.html" target="_blank" rel="noopener">aami-eep.github.io/kitabak-alawal</a>
+  </div>
+</section>
+
+<footer>
+  من خلف الزحام — جميع الحقوق محفوظة للمؤلف — الطبعة الأولى: 1446 هـ / 2026 م
+</footer>
+
+<script>
+  const bar = document.getElementById('progressBar');
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    bar.style.width = scrolled + '%';
+  });
+
+  const fab = document.getElementById('tocFab');
+  const overlay = document.getElementById('tocOverlay');
+  const closeBtn = document.getElementById('tocClose');
+  fab.addEventListener('click', () => overlay.classList.add('open'));
+  closeBtn.addEventListener('click', () => overlay.classList.remove('open'));
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.classList.remove('open'); });
+  document.querySelectorAll('.toc-panel a').forEach(a => {
+    a.addEventListener('click', () => overlay.classList.remove('open'));
+  });
+</script>
+
+</body>
+</html>
