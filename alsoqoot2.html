@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>السقوط — هذه قصة حياتي | المتفائل</title>
+<meta name="description" content="السقوط: هذه قصة حياتي — سيرة صادقة عن سقوط طفولي شكّل ملامح حياة كاملة، بقلم المتفائل. نسخة رقمية PDF متاحة الآن.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#120D0A">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="book">
+<meta property="og:title" content="السقوط — هذه قصة حياتي | المتفائل">
+<meta property="og:description" content="سيرة صادقة عن سقوط طفولي شكّل ملامح حياة كاملة، بقلم المتفائل. نسخة رقمية PDF متاحة الآن.">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:image" content="assets/cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="السقوط — هذه قصة حياتي | المتفائل">
+<meta name="twitter:description" content="سيرة صادقة عن سقوط طفولي شكّل ملامح حياة كاملة، بقلم المتفائل.">
+<meta name="twitter:image" content="assets/cover.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23120D0A'/%3E%3Ccircle cx='50' cy='50' r='36' fill='none' stroke='%23E7C98F' stroke-width='2.5'/%3E%3Ctext x='50' y='64' font-size='42' text-anchor='middle' fill='%23E7C98F' font-family='Georgia, serif'%3Eم%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "السقوط — هذه قصة حياتي",
+  "author": { "@type": "Person", "name": "المتفائل" },
+  "inLanguage": "ar",
+  "numberOfPages": 64,
+  "bookFormat": "https://schema.org/EBook",
+  "image": "assets/cover.jpg",
+  "offers": {
+    "@type": "Offer",
+    "price": "5.99",
+    "priceCurrency": "USD",
+    "url": "https://payhip.com/b/vexQw",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+<style>
+  :root{
+    --void:#120D0A;
+    --bark:#1C1510;
+    --bark-2:#231A13;
+    --stone:#4A3F35;
+    --ember:#C97A3A;
+    --ember-dim:#8C572A;
+    --gold:#E7C98F;
+    --parchment:#EDE3D1;
+    --dim:#93876F;
+    --ease-out:cubic-bezier(.22,.9,.3,1);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--void);
+    color:var(--parchment);
+    font-family:'Tajawal', sans-serif;
+    overflow-x:hidden;
+    line-height:1.9;
+  }
+  h1,h2,h3, .display{
+    font-family:'Aref Ruqaa', serif;
+    font-weight:700;
+  }
+  a{color:inherit; text-decoration:none;}
+  ::selection{background:var(--ember-dim); color:var(--parchment);}
+
+  a:focus-visible, summary:focus-visible, .cta:focus-visible, button:focus-visible{
+    outline:2px solid var(--gold); outline-offset:3px; border-radius:2px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *, *::before, *::after{
+      animation-duration:.01ms !important; animation-iteration-count:1 !important;
+      transition-duration:.01ms !important;
+    }
+  }
+
+  /* ---------- Film grain & vignette ---------- */
+  .grain{
+    position:fixed; inset:0; z-index:90; pointer-events:none; opacity:.045;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .vignette{
+    position:fixed; inset:0; z-index:89; pointer-events:none;
+    background:radial-gradient(ellipse at 50% 45%, transparent 55%, rgba(5,3,2,.55) 100%);
+  }
+
+  /* ---------- Scroll progress ---------- */
+  .progress{
+    position:fixed; top:0; right:0; left:0; height:2px; z-index:100;
+    background:rgba(74,63,53,.35);
+  }
+  .progress .bar{
+    height:100%; width:100%;
+    background:linear-gradient(90deg, var(--ember), var(--gold));
+    transform-origin:right;
+    transform:scaleX(0);
+  }
+
+  /* ---------- Sticky header ---------- */
+  .topbar{
+    position:fixed; top:0; right:0; left:0; z-index:95;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:.8rem 5vw;
+    background:rgba(18,13,10,.78);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(74,63,53,.5);
+    transform:translateY(-100%);
+    transition:transform .5s var(--ease-out);
+  }
+  .topbar.show{transform:translateY(0);}
+  .topbar .brand{
+    display:flex; align-items:baseline; gap:.7rem;
+    font-family:'Aref Ruqaa', serif; font-size:1.25rem; color:var(--gold);
+  }
+  .topbar .brand small{
+    font-family:'Tajawal',sans-serif; font-size:.75rem; color:var(--dim); letter-spacing:.12em;
+  }
+  .topbar .mini-cta{
+    display:inline-flex; align-items:center; gap:.5rem;
+    background:linear-gradient(135deg, var(--ember), var(--ember-dim));
+    color:#1a1006; font-weight:900; font-size:.85rem;
+    padding:.5rem 1.3rem; border-radius:2px;
+    box-shadow:0 8px 20px -8px rgba(201,122,58,.6);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .topbar .mini-cta:hover{transform:translateY(-2px); box-shadow:0 12px 26px -6px rgba(201,122,58,.75);}
+  .topbar .mini-cta .p{
+    font-weight:400; font-size:.75rem; opacity:.8;
+    border-right:1px solid rgba(26,16,6,.3); padding-right:.5rem;
+  }
+
+  /* ---------- Well rings background ---------- */
+  .well-bg{
+    position:absolute; inset:0;
+    background:
+      radial-gradient(circle at 50% 8%, rgba(231,201,143,0.14) 0%, rgba(231,201,143,0.05) 6%, transparent 26%),
+      repeating-radial-gradient(circle at 50% 8%, rgba(74,63,53,0.35) 0px, rgba(74,63,53,0.35) 2px, transparent 3px, transparent 42px),
+      linear-gradient(180deg, #0c0906 0%, var(--void) 55%, var(--bark) 100%);
+    z-index:0;
+    will-change:transform;
+  }
+  .well-bg::after{
+    content:"";
+    position:absolute; top:-10%; left:50%; transform:translateX(-50%);
+    width:340px; height:340px; border-radius:50%;
+    background:radial-gradient(circle, rgba(231,201,143,0.5) 0%, rgba(201,122,58,0.15) 45%, transparent 70%);
+    filter:blur(6px);
+    animation:glow 7s ease-in-out infinite;
+  }
+  @keyframes glow{
+    0%,100%{opacity:.55; transform:translateX(-50%) scale(1);}
+    50%{opacity:.9; transform:translateX(-50%) scale(1.08);}
+  }
+  #embers{position:absolute; inset:0; z-index:1; pointer-events:none;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    min-height:100svh;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center;
+    padding:8vh 6vw 10vh;
+    isolation:isolate;
+  }
+  .hero-inner{position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; will-change:transform,opacity;}
+
+  .anim{opacity:0; animation:heroIn 1.1s var(--ease-out) forwards; animation-delay:var(--d,0s);}
+  @keyframes heroIn{
+    from{opacity:0; transform:translateY(28px); filter:blur(6px);}
+    to{opacity:1; transform:translateY(0); filter:blur(0);}
+  }
+
+  /* Cover with 3D tilt + shine */
+  .cover-tilt{perspective:1000px; z-index:2;}
+  .cover-angle{transform:rotate(-2deg);}
+  .cover-frame{
+    width:min(42vw, 190px);
+    margin:0 auto 1.8rem;
+    position:relative;
+    box-shadow:0 25px 50px -15px rgba(0,0,0,.75), 0 0 40px rgba(231,201,143,.15);
+    border:1px solid rgba(231,201,143,.25);
+    transform-style:preserve-3d;
+    will-change:transform;
+    overflow:hidden;
+    background:var(--bark);
+  }
+  .cover-frame img{width:100%; height:auto; display:block;}
+  .cover-frame::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(115deg, transparent 30%, rgba(237,227,209,.18) 48%, transparent 62%);
+    transform:translateX(130%);
+    transition:transform .9s var(--ease-out);
+    pointer-events:none;
+  }
+  .cover-tilt:hover .cover-frame::after{transform:translateX(-130%);}
+
+  .eyebrow{
+    font-size:.8rem; letter-spacing:.35em; color:var(--gold);
+    opacity:.8; margin-bottom:2.2rem;
+  }
+  .hero h1{
+    font-size:clamp(4rem, 14vw, 9rem);
+    color:var(--parchment);
+    text-shadow:0 0 40px rgba(201,122,58,.35);
+    line-height:1;
+  }
+  .hero .sub{
+    margin-top:1.4rem;
+    font-size:clamp(1.05rem, 2.2vw, 1.5rem);
+    color:var(--gold);
+    letter-spacing:.06em;
+  }
+  .hero .author{
+    margin-top:1.7rem;
+    font-size:.95rem;
+    color:var(--dim);
+    letter-spacing:.15em;
+  }
+  .falling-figure{
+    width:34px; height:34px; margin-top:2.8rem;
+    opacity:.75;
+    animation:fall 4.5s ease-in-out infinite;
+  }
+  @keyframes fall{
+    0%{transform:translateY(-6px) rotate(-4deg); opacity:.4;}
+    50%{transform:translateY(6px) rotate(4deg); opacity:.85;}
+    100%{transform:translateY(-6px) rotate(-4deg); opacity:.4;}
+  }
+
+  /* ---------- Meta row ---------- */
+  .meta-row{
+    display:flex; flex-wrap:wrap; align-items:center; justify-content:center;
+    gap:.9rem 1.8rem;
+    margin-top:1.9rem;
+    font-size:.85rem; color:var(--dim);
+    letter-spacing:.03em;
+  }
+  .meta-row span{display:inline-flex; align-items:center; gap:.45rem;}
+  .meta-row svg{width:15px; height:15px; stroke:var(--ember); fill:none; stroke-width:1.6; flex-shrink:0;}
+  .meta-row .price{
+    color:var(--gold); font-weight:700; font-size:.95rem;
+    border:1px solid var(--ember-dim); padding:.3rem .95rem; border-radius:999px;
+    background:rgba(201,122,58,.08);
+  }
+
+  /* ---------- CTA ---------- */
+  .cta{
+    display:inline-flex; align-items:center; gap:.6rem;
+    margin-top:3.2rem;
+    background:linear-gradient(135deg, var(--ember), var(--ember-dim));
+    color:#1a1006;
+    font-weight:900;
+    font-size:1.05rem;
+    padding:1.05rem 2.8rem;
+    border-radius:2px;
+    box-shadow:0 12px 30px -8px rgba(201,122,58,.55);
+    transition:transform .25s ease, box-shadow .25s ease;
+    position:relative;
+    overflow:hidden;
+  }
+  .cta::before{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(115deg, transparent 35%, rgba(255,244,222,.35) 50%, transparent 65%);
+    transform:translateX(140%);
+    transition:transform .8s var(--ease-out);
+  }
+  .cta:hover{transform:translateY(-3px); box-shadow:0 18px 36px -6px rgba(201,122,58,.7);}
+  .cta:hover::before{transform:translateX(-140%);}
+  .cta span{position:relative;}
+
+  .scroll-hint{
+    position:absolute; bottom:2.4rem; left:50%; transform:translateX(-50%);
+    width:1px; height:56px;
+    background:linear-gradient(var(--gold), transparent);
+    z-index:2;
+    animation:pulse 2.4s ease-in-out infinite;
+  }
+  .scroll-hint::after{
+    content:""; position:absolute; top:0; left:50%; transform:translateX(-50%);
+    width:5px; height:5px; border-radius:50%; background:var(--gold);
+    animation:drip 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{opacity:.2;} 50%{opacity:.8;}}
+  @keyframes drip{0%{top:0; opacity:0;} 30%{opacity:1;} 100%{top:100%; opacity:0;}}
+
+  /* ---------- Section shells ---------- */
+  section{
+    position:relative;
+    padding:7rem 6vw;
+    max-width:920px;
+    margin:0 auto;
+  }
+  .divider{
+    width:56px; height:56px; margin:0 auto 2.6rem;
+    border:1px solid var(--stone);
+    border-radius:50%;
+    position:relative;
+    transition:transform .6s var(--ease-out);
+  }
+  .divider::before{
+    content:""; position:absolute; inset:14px;
+    border:1px solid var(--ember-dim); border-radius:50%;
+  }
+  .reveal.in .divider{transform:rotate(180deg);}
+
+  .kicker{
+    text-align:center; color:var(--gold);
+    font-size:.85rem; letter-spacing:.3em; margin-bottom:1rem;
+  }
+  .lede{
+    font-size:clamp(1.3rem, 2.6vw, 1.8rem);
+    text-align:center;
+    color:var(--parchment);
+    font-family:'Aref Ruqaa', serif;
+    line-height:1.85;
+    max-width:760px;
+    margin:0 auto;
+  }
+  .lede strong{color:var(--gold); font-weight:700;}
+
+  p.body-text{
+    font-size:1.08rem;
+    color:#D9CDBB;
+    max-width:680px;
+    margin:1.6rem auto 0;
+    text-align:center;
+  }
+
+  /* ---------- Rope / chapters ---------- */
+  .rope-wrap{position:relative; padding-top:2rem;}
+  .rope-line{
+    position:absolute; top:0; bottom:0; right:calc(50% - .5px);
+    width:1px;
+    background:linear-gradient(var(--stone), var(--ember-dim), var(--stone));
+    transform-origin:top;
+    transform:scaleY(0);
+  }
+  .rope-line .glow-tip{
+    position:absolute; bottom:-4px; right:50%; transform:translateX(50%);
+    width:9px; height:9px; border-radius:50%;
+    background:var(--gold);
+    box-shadow:0 0 14px rgba(231,201,143,.9);
+  }
+  .station{
+    position:relative;
+    width:calc(50% - 3rem);
+    margin-bottom:3.6rem;
+    padding:1.6rem 1.8rem;
+    background:linear-gradient(160deg, var(--bark-2), var(--bark));
+    border:1px solid rgba(74,63,53,.6);
+    opacity:0;
+    transition:opacity .9s var(--ease-out), transform .9s var(--ease-out),
+               border-color .35s ease, box-shadow .35s ease;
+    transition-delay:var(--d, 0s), var(--d, 0s), 0s, 0s;
+  }
+  .station:nth-child(odd){margin-right:0; margin-left:auto; text-align:right; transform:translateX(46px);}
+  .station:nth-child(even){margin-left:0; margin-right:auto; text-align:right; transform:translateX(-46px);}
+  .station.in{opacity:1; transform:translateX(0);}
+  .station:hover{
+    border-color:rgba(201,122,58,.55);
+    box-shadow:0 14px 34px -14px rgba(0,0,0,.7), 0 0 24px -6px rgba(201,122,58,.25);
+  }
+  .station::before{
+    content:"";
+    position:absolute; top:1.9rem;
+    width:11px; height:11px; border-radius:50%;
+    background:var(--gold);
+    box-shadow:0 0 12px rgba(231,201,143,.7);
+    transition:transform .35s var(--ease-out);
+  }
+  .station:hover::before{transform:scale(1.5);}
+  .station:nth-child(odd)::before{left:-3.05rem;}
+  .station:nth-child(even)::before{right:-3.05rem;}
+  .station .num{
+    display:block; font-size:.75rem; letter-spacing:.2em; color:var(--ember);
+    margin-bottom:.5rem; font-family:'Tajawal',sans-serif; font-weight:700;
+  }
+  .station h3{font-size:1.35rem; color:var(--parchment); margin-bottom:.5rem;}
+  .station p{font-size:.95rem; color:#C9BCA9;}
+
+  @media (max-width:720px){
+    .rope-line{right:1.2rem;}
+    .station{width:calc(100% - 3.2rem); margin-right:2.8rem !important; margin-left:0 !important; text-align:right;}
+    .station:nth-child(odd), .station:nth-child(even){transform:translateX(46px);}
+    .station.in{transform:translateX(0);}
+    .station:nth-child(odd)::before, .station:nth-child(even)::before{right:-2.05rem; left:auto;}
+  }
+
+  /* ---------- Quote spotlight ---------- */
+  .spotlight{
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(201,122,58,.07), transparent 60%),
+      var(--bark);
+    border-top:1px solid var(--stone);
+    border-bottom:1px solid var(--stone);
+    padding:7rem 6vw;
+    max-width:none;
+  }
+  .spotlight blockquote{
+    max-width:780px; margin:0 auto; text-align:center;
+    font-family:'Aref Ruqaa', serif;
+    font-size:clamp(1.5rem, 3.4vw, 2.3rem);
+    color:var(--gold);
+    line-height:1.9;
+    position:relative;
+  }
+  .spotlight blockquote::before{
+    content:"❞";
+    display:block;
+    font-size:3rem;
+    color:var(--ember-dim);
+    opacity:.6;
+    margin-bottom:.6rem;
+  }
+  .spotlight blockquote::after{
+    content:"❖"; display:block; color:var(--ember-dim); font-size:1rem; margin-top:1.2rem;
+  }
+  .spotlight cite{
+    display:block; margin-top:2rem; font-style:normal;
+    font-family:'Tajawal',sans-serif; font-size:.85rem; letter-spacing:.2em; color:var(--dim);
+  }
+
+  /* ---------- What's inside grid ---------- */
+  .grid3{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem; margin-top:3rem;
+  }
+  @media (max-width:760px){.grid3{grid-template-columns:1fr;}}
+  .card{
+    background:var(--bark-2);
+    border:1px solid rgba(74,63,53,.5);
+    padding:2.2rem 1.6rem 2rem;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    transition:transform .4s var(--ease-out), border-color .35s ease, box-shadow .35s ease;
+  }
+  .card::before{
+    content:"";
+    position:absolute; top:0; right:0; left:0; height:2px;
+    background:linear-gradient(90deg, var(--ember), var(--gold));
+    transform:scaleX(0);
+    transform-origin:right;
+    transition:transform .5s var(--ease-out);
+  }
+  .card:hover{
+    transform:translateY(-7px);
+    border-color:rgba(201,122,58,.5);
+    box-shadow:0 20px 40px -18px rgba(0,0,0,.75);
+  }
+  .card:hover::before{transform:scaleX(1);}
+  .card .icon{
+    font-size:1.6rem; color:var(--ember); margin-bottom:1rem; display:inline-block;
+    transition:transform .45s var(--ease-out);
+  }
+  .card:hover .icon{transform:translateY(-4px) scale(1.15);}
+  .card h4{font-size:1.1rem; color:var(--parchment); margin-bottom:.7rem; font-family:'Aref Ruqaa',serif;}
+  .card p{font-size:.9rem; color:#C2B4A0;}
+
+  /* ---------- Author ---------- */
+  .author-block{
+    display:flex; flex-direction:column; align-items:center; text-align:center; gap:1.2rem;
+  }
+  .author-photo{
+    width:104px; height:104px; border-radius:50%; overflow:hidden;
+    border:1px solid var(--gold);
+    box-shadow:0 0 24px rgba(231,201,143,.25);
+    position:relative;
+  }
+  .author-photo::after{
+    content:"";
+    position:absolute; inset:-6px; border-radius:50%;
+    border:1px dashed rgba(231,201,143,.3);
+    animation:spin 24s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .author-fallback{
+    width:100%; height:100%; display:flex; align-items:center; justify-content:center;
+    font-family:'Aref Ruqaa',serif; font-size:2rem; color:var(--gold);
+    background:radial-gradient(circle at 50% 35%, var(--bark-2), var(--void));
+  }
+  .author-block h3{font-size:1.6rem; color:var(--parchment);}
+  .author-block .role{color:var(--ember); font-size:.85rem; letter-spacing:.15em;}
+  .author-block p{max-width:620px; color:#D0C3B0; font-size:.98rem;}
+
+  /* ---------- FAQ ---------- */
+  .faq-list{max-width:720px; margin:2.6rem auto 0;}
+  .faq-item{
+    border-bottom:1px solid rgba(74,63,53,.6);
+    padding:1.3rem 0;
+    transition:background .3s ease;
+  }
+  .faq-item summary{
+    cursor:pointer; list-style:none;
+    font-family:'Aref Ruqaa', serif;
+    font-size:1.15rem;
+    color:var(--parchment);
+    display:flex; align-items:center; justify-content:space-between;
+    gap:1rem;
+    transition:color .3s ease;
+  }
+  .faq-item summary:hover{color:var(--gold);}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{
+    content:"+"; color:var(--ember); font-size:1.4rem; font-family:'Tajawal',sans-serif;
+    transition:transform .3s var(--ease-out); flex-shrink:0;
+  }
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-body{display:grid; grid-template-rows:0fr; transition:grid-template-rows .45s var(--ease-out);}
+  .faq-body > div{overflow:hidden;}
+  .faq-item[open] .faq-body{grid-template-rows:1fr;}
+  .faq-body p{margin-top:.9rem; color:#C9BCA9; font-size:.95rem; max-width:640px;}
+
+  /* ---------- Final CTA ---------- */
+  .final{
+    text-align:center;
+    padding:8rem 6vw 9rem;
+    position:relative;
+  }
+  .final::before{
+    content:"";
+    position:absolute; top:0; left:50%; transform:translateX(-50%);
+    width:1px; height:70px;
+    background:linear-gradient(transparent, var(--gold));
+  }
+  .final h2{
+    font-size:clamp(2.2rem, 5vw, 3.2rem);
+    color:var(--parchment);
+    margin-bottom:1.2rem;
+  }
+  .final p{color:#CBBBA5; max-width:520px; margin:0 auto 2.6rem; font-size:1.02rem;}
+  .price-tag{
+    display:block; width:fit-content; margin:1.5rem auto 0;
+    font-size:.85rem; color:var(--dim); letter-spacing:.1em;
+  }
+
+  footer{
+    text-align:center; padding:3rem 6vw; color:#6E6153; font-size:.8rem;
+    border-top:1px solid rgba(74,63,53,.5);
+  }
+  footer a{color:var(--gold); transition:color .3s ease;}
+  footer a:hover{color:var(--ember);}
+
+  /* ---------- Back to top ---------- */
+  .to-top{
+    position:fixed; bottom:1.6rem; left:1.6rem; z-index:95;
+    width:46px; height:46px; border-radius:50%;
+    background:rgba(28,21,16,.85);
+    backdrop-filter:blur(8px);
+    border:1px solid rgba(231,201,143,.4);
+    color:var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+    opacity:0; transform:translateY(16px); pointer-events:none;
+    transition:opacity .4s ease, transform .4s var(--ease-out), border-color .3s ease, background .3s ease;
+  }
+  .to-top.show{opacity:1; transform:translateY(0); pointer-events:auto;}
+  .to-top:hover{border-color:var(--gold); background:var(--bark-2);}
+  .to-top svg{width:18px; height:18px; stroke:currentColor; fill:none; stroke-width:2;}
+
+  /* ---------- Reveal ---------- */
+  .reveal{
+    opacity:0; transform:translateY(24px);
+    transition:opacity .9s var(--ease-out), transform .9s var(--ease-out);
+  }
+  .reveal.in{opacity:1; transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<div class="progress" aria-hidden="true"><div class="bar" id="progressBar"></div></div>
+
+<header class="topbar" id="topbar">
+  <div class="brand">السقوط <small>هذه قصة حياتي — المتفائل</small></div>
+  <a class="mini-cta" href="https://payhip.com/b/vexQw" target="_blank" rel="noopener">
+    اشترِ الآن <span class="p">5.99$</span>
+  </a>
+</header>
+
+<div class="hero" id="hero">
+  <div class="well-bg" id="wellBg"></div>
+  <canvas id="embers" aria-hidden="true"></canvas>
+
+  <div class="hero-inner" id="heroInner">
+    <div class="cover-tilt anim" style="--d:.15s;">
+      <div class="cover-angle">
+        <div class="cover-frame" id="coverFrame">
+          <img src="assets/cover.jpg" alt="غلاف كتاب السقوط — طفل يسقط في بئر نحو الضوء" width="900" height="1439" fetchpriority="high" decoding="async">
+        </div>
+      </div>
+    </div>
+
+    <div class="eyebrow anim" style="--d:.35s;">سيرة لا تُروى لتُصدَّق، بل لتُعاش من جديد</div>
+    <h1 class="anim" style="--d:.5s;">السقوط</h1>
+    <div class="sub anim" style="--d:.65s;">هذه قصة حياتي</div>
+    <div class="author anim" style="--d:.8s;">تأليف — المتفائل</div>
+
+    <div class="meta-row anim" style="--d:.95s;">
+      <span>
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+        PDF رقمي
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        64 صفحة
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        عربي
+      </span>
+      <span class="price">السعر: 5.99$</span>
+    </div>
+
+    <svg class="falling-figure anim" style="--d:1.1s;" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6" aria-hidden="true">
+      <circle cx="12" cy="5" r="2.2"/>
+      <path d="M12 8v6M12 10l-5 5M12 10l5 5M12 14l-3.5 5M12 14l3.5 5"/>
+    </svg>
+
+    <a class="cta anim" style="--d:1.25s;" href="https://payhip.com/b/vexQw" target="_blank" rel="noopener">
+      <span>اشترِ الكتاب الآن</span>
+    </a>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true"></div>
+</div>
+
+<main>
+
+<section class="reveal">
+  <div class="divider" aria-hidden="true"></div>
+  <p class="kicker">حكاية سقطتين، في قرية واحدة</p>
+  <p class="lede">
+    قبل أن أُولد، سقطت أختي في بئر فماتت، ومُنحت أنا اسمها. وبعد سنوات، سقطتُ أنا أيضًا من مكان قريب — فعشت. هذا الكتاب محاولتي لفهم السبب.
+  </p>
+  <p class="body-text">
+    ليست سيرة بالمعنى الذي عرفه القدماء، ولا نصيحة جاهزة تُقدَّم على طبق. هي محاولة صادقة، وربما قاصرة،
+    لتتبّع أثرٍ واحد وهو يتحول من حادثة إلى فكرة، ومن فكرة إلى طريقة في الحياة أشبه بحكمة.
+  </p>
+</section>
+
+<section class="spotlight reveal">
+  <blockquote>
+    "علمتُ، بعد طول تأمل، أن المرء يحمل من صباه حادثة أو حادثتين، لا يدرك أنهما صنعتاه
+    إلا بعد أن يشيب رأسه من التفكّر."
+    <cite>من مقدمة الكتاب</cite>
+  </blockquote>
+</section>
+
+<section class="reveal">
+  <p class="kicker" style="margin-top:0;">رحلة الكتاب</p>
+  <h2 class="lede" style="font-size:clamp(1.6rem,3vw,2rem); margin-bottom:1rem;">سبع محطات، من الغياب إلى السكينة</h2>
+
+  <div class="rope-wrap" id="ropeWrap">
+    <div class="rope-line" id="ropeLine"><div class="glow-tip" aria-hidden="true"></div></div>
+
+    <div class="station" style="--d:0s;">
+      <span class="num">الفصل الأول</span>
+      <h3>الغياب</h3>
+      <p>طفلة تسقط في بئر فتموت قبل أن يولد، واسمٌ يُمنح له ليكمل به ما لم يُكتب لها أن تكمله.</p>
+    </div>
+
+    <div class="station" style="--d:.08s;">
+      <span class="num">الفصل الثاني</span>
+      <h3>طفل من القرية</h3>
+      <p>قرية جبلية هادئة، لا تُعِدّ أهلها لصدمة، تحتضن طفولة موسومة بالبراءة قبل أن ينقلب كل شيء.</p>
+    </div>
+
+    <div class="station" style="--d:.16s;">
+      <span class="num">الفصل الثالث</span>
+      <h3>الجسد والسقوط</h3>
+      <p>خمس سنوات عجاف تعقب الحادثة، وجسدٌ يحمل ذاكرة الخوف بلغة لا يُحسن أحد ترجمتها.</p>
+    </div>
+
+    <div class="station" style="--d:.24s;">
+      <span class="num">الفصل الرابع</span>
+      <h3>في المدينة</h3>
+      <p>الانتقال من عزلة القرية إلى ضوضاء لا تنقطع، وتجارب أولى في الجامعة والعمل والناس.</p>
+    </div>
+
+    <div class="station" style="--d:.32s;">
+      <span class="num">الفصل الخامس</span>
+      <h3>التحوّل</h3>
+      <p>سنوات عمل مضنية، وخيانة ثقة، ومرحلة تتشكل فيها بلاد بأكملها من حوله.</p>
+    </div>
+
+    <div class="station" style="--d:.4s;">
+      <span class="num">الفصل السادس</span>
+      <h3>الخمس العجاف</h3>
+      <p>عزلة طويلة، ومرض لا يُفهم سببه، وكتاب ومكتبة تصيران الرفيق الوحيد.</p>
+    </div>
+
+    <div class="station" style="--d:.48s;">
+      <span class="num">الفصل السابع</span>
+      <h3>الخمس السمان</h3>
+      <p>سكينة لم تُطلب، وفلسفة رواقية تُعاش لا تُقرأ فحسب، وسقطة تتحول أخيرًا إلى باب.</p>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <p class="kicker" style="margin-top:0;">لماذا تقرأ هذا الكتاب</p>
+  <div class="grid3">
+    <div class="card">
+      <span class="icon">✒</span>
+      <h4>صدق لا يُجامل</h4>
+      <p>لا يقدّم الكاتب نفسه بطلاً ولا ضحية، بل يروي القسوة والرحمة كما وقعتا، دون تجميل.</p>
+    </div>
+    <div class="card">
+      <span class="icon">◐</span>
+      <h4>أسئلة أكبر من السيرة</h4>
+      <p>عن القدر والاختيار، عن الأسماء وأثرها، وعن كيف تتحول هزيمة أمة إلى غضب في بيت.</p>
+    </div>
+    <div class="card">
+      <span class="icon">✦</span>
+      <h4>حكمة تُعاش لا تُملى</h4>
+      <p>الكتاب لا يطلب منك أن تُصدّق، بل أن تجد في سقوطه ظلاً من سقوطك أنت.</p>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="author-block">
+    <div class="author-photo">
+      <img src="assets/author.jpg" alt="صورة المؤلف المتفائل" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;" onerror="handleAuthorImgError(this)">
+    </div>
+    <h3>المتفائل</h3>
+    <div class="role">أبو أسامة سامي الذبياني — كاتب وباحث مستقل من جدة</div>
+    <p>
+      تتقاطع مؤلفاته بين الفلسفة والتاريخ والأدب والعلوم السياسية والجيوبوليتيك وتحليل الخطاب،
+      ويسعى فيها إلى تقديم قراءات عميقة تخاطب العقل الشغوف بفهم ما وراء الأحداث والظواهر.
+    </p>
+  </div>
+</section>
+
+<section class="reveal">
+  <p class="kicker" style="margin-top:0;">أسئلة شائعة</p>
+  <h2 class="lede" style="font-size:clamp(1.6rem,3vw,2rem); margin-bottom:0;">قبل أن تشتري</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>كم سعر الكتاب؟</summary>
+      <div class="faq-body"><div><p>5.99$ للنسخة الرقمية الكاملة، تُدفع مرة واحدة عبر Payhip.</p></div></div>
+    </details>
+    <details class="faq-item">
+      <summary>بأي صيغة يصل الكتاب؟</summary>
+      <div class="faq-body"><div><p>نسخة إلكترونية بصيغة PDF، جاهزة للقراءة على الجوال أو الحاسوب أو أي جهاز قراءة إلكتروني.</p></div></div>
+    </details>
+    <details class="faq-item">
+      <summary>كم عدد صفحات الكتاب؟</summary>
+      <div class="faq-body"><div><p>64 صفحة، موزعة على مقدمة وسبعة فصول وخاتمة.</p></div></div>
+    </details>
+    <details class="faq-item">
+      <summary>كيف أستلم نسختي بعد الدفع؟</summary>
+      <div class="faq-body"><div><p>فور إتمام الشراء عبر Payhip، يصلك رابط تحميل مباشر للنسخة الرقمية على بريدك الإلكتروني.</p></div></div>
+    </details>
+    <details class="faq-item">
+      <summary>هل لديّ استفسار آخر؟</summary>
+      <div class="faq-body"><div><p>راسل المؤلف مباشرة على <a href="mailto:almtfayl562@gmail.com" style="color:var(--gold); text-decoration:underline;">almtfayl562@gmail.com</a>.</p></div></div>
+    </details>
+  </div>
+</section>
+
+<div class="final reveal">
+  <h2>ابدأ القراءة الآن</h2>
+  <p>سقطتُ طفلاً من فوق بناية، لا تبعد كثيرًا عن حيث سقطت أختي فماتت قبلي، ولم أكن أعرف أن ذلك السقوط سيصوغ ملامح حياتي كلها.</p>
+  <a class="cta" href="https://payhip.com/b/vexQw" target="_blank" rel="noopener">
+    <span>اشترِ نسختك الآن</span>
+  </a>
+  <div class="price-tag">5.99$ · نسخة رقمية · تصلك فور إتمام الشراء</div>
+</div>
+
+</main>
+
+<footer>
+  <div>© جميع الحقوق محفوظة للمؤلف — المتفائل</div>
+  <div style="margin-top:.8rem; display:flex; gap:1.4rem; justify-content:center; flex-wrap:wrap;">
+    <a href="index.html">الموقع الرئيسي</a>
+    <a href="index.html#download">كتابي المجاني: خلف الزحام</a>
+    <a href="mailto:almtfayl562@gmail.com">almtfayl562@gmail.com</a>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="العودة إلى الأعلى" title="العودة إلى الأعلى">
+  <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Author image fallback ---------- */
+  function handleAuthorImgError(img){
+    img.onerror = null;
+    const wrap = img.parentElement;
+    wrap.innerHTML = '';
+    const fallback = document.createElement('div');
+    fallback.className = 'author-fallback';
+    fallback.textContent = 'م';
+    fallback.title = 'المتفائل';
+    wrap.appendChild(fallback);
+  }
+
+  /* ---------- Reveal on scroll ---------- */
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.15});
+  document.querySelectorAll('.reveal, .station').forEach(el=>io.observe(el));
+
+  /* ---------- Scroll-driven UI (progress, topbar, rope, hero parallax) ---------- */
+  const progressBar = document.getElementById('progressBar');
+  const topbar      = document.getElementById('topbar');
+  const toTop       = document.getElementById('toTop');
+  const hero        = document.getElementById('hero');
+  const heroInner   = document.getElementById('heroInner');
+  const wellBg      = document.getElementById('wellBg');
+  const ropeWrap    = document.getElementById('ropeWrap');
+  const ropeLine    = document.getElementById('ropeLine');
+
+  let ticking = false;
+  function onScroll(){
+    if(ticking) return;
+    ticking = true;
+    requestAnimationFrame(()=>{
+      const y = window.scrollY;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.transform = 'scaleX(' + (max > 0 ? y / max : 0) + ')';
+
+      const past = y > window.innerHeight * .65;
+      topbar.classList.toggle('show', past);
+      toTop.classList.toggle('show', y > 700);
+
+      if(!reduceMotion){
+        if(y < window.innerHeight * 1.2){
+          wellBg.style.transform = 'translateY(' + y * .35 + 'px)';
+          heroInner.style.transform = 'translateY(' + y * .18 + 'px)';
+          heroInner.style.opacity = Math.max(0, 1 - y / (window.innerHeight * .85));
+        }
+        const r = ropeWrap.getBoundingClientRect();
+        const p = Math.min(1, Math.max(0, (window.innerHeight * .8 - r.top) / r.height));
+        ropeLine.style.transform = 'scaleY(' + p + ')';
+      } else {
+        ropeLine.style.transform = 'scaleY(1)';
+      }
+      ticking = false;
+    });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  toTop.addEventListener('click', ()=> window.scrollTo({top:0, behavior: reduceMotion ? 'auto' : 'smooth'}));
+
+  /* ---------- Cover 3D tilt ---------- */
+  const coverFrame = document.getElementById('coverFrame');
+  if(!reduceMotion && window.matchMedia('(hover:hover)').matches){
+    let tx = 0, ty = 0, rx = 0, ry = 0;
+    hero.addEventListener('mousemove', (e)=>{
+      const r = coverFrame.getBoundingClientRect();
+      const cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+      ty = ((e.clientX - cx) / r.width) * 10;
+      tx = -((e.clientY - cy) / r.height) * 10;
+    });
+    hero.addEventListener('mouseleave', ()=>{ tx = 0; ty = 0; });
+    (function tiltLoop(){
+      rx += (tx - rx) * .08;
+      ry += (ty - ry) * .08;
+      coverFrame.style.transform = 'rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg)';
+      requestAnimationFrame(tiltLoop);
+    })();
+  }
+
+  /* ---------- Ember particles ---------- */
+  const cvs = document.getElementById('embers');
+  if(!reduceMotion && cvs.getContext){
+    const ctx = cvs.getContext('2d');
+    let W, H, parts = [], running = true, raf;
+
+    function resize(){
+      W = cvs.width  = hero.offsetWidth;
+      H = cvs.height = hero.offsetHeight;
+    }
+    function spawn(initial){
+      return {
+        x: Math.random() * W,
+        y: initial ? Math.random() * H : H + 10,
+        r: .6 + Math.random() * 1.8,
+        vy: -(.15 + Math.random() * .45),
+        vx: (Math.random() - .5) * .18,
+        o: .15 + Math.random() * .55,
+        fl: Math.random() * Math.PI * 2
+      };
+    }
+    function init(){
+      resize();
+      parts = Array.from({length: Math.min(70, W / 14)}, ()=>spawn(true));
+    }
+    function tick(){
+      if(!running){ return; }
+      ctx.clearRect(0, 0, W, H);
+      parts.forEach((p, i)=>{
+        p.y += p.vy; p.x += p.vx; p.fl += .03;
+        const alpha = p.o * (.65 + .35 * Math.sin(p.fl));
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(231,201,143,' + alpha.toFixed(3) + ')';
+        ctx.fill();
+        if(p.y < -12 || p.x < -12 || p.x > W + 12){ parts[i] = spawn(false); }
+      });
+      raf = requestAnimationFrame(tick);
+    }
+    init();
+    tick();
+    window.addEventListener('resize', init);
+    new IntersectionObserver((es)=>{
+      es.forEach(e=>{
+        running = e.isIntersecting;
+        if(running){ cancelAnimationFrame(raf); tick(); }
+      });
+    }).observe(hero);
+  }
+
+  /* ---------- Smooth FAQ close ---------- */
+  document.querySelectorAll('.faq-item').forEach(d=>{
+    const summary = d.querySelector('summary');
+    const body = d.querySelector('.faq-body');
+    summary.addEventListener('click', (e)=>{
+      if(d.open && !reduceMotion){
+        e.preventDefault();
+        body.style.gridTemplateRows = '0fr';
+        setTimeout(()=>{ d.open = false; body.style.gridTemplateRows = ''; }, 430);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
